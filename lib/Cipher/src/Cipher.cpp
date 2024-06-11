@@ -1,4 +1,4 @@
-#include "cipher.hpp"
+#include "Cipher.hpp"
 
 Cipher::Cipher(QObject *parent)
     : QObject{parent} {

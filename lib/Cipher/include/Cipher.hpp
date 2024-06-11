@@ -33,7 +33,6 @@
  * openssl aes-256-cbc -salt -md sha1 -in file.txt -out file.enc -pass pass:password
  * openssl aes-256-cbc -d -salt -md sha1 -in file.enc -out file.txt -pass pass:password
  *
- * Be sure to link to the OpenSSL lib and include the headers
  */
 
 class Cipher : public QObject {
@@ -116,7 +115,6 @@ class Cipher : public QObject {
      * @param key The RSA Key
      */
     void freeRSAKey(RSA *key);
-  signals:
 
   private:
     /**

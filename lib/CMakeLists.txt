@@ -2,6 +2,7 @@
 set(
   DIRECTORIES_TO_CHECK
   "${CMAKE_CURRENT_SOURCE_DIR}/Cipher" # get Cipher
+  "${CMAKE_CURRENT_SOURCE_DIR}/JSONHandler" # get Cipher
 )
 
 foreach(DIRECTORY ${DIRECTORIES_TO_CHECK})
