@@ -4,6 +4,8 @@ project(qt-password-manager VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+add_subdirectory(lib) # compile libs
+
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -16,11 +18,10 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 file(GLOB CPP_HILES "src/*.cpp")
 file(GLOB HPP_HILES "include/*.hpp")
-file(GLOB UI_HILES  "design/*.ui")
-
+file(GLOB UI_HILES "design/*.ui")
 
 set(PROJECT_SOURCES
-${CPP_HILES} ${HPP_HILES} ${UI_HILES}
+    ${CPP_HILES} ${HPP_HILES} ${UI_HILES}
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
