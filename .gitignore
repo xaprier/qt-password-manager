@@ -1,0 +1,19 @@
+#user files
+*.user
+# cmake build
+build/
+cmake-build-debug/
+# jetbrains settings
+*.xml
+# kdevelop settings
+*.kdev4
+
+# vscode settings
+.vscode*
+.VSCodeCounter/
+# idea settings
+.idea/
+
+*clang*
+.cache
+.todo
