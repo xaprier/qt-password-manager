@@ -1,14 +1,24 @@
 #include "EncFileListLoader.hpp"
 
+#include "EncFileListLoaderException.hpp"
+
 EncFileListLoader::EncFileListLoader(QComboBox* comboBox) : comboBox(comboBox) {
     this->loadEncFiles();
 }
 
 void EncFileListLoader::loadEncFiles() {
     // get default qsettings directory for getting files
-    QString settingsPath = QSettings().fileName();
+    QString settingsPath = QSettings("xaprier", "Password Manager").fileName();
     QFileInfo settingsFileInfo(settingsPath);
     QDir settingsDir = settingsFileInfo.dir();
+
+    // create path if not exists
+    QDir dir(settingsFileInfo.absolutePath());
+    if (!dir.exists()) {
+        if (!dir.mkpath(settingsFileInfo.absolutePath())) {
+            throw EncFileListLoaderException("Failed to create directory: " + settingsFileInfo.absolutePath());
+        }
+    }
 
     // get files with .enc extension
     QStringList filters;

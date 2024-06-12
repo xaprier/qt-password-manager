@@ -5,6 +5,7 @@
 #include <qmessagebox.h>
 
 #include "../design/ui_LoginDialog.h"
+#include "CreateDialog.hpp"
 #include "EncFileListLoader.hpp"
 
 LoginDialog::LoginDialog(QWidget* parent) : QDialog(parent),
@@ -15,7 +16,14 @@ LoginDialog::LoginDialog(QWidget* parent) : QDialog(parent),
     if (this->m_ui->encryptedFiles->count() <= 0) {
         auto msgBox = QMessageBox(QMessageBox::Icon::Warning, "No encrypted database found", "There is no encrypted databases. Do you want to create one", QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
         if (msgBox.exec() == QMessageBox::StandardButton::Yes) {
-            // TODO add implementation of creating new encrypted database dialog
+            CreateDialog d;
+            while (!d.isCreated()) {
+                if (d.exec() == QDialog::Rejected) break;
+            }
+
+            if (d.isCreated()) {  // if there is a created one, update combobox again
+                EncFileListLoader loader(this->m_ui->encryptedFiles);
+            }
         }
     }
     connect(this, &QDialog::accepted, this, &LoginDialog::sl_accepted);
