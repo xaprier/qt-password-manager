@@ -6,6 +6,7 @@
 #include <qtoolbutton.h>
 
 #include "../design/ui_LoginDialog.h"
+#include "Auth.hpp"
 #include "CreateDialog.hpp"
 #include "EncFileListLoader.hpp"
 
@@ -56,7 +57,7 @@ void LoginDialog::sl_accepted() {
 
     QString selectedFile = combobox->currentText();
     if (verifyPassword(selectedFile, password)) {
-        QMessageBox::information(this, "Success", "Login successful. Selected file: " + selectedFile);
+        QMessageBox::information(this, "Success", "Login successful for file: " + selectedFile);
         this->setLogged(true);
     } else {
         QMessageBox::warning(this, "Error", "Invalid password. Please try again.");
@@ -67,8 +68,12 @@ void LoginDialog::sl_rejected() {
     QApplication::quit();
 }
 
-bool LoginDialog::verifyPassword(const QString& file, const QString& password) {  // TODO create implementation
-    return password == "correctpassword";
+bool LoginDialog::verifyPassword(const QString& file, const QString& password) {
+    QString settingsPath = QSettings("xaprier", "Password Manager").fileName();
+    QFileInfo settingsFileInfo(settingsPath);
+    QString fullFilePath = settingsFileInfo.absolutePath() + "/" + file + ".enc";
+    Auth authorizer(fullFilePath, password);
+    return authorizer.isAuthorized();
 }
 
 void LoginDialog::sl_newClicked(bool checked) {

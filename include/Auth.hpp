@@ -1,0 +1,21 @@
+#ifndef AUTH_HPP
+#define AUTH_HPP
+
+#include <qobjectdefs.h>
+
+#include <QObject>
+
+class Auth : public QObject {
+    Q_OBJECT
+  public:
+    explicit Auth(const QString &file, const QString &masterPassword, QObject *parent = nullptr);
+    inline const bool isAuthorized() { return m_isAuthorized; }
+
+  private:
+    const bool isValidJson(const QByteArray &json);
+
+  private:
+    bool m_isAuthorized = false;
+};
+
+#endif  // AUTH_HPP

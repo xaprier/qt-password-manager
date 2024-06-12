@@ -8,7 +8,7 @@ class CreateEncryptedFileException : public QException {
     CreateEncryptedFileException(const QString &message) : m_message(message) {}  // NOLINT
 
     void raise() const override { throw *this; }
-    [[nodiscard]] CreateEncryptedFileException *clone() const override { return new CreateEncryptedFileException(*this); }
+    [[nodiscard]] CreateEncryptedFileException *clone() const override { return new CreateEncryptedFileException(*this); }  // NOLINT
 
     [[nodiscard]] const QString &message() const { return m_message; }
 

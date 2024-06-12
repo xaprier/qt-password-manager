@@ -2,6 +2,7 @@
 #define CREATEDIALOG_HPP
 
 #include <qcombobox.h>
+#include <qglobal.h>
 
 #include <QDialog>
 
@@ -11,7 +12,7 @@ class CreateDialog;
 
 class CreateDialog : public QDialog {
     Q_OBJECT
-
+    Q_DISABLE_COPY_MOVE(CreateDialog)
   public:
     explicit CreateDialog(QWidget *parent = nullptr);
     ~CreateDialog();

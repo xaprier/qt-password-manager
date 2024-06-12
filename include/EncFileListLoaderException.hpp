@@ -8,7 +8,7 @@ class EncFileListLoaderException : public QException {
     EncFileListLoaderException(const QString &message) : m_message(message) {}  // NOLINT
 
     void raise() const override { throw *this; }
-    [[nodiscard]] EncFileListLoaderException *clone() const override { return new EncFileListLoaderException(*this); }
+    [[nodiscard]] EncFileListLoaderException *clone() const override { return new EncFileListLoaderException(*this); }  // NOLINT
 
     [[nodiscard]] const QString &message() const { return m_message; }
 
