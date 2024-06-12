@@ -23,6 +23,8 @@ class LoginDialog : public QDialog {
   private slots:
     void sl_accepted();
     void sl_rejected();
+    void sl_newClicked(bool checked);
+    void sl_checkBoxChanged(int state);
 
   private:
     bool verifyPassword(const QString& file, const QString& password);

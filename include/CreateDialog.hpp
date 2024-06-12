@@ -20,6 +20,7 @@ class CreateDialog : public QDialog {
   private slots:
     void sl_accepted();
     void sl_rejected();
+    void sl_checkBoxChanged(int state);
 
   private:
     bool m_isCreated = false;

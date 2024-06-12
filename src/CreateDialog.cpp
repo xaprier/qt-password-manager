@@ -1,5 +1,6 @@
 #include "CreateDialog.hpp"
 
+#include <qcheckbox.h>
 #include <qcombobox.h>
 #include <qdialog.h>
 #include <qmessagebox.h>
@@ -17,6 +18,7 @@ CreateDialog::CreateDialog(QWidget *parent) : QDialog(parent),
 
     connect(this, &QDialog::accepted, this, &CreateDialog::sl_accepted);
     connect(this, &QDialog::rejected, this, &CreateDialog::sl_rejected);
+    connect(this->m_ui->showPasswordCheck, &QCheckBox::stateChanged, this, &CreateDialog::sl_checkBoxChanged);
 }
 
 CreateDialog::~CreateDialog() {
@@ -60,4 +62,12 @@ void CreateDialog::sl_accepted() {
 
 void CreateDialog::sl_rejected() {
     qDebug() << "Rejected";
+}
+
+void CreateDialog::sl_checkBoxChanged(int state) {
+    if (state == Qt::Checked) {
+        this->m_ui->passwordLE->setEchoMode(QLineEdit::Normal);
+    } else {
+        this->m_ui->passwordLE->setEchoMode(QLineEdit::Password);
+    }
 }

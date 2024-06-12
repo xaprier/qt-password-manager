@@ -3,6 +3,7 @@
 #include <qdialog.h>
 #include <qdialogbuttonbox.h>
 #include <qmessagebox.h>
+#include <qtoolbutton.h>
 
 #include "../design/ui_LoginDialog.h"
 #include "CreateDialog.hpp"
@@ -28,6 +29,8 @@ LoginDialog::LoginDialog(QWidget* parent) : QDialog(parent),
     }
     connect(this, &QDialog::accepted, this, &LoginDialog::sl_accepted);
     connect(this, &QDialog::rejected, this, &LoginDialog::sl_rejected);
+    connect(this->m_ui->newButton, &QToolButton::clicked, this, &LoginDialog::sl_newClicked);
+    connect(this->m_ui->showPasswordCheck, &QCheckBox::stateChanged, this, &LoginDialog::sl_checkBoxChanged);
 }
 
 LoginDialog::~LoginDialog() {
@@ -66,4 +69,23 @@ void LoginDialog::sl_rejected() {
 
 bool LoginDialog::verifyPassword(const QString& file, const QString& password) {  // TODO create implementation
     return password == "correctpassword";
+}
+
+void LoginDialog::sl_newClicked(bool checked) {
+    CreateDialog d;
+    while (!d.isCreated()) {
+        if (d.exec() == QDialog::Rejected) break;
+    }
+
+    if (d.isCreated()) {  // if there is a created one, update combobox again
+        EncFileListLoader loader(this->m_ui->encryptedFiles);
+    }
+}
+
+void LoginDialog::sl_checkBoxChanged(int state) {
+    if (state == Qt::Checked) {
+        this->m_ui->passwordLine->setEchoMode(QLineEdit::Normal);
+    } else {
+        this->m_ui->passwordLine->setEchoMode(QLineEdit::Password);
+    }
 }

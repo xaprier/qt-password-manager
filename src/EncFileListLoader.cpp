@@ -3,6 +3,7 @@
 #include "EncFileListLoaderException.hpp"
 
 EncFileListLoader::EncFileListLoader(QComboBox* comboBox) : comboBox(comboBox) {
+    comboBox->clear();
     this->loadEncFiles();
 }
 
