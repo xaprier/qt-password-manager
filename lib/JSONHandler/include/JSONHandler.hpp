@@ -7,7 +7,6 @@
 #include <qsettings.h>
 
 #include "Cipher.hpp"
-#include "JSONHandlerException.hpp"
 
 class JSONHandler : public QObject {
     Q_DISABLE_COPY_MOVE(JSONHandler)

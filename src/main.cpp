@@ -1,5 +1,16 @@
+#include <qapplication.h>
+#include <qdialog.h>
+
 #include <iostream>
 
+#include "LoginDialog.hpp"
+
 int main(int argc, char *argv[]) {
-    std::cout << "Hello world\n";
+    QApplication a(argc, argv);
+    LoginDialog d;
+    while (!d.isLogged()) {
+        if (d.exec() == QDialog::Rejected) return 0;
+    }
+    // now its logged, create mainwindow with the decrypted file
+    return a.exec();
 }
