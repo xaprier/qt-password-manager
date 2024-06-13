@@ -56,9 +56,14 @@ void LoginDialog::sl_accepted() {
     }
 
     QString selectedFile = combobox->currentText();
-    if (verifyPassword(selectedFile, password)) {
-        QMessageBox::information(this, "Success", "Login successful for file: " + selectedFile);
+    QString settingsPath = QSettings("xaprier", "Password Manager").fileName();
+    QFileInfo settingsFileInfo(settingsPath);
+    QString fullFilePath = settingsFileInfo.absolutePath() + "/" + selectedFile + ".enc";
+    if (verifyPassword(fullFilePath, password)) {
+        this->m_masterPassword = password;
+        this->m_filePath = fullFilePath;
         this->setLogged(true);
+        QMessageBox::information(this, "Success", "Login successful for file: " + selectedFile);
     } else {
         QMessageBox::warning(this, "Error", "Invalid password. Please try again.");
     }
@@ -68,11 +73,8 @@ void LoginDialog::sl_rejected() {
     QApplication::quit();
 }
 
-bool LoginDialog::verifyPassword(const QString& file, const QString& password) {
-    QString settingsPath = QSettings("xaprier", "Password Manager").fileName();
-    QFileInfo settingsFileInfo(settingsPath);
-    QString fullFilePath = settingsFileInfo.absolutePath() + "/" + file + ".enc";
-    Auth authorizer(fullFilePath, password);
+bool LoginDialog::verifyPassword(const QString& filePath, const QString& password) {
+    Auth authorizer(filePath, password);
     return authorizer.isAuthorized();
 }
 

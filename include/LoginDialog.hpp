@@ -31,6 +31,8 @@ class LoginDialog : public QDialog {
     inline void setLogged(bool logged) { this->m_logged = logged; }
 
   private:
+    QString m_filePath;
+    QString m_masterPassword;
     bool m_logged = false;
     Ui::LoginDialog* m_ui;
 };
