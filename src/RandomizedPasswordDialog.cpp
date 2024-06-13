@@ -59,6 +59,7 @@ void RandomizedPasswordDialog::sl_generateClicked(bool clicked) {
         QMessageBox::warning(this, "Error", "Random password cannot be created");
     }
     this->m_ui->passwordLE->setText(password);
+    this->m_generatedPassword = password;
 }
 
 void RandomizedPasswordDialog::sl_checkBoxToggled(bool toggle) {

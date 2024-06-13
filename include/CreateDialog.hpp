@@ -22,6 +22,7 @@ class CreateDialog : public QDialog {
     void sl_accepted();
     void sl_rejected();
     void sl_checkBoxChanged(int state);
+    void sl_generateClicked(bool checked);
 
   private:
     bool m_isCreated = false;

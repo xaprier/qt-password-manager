@@ -5,11 +5,13 @@
 #include <qdialog.h>
 #include <qmessagebox.h>
 #include <qnamespace.h>
+#include <qtoolbutton.h>
 
 #include "../design/ui_CreateDialog.h"
 #include "CreateEncryptedFile.hpp"
 #include "CreateEncryptedFileException.hpp"
 #include "EncFileListLoader.hpp"
+#include "RandomizedPasswordDialog.hpp"
 
 CreateDialog::CreateDialog(QWidget *parent) : QDialog(parent),
                                               m_ui(new Ui::CreateDialog) {
@@ -19,6 +21,7 @@ CreateDialog::CreateDialog(QWidget *parent) : QDialog(parent),
     connect(this, &QDialog::accepted, this, &CreateDialog::sl_accepted);
     connect(this, &QDialog::rejected, this, &CreateDialog::sl_rejected);
     connect(this->m_ui->showPasswordCheck, &QCheckBox::stateChanged, this, &CreateDialog::sl_checkBoxChanged);
+    connect(this->m_ui->generateTB, &QToolButton::clicked, this, &CreateDialog::sl_generateClicked);
 }
 
 CreateDialog::~CreateDialog() {
@@ -69,5 +72,14 @@ void CreateDialog::sl_checkBoxChanged(int state) {
         this->m_ui->passwordLE->setEchoMode(QLineEdit::Normal);
     } else {
         this->m_ui->passwordLE->setEchoMode(QLineEdit::Password);
+    }
+}
+
+void CreateDialog::sl_generateClicked(bool checked) {
+    RandomizedPasswordDialog dialog;
+    dialog.exec();
+    auto createdPassword = dialog.getGeneratedPassword();
+    if (!createdPassword.isEmpty() && !createdPassword.isNull()) {
+        this->m_ui->passwordLE->setText(createdPassword);
     }
 }
