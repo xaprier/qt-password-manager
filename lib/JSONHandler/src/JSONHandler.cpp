@@ -5,6 +5,7 @@
 #include <qjsonarray.h>
 #include <qjsondocument.h>
 #include <qjsonobject.h>
+#include <qjsonvalue.h>
 #include <qobject.h>
 #include <qsettings.h>
 
@@ -45,11 +46,33 @@ bool JSONHandler::decryptJSON() {
 
 bool JSONHandler::encryptJSON() {
     qDebug() << "[JSONHandler] encryptJSON: " << m_fileFullPath << m_password.toUtf8() << m_json;
+    QString filePath = m_fileFullPath;
+    if (nameChanged) {
+        qDebug() << "[JSONHandler] encryptJSON: nameChanged";
+        auto newName = m_json.object()["name"].toString();
+        // update file name in m_fileFullPath
+        QFileInfo info(m_fileFullPath);
+        filePath = info.absolutePath() + "/" + newName + ".enc";
+    }
+    qDebug() << "Path: " << filePath;
+
     auto last = m_json.toJson();
     auto encrypted = m_wrapper.encryptAES(m_password.toUtf8(), last);
-    if (!this->writeFile(m_fileFullPath, encrypted)) {
-        qDebug() << "Cannot write file: " << m_fileFullPath;
+    if (!this->writeFile(filePath, encrypted)) {
+        qDebug() << "Cannot write file: " << filePath;
         return false;
+    }
+
+    // write file is successful, if nameChanged we can delete old file.
+    if (nameChanged) {
+        QFile oldFile(m_fileFullPath);
+        if (oldFile.exists()) {
+            if (!oldFile.remove()) {
+                qDebug() << "Failed to remove old file:" << m_fileFullPath;
+            } else {
+                qDebug() << "Old file removed:" << m_fileFullPath;
+            }
+        }
     }
 
     return true;
@@ -107,8 +130,11 @@ const QString JSONHandler::name() const {
 
 void JSONHandler::setName(const QString &name) {
     if (m_json.isNull()) throw JSONHandlerException("Decrypted JSON is not valid");
-    if (!m_json.object().contains("name")) throw JSONHandlerException("Invalid JSON format. Required area not found.");
-    m_json.object()["name"] = name;
+    QJsonObject jsonObj = m_json.object();
+    if (!jsonObj.contains("name")) throw JSONHandlerException("Invalid JSON format. Required area not found.");
+    jsonObj["name"] = QJsonValue(name);
+    m_json.setObject(jsonObj);
+    nameChanged = true;
 }
 
 void JSONHandler::setPlatforms(const QJsonArray &platforms) {
@@ -116,11 +142,13 @@ void JSONHandler::setPlatforms(const QJsonArray &platforms) {
     QJsonObject jsonObj = m_json.object();
     if (!jsonObj.contains("datas")) throw JSONHandlerException("Invalid JSON format. Required area not found.");
     jsonObj["datas"] = QJsonValue(platforms);
-    m_json.object()["datas"].toArray() = platforms;
-    qDebug() << "a:" << jsonObj;
     m_json.setObject(jsonObj);
 }
 
 void JSONHandler::setMasterPassword(const QString &master_password) {
     this->m_password = master_password;
+}
+
+const bool JSONHandler::passwordSameAs(const QString &password) const {
+    return password == m_password;
 }

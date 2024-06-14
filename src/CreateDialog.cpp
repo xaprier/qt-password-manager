@@ -81,5 +81,6 @@ void CreateDialog::sl_generateClicked(bool checked) {
     auto createdPassword = dialog.getGeneratedPassword();
     if (!createdPassword.isEmpty() && !createdPassword.isNull()) {
         this->m_ui->passwordLE->setText(createdPassword);
+        // todo: copy to clipboard
     }
 }

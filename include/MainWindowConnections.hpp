@@ -25,6 +25,7 @@ class MainWindowConnections : public QObject {  // NOLINT
     MainWindow *m_base{};
 
   signals:
+
   private slots:
     void sl_generateTBClicked(bool checked);
     void sl_showPasswordCBStateChanged(int state);
@@ -32,6 +33,8 @@ class MainWindowConnections : public QObject {  // NOLINT
     void sl_updatePBClicked(bool checked);
     void sl_deletePBClicked(bool checked);
     void sl_itemClickedLW(QListWidgetItem *item);
+    void sl_actionChangeNameTriggered(bool checked);
+    void sl_actionChangeMasterPasswordTriggered(bool checked);
 };
 
 #endif  // MAINWINDOWCONNECTIONS_HPP

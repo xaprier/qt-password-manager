@@ -18,6 +18,7 @@ class JSONHandler : public QObject {
 
     [[nodiscard]] const QString name() const;
     [[nodiscard]] const QJsonArray platforms() const;
+    [[nodiscard]] const bool passwordSameAs(const QString &password) const;
 
     void setName(const QString &name);
     void setPlatforms(const QJsonArray &platforms);
@@ -32,6 +33,7 @@ class JSONHandler : public QObject {
     virtual bool encryptJSON();
 
   private:
+    bool nameChanged = false;
     QJsonDocument m_json;
     QByteArray m_decrypted;
     QString m_fileFullPath;

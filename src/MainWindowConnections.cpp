@@ -1,11 +1,14 @@
 #include "MainWindowConnections.hpp"
 
+#include <qdialog.h>
 #include <qjsonobject.h>
 #include <qmessagebox.h>
 #include <qnamespace.h>
 #include <qobject.h>
 #include <qtoolbutton.h>
 
+#include "NameChangerDialog.hpp"
+#include "PasswordChangerDialog.hpp"
 #include "RandomizedPasswordDialog.hpp"
 
 void MainWindowConnections::sl_generateTBClicked(bool checked) {
@@ -14,6 +17,7 @@ void MainWindowConnections::sl_generateTBClicked(bool checked) {
     auto createdPassword = dialog.getGeneratedPassword();
     if (!createdPassword.isEmpty() && !createdPassword.isNull()) {
         this->m_ui->passwordLE->setText(createdPassword);
+        // todo: copy to clipboard
     }
 }
 
@@ -203,4 +207,87 @@ void MainWindowConnections::sl_updatePBClicked(bool checked) {
 
     // remove selection
     this->m_ui->platformsLW->clearSelection();
+}
+
+void MainWindowConnections::sl_actionChangeNameTriggered(bool checked) {
+    NameChangerDialog dialog;
+begin:
+    int result = dialog.exec();
+
+    if (result != QDialog::Accepted) return;
+
+    auto newName = dialog.getEnteredName();
+    auto oldName = this->m_base->m_jsonHandler->name();
+    if (newName.isEmpty() || newName.isNull()) {
+        QMessageBox::critical(this->m_base, "Error", "Name cannot be empty.");
+        goto begin;  // NOLINT
+    }
+
+    if (newName == oldName) {
+        QMessageBox::critical(this->m_base, "Error", "Name cannot be same as old.");
+        goto begin;  // NOLINT
+    }
+
+    // todo: check files is it exists
+
+    auto currentPassword = dialog.getCurrentPassword();
+    if (currentPassword.isEmpty() || currentPassword.isNull()) {
+        QMessageBox::critical(this->m_base, "Error", "Current password cannot be empty.");
+        goto begin;  // NOLINT
+    }
+
+    if (!this->m_base->m_jsonHandler->passwordSameAs(currentPassword)) {
+        QMessageBox::critical(this->m_base, "Error", "Current password is not correct.");
+        goto begin;  // NOLINT
+    }
+
+    QMessageBox msg(QMessageBox::Icon::Warning, "Confirm", "Are you sure to update name?", QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
+    if (msg.exec() == QMessageBox::StandardButton::No) return;
+
+    this->m_base->m_jsonHandler->setName(newName);
+
+    QMessageBox msgSuccess(QMessageBox::Icon::Information, "Success", "Name changed successfully.\nYou should login again to continue", QMessageBox::StandardButton::Ok);
+    if (msgSuccess.exec() == QMessageBox::StandardButton::Ok) {
+        this->m_base->close();
+    }
+}
+
+void MainWindowConnections::sl_actionChangeMasterPasswordTriggered(bool checked) {
+    PasswordChangerDialog dialog;
+begin:
+    int result = dialog.exec();
+
+    if (result != QDialog::Accepted) return;
+
+    auto newPassword = dialog.getNewPassword();
+    auto currentPassword = dialog.getCurrentPassword();
+    if (newPassword.isEmpty() || newPassword.isNull() || !dialog.passwordEnteredCorrectly()) {
+        QMessageBox::critical(this->m_base, "Error", "New passwords must be equal and cannot be empty.");
+        goto begin;  // NOLINT
+    }
+
+    if (currentPassword.isEmpty() || currentPassword.isNull()) {
+        QMessageBox::critical(this->m_base, "Error", "Current password cannot be empty.");
+        goto begin;  // NOLINT
+    }
+
+    if (currentPassword == newPassword) {
+        QMessageBox::critical(this->m_base, "Error", "Current password and new password cannot be same.");
+        goto begin;  // NOLINT
+    }
+
+    auto currentPasswordIsCorrect = this->m_base->m_jsonHandler->passwordSameAs(currentPassword);
+    if (!currentPasswordIsCorrect) {
+        QMessageBox::critical(this->m_base, "Error", "Current password is not correct.");
+        goto begin;  // NOLINT
+    }
+
+    QMessageBox msg(QMessageBox::Icon::Warning, "Confirm", "Are you sure to update master password?", QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
+    if (msg.exec() == QMessageBox::StandardButton::No) return;
+
+    this->m_base->m_jsonHandler->setMasterPassword(newPassword);
+    QMessageBox msgSuccess(QMessageBox::Icon::Information, "Success", "Master password changed successfully.\nYou should login again to continue", QMessageBox::StandardButton::Ok);
+    if (msgSuccess.exec() == QMessageBox::StandardButton::Ok) {
+        this->m_base->close();
+    }
 }

@@ -1,5 +1,6 @@
 #include "MainWindow.hpp"
 
+#include <qaction.h>
 #include <qalgorithms.h>
 #include <qapplication.h>
 #include <qlistwidget.h>
@@ -12,15 +13,10 @@
 #include "Platform.hpp"
 #include "Platforms.hpp"
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
-                                          m_ui(new Ui::MainWindow),
-                                          m_connections(new MainWindowConnections(this, m_ui)) {
-    LoginDialog d;
-    while (!d.isLogged()) {
-        if (d.exec() == QDialog::Rejected) QApplication::exit(0);
-    }
-
-    m_jsonHandler = std::make_unique<JSONHandler>(d.m_filePath, d.m_masterPassword);
+MainWindow::MainWindow(const LoginDialog &dialog, QWidget *parent) : QMainWindow(parent),
+                                                                     m_ui(new Ui::MainWindow),
+                                                                     m_connections(new MainWindowConnections(this, m_ui)) {
+    m_jsonHandler = std::make_unique<JSONHandler>(dialog.m_filePath, dialog.m_masterPassword);
 
     m_ui->setupUi(this);
     this->initPlatforms();
@@ -60,6 +56,8 @@ void MainWindow::initConnections() {
     connect(this->m_ui->deletePB, &QPushButton::clicked, this->m_connections, &MainWindowConnections::sl_deletePBClicked);
     connect(this->m_ui->updatePB, &QPushButton::clicked, this->m_connections, &MainWindowConnections::sl_updatePBClicked);
     connect(this->m_ui->platformsLW, &QListWidget::itemClicked, this->m_connections, &MainWindowConnections::sl_itemClickedLW);
+    connect(this->m_ui->actionChange_Name, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_actionChangeNameTriggered);
+    connect(this->m_ui->actionChange_Master_Password, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_actionChangeMasterPasswordTriggered);
 }
 
 void MainWindow::loadPlatforms() {

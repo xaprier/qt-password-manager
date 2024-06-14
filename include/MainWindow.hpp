@@ -15,11 +15,12 @@ class MainWindow;
 }
 
 class MainWindowConnections;  // Forward decleration
+class LoginDialog;            // Forward decleration
 class MainWindow : public QMainWindow {
     Q_OBJECT
     Q_DISABLE_COPY_MOVE(MainWindow)
   public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(const LoginDialog &dialog, QWidget *parent = nullptr);
     ~MainWindow();
     friend class MainWindowConnections;  //* allow m_ui reach
 
