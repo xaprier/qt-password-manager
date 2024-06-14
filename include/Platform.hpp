@@ -1,10 +1,12 @@
 #ifndef PLATFORM_HPP
 #define PLATFORM_HPP
 
+#include <qjsonobject.h>
 #include <qobject.h>
 #include <qobjectdefs.h>
 
 #include <QIcon>
+#include <QJsonObject>
 #include <QString>
 
 class Platform : public QObject {
@@ -13,6 +15,7 @@ class Platform : public QObject {
     explicit Platform(QString name, QIcon icon) : m_name(std::move(name)), m_icon(std::move(icon)) {}
     [[nodiscard]] const QIcon icon() const { return m_icon; }
     [[nodiscard]] const QString name() const { return m_name; }
+    static std::unique_ptr<Platform> fromJson(const QJsonObject &object);
 
   private:
     QString m_name;

@@ -11,10 +11,11 @@
 
 #include "Cipher.hpp"
 #include "CreateEncryptedFileException.hpp"
+#include "JSONHandler.hpp"
 
 CreateEncryptedFile::CreateEncryptedFile(const QString &fileName, const QString &masterPassword, QObject *base) : QObject(base) {
     Cipher cipher;
-    auto json = getDefaultJSON(fileName);
+    auto json = JSONHandler::getDefaultJSON(fileName);
     auto encrypted = cipher.encryptAES(masterPassword.toUtf8(), json);
 
     // get QSettings path
@@ -38,14 +39,4 @@ CreateEncryptedFile::CreateEncryptedFile(const QString &fileName, const QString 
     } else {
         throw CreateEncryptedFileException("File cannot open: " + file.fileName());
     }
-}
-
-QByteArray CreateEncryptedFile::getDefaultJSON(const QString &fileName) {
-    QJsonObject jsonObject;
-    jsonObject["name"] = fileName;
-    jsonObject["datas"] = QJsonArray();
-
-    QJsonDocument jsonDoc(jsonObject);
-
-    return jsonDoc.toJson();
 }

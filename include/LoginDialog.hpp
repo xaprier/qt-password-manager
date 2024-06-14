@@ -6,6 +6,8 @@
 #include <QDialog>
 #include <QMessageBox>
 
+#include "MainWindow.hpp"
+
 namespace Ui {
 class LoginDialog;
 }
@@ -19,6 +21,8 @@ class LoginDialog : public QDialog {
     ~LoginDialog();
 
     const bool isLogged() { return m_logged; }
+
+    friend class MainWindow;
 
   private slots:
     void sl_accepted();

@@ -11,9 +11,6 @@ class CreateEncryptedFile : public QObject {
   public:
     explicit CreateEncryptedFile(const QString &fileName, const QString &masterPassword, QObject *base = nullptr);
     ~CreateEncryptedFile() override = default;
-
-  private:
-    QByteArray getDefaultJSON(const QString &fileName);
 };
 
 #endif  // CREATEENCRYPTEDFILE_HPP

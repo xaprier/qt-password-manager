@@ -74,6 +74,7 @@ void LoginDialog::sl_rejected() {
 }
 
 bool LoginDialog::verifyPassword(const QString& filePath, const QString& password) {
+    qDebug() << "path : " << filePath;
     Auth authorizer(filePath, password);
     return authorizer.isAuthorized();
 }

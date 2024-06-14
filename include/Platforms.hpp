@@ -72,4 +72,16 @@ using Steam = PlatformTemplate<SteamData>;
 using Epic = PlatformTemplate<EpicData>;
 using Other = PlatformTemplate<OtherData>;
 
+const std::map<QString, std::function<std::unique_ptr<Platform>()>> PlatformID = {
+    {"Instagram", []() { return std::make_unique<Instagram>(); }},
+    {"Google", []() { return std::make_unique<Google>(); }},
+    {"Reddit", []() { return std::make_unique<Reddit>(); }},
+    {"Discord", []() { return std::make_unique<Discord>(); }},
+    {"LinkedIn", []() { return std::make_unique<LinkedIn>(); }},
+    {"GitHub", []() { return std::make_unique<GitHub>(); }},
+    {"Microsoft", []() { return std::make_unique<Microsoft>(); }},
+    {"Steam", []() { return std::make_unique<Steam>(); }},
+    {"Epic", []() { return std::make_unique<Epic>(); }},
+    {"Other", []() { return std::make_unique<Other>(); }}};
+
 #endif  // PLATFORMS_HPP

@@ -12,6 +12,7 @@ Auth::Auth(const QString &fileName, const QString &masterPassword, QObject *pare
     Cipher wrapper;
     auto decrypted = wrapper.decryptAES(masterPassword.toUtf8(), encrypted);
     bool isItJsonFile = this->isValidJson(decrypted);
+    qDebug() << "[AUTH]" << isItJsonFile << decrypted << fileName << masterPassword;
     if (!decrypted.isEmpty() && !decrypted.isNull() && isItJsonFile) this->m_isAuthorized = true;
 }
 

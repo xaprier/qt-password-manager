@@ -4,14 +4,17 @@
 #include <qglobal.h>
 
 #include <QMainWindow>
+#include <memory>
 
-#include "MainWindowConnections.hpp"
+#include "../design/ui_MainWindow.h"
+#include "JSONHandler.hpp"
 #include "Platform.hpp"
 
 namespace Ui {
 class MainWindow;
 }
 
+class MainWindowConnections;  // Forward decleration
 class MainWindow : public QMainWindow {
     Q_OBJECT
     Q_DISABLE_COPY_MOVE(MainWindow)
@@ -23,9 +26,11 @@ class MainWindow : public QMainWindow {
   private:
     void initPlatforms();
     void initConnections();
+    void loadPlatforms();
 
   private:
-    QList<Platform *> platforms;
+    std::unique_ptr<JSONHandler> m_jsonHandler;
+    QList<Platform *> m_platforms;
     Ui::MainWindow *m_ui;
     MainWindowConnections *m_connections;
 };
