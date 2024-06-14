@@ -117,6 +117,7 @@ void JSONHandler::setPlatforms(const QJsonArray &platforms) {
     if (!jsonObj.contains("datas")) throw JSONHandlerException("Invalid JSON format. Required area not found.");
     jsonObj["datas"] = QJsonValue(platforms);
     m_json.object()["datas"].toArray() = platforms;
+    qDebug() << "a:" << jsonObj;
     m_json.setObject(jsonObj);
 }
 
