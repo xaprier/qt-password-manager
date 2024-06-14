@@ -22,7 +22,7 @@ JSONHandler::JSONHandler(const QString &fileFullPath, const QString &master_pass
 }
 
 JSONHandler::~JSONHandler() {
-    encryptJSON();
+    encryptJSON();  // todo: throw if false
 }
 
 bool JSONHandler::decryptJSON() {
@@ -46,8 +46,13 @@ bool JSONHandler::decryptJSON() {
 
 bool JSONHandler::encryptJSON() {
     qDebug() << "[JSONHandler] encryptJSON: " << m_fileFullPath << m_password.toUtf8() << m_json;
+    if (m_deleted) {
+        qDebug() << "[JSONHandler] encryptJSON: will not encrypt because of file deleted";
+        return true;
+    }
+
     QString filePath = m_fileFullPath;
-    if (nameChanged) {
+    if (m_nameChanged) {
         qDebug() << "[JSONHandler] encryptJSON: nameChanged";
         auto newName = m_json.object()["name"].toString();
         // update file name in m_fileFullPath
@@ -64,7 +69,7 @@ bool JSONHandler::encryptJSON() {
     }
 
     // write file is successful, if nameChanged we can delete old file.
-    if (nameChanged) {
+    if (m_nameChanged) {
         QFile oldFile(m_fileFullPath);
         if (oldFile.exists()) {
             if (!oldFile.remove()) {
@@ -134,7 +139,7 @@ void JSONHandler::setName(const QString &name) {
     if (!jsonObj.contains("name")) throw JSONHandlerException("Invalid JSON format. Required area not found.");
     jsonObj["name"] = QJsonValue(name);
     m_json.setObject(jsonObj);
-    nameChanged = true;
+    m_nameChanged = true;
 }
 
 void JSONHandler::setPlatforms(const QJsonArray &platforms) {

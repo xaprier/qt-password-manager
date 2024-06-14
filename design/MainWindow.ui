@@ -141,6 +141,8 @@
     </property>
     <addaction name="actionChange_Master_Password"/>
     <addaction name="actionChange_Name"/>
+    <addaction name="separator"/>
+    <addaction name="actionDelete"/>
    </widget>
    <addaction name="menuManage"/>
   </widget>
@@ -153,6 +155,11 @@
   <action name="actionChange_Name">
    <property name="text">
     <string>Change Name</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>Delete</string>
    </property>
   </action>
  </widget>

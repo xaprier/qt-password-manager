@@ -23,6 +23,7 @@ class JSONHandler : public QObject {
     void setName(const QString &name);
     void setPlatforms(const QJsonArray &platforms);
     void setMasterPassword(const QString &master_password);
+    void deleteFile() { m_deleted = true; }
 
     bool readFile(QString filename, QByteArray &data) const;
     bool writeFile(QString filename, QByteArray &data) const;
@@ -33,7 +34,8 @@ class JSONHandler : public QObject {
     virtual bool encryptJSON();
 
   private:
-    bool nameChanged = false;
+    bool m_deleted = false;
+    bool m_nameChanged = false;
     QJsonDocument m_json;
     QByteArray m_decrypted;
     QString m_fileFullPath;

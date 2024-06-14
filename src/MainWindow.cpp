@@ -58,6 +58,7 @@ void MainWindow::initConnections() {
     connect(this->m_ui->platformsLW, &QListWidget::itemClicked, this->m_connections, &MainWindowConnections::sl_itemClickedLW);
     connect(this->m_ui->actionChange_Name, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_actionChangeNameTriggered);
     connect(this->m_ui->actionChange_Master_Password, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_actionChangeMasterPasswordTriggered);
+    connect(this->m_ui->actionDelete, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_actionDeleteTriggered);
 }
 
 void MainWindow::loadPlatforms() {

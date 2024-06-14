@@ -7,8 +7,10 @@
 #include <qobject.h>
 #include <qtoolbutton.h>
 
+#include "EncryptedFiles.hpp"
 #include "NameChangerDialog.hpp"
 #include "PasswordChangerDialog.hpp"
+#include "PasswordConfirmationDialog.hpp"
 #include "RandomizedPasswordDialog.hpp"
 
 void MainWindowConnections::sl_generateTBClicked(bool checked) {
@@ -228,7 +230,11 @@ begin:
         goto begin;  // NOLINT
     }
 
-    // todo: check files is it exists
+    EncryptedFiles files;
+    if (files.contains(newName)) {
+        QMessageBox::critical(this->m_base, "Error", "Name must be unique. Please set unused name.");
+        goto begin;  // NOLINT
+    }
 
     auto currentPassword = dialog.getCurrentPassword();
     if (currentPassword.isEmpty() || currentPassword.isNull()) {
@@ -287,6 +293,38 @@ begin:
 
     this->m_base->m_jsonHandler->setMasterPassword(newPassword);
     QMessageBox msgSuccess(QMessageBox::Icon::Information, "Success", "Master password changed successfully.\nYou should login again to continue", QMessageBox::StandardButton::Ok);
+    if (msgSuccess.exec() == QMessageBox::StandardButton::Ok) {
+        this->m_base->close();
+    }
+}
+
+void MainWindowConnections::sl_actionDeleteTriggered(bool checked) {
+    PasswordConfirmationDialog dialog;
+begin:
+    QString fileName = this->m_base->m_jsonHandler->name();
+    int result = dialog.exec();
+
+    if (result != QDialog::Accepted) return;
+    auto currentPassword = dialog.getCurrentPassword();
+    if (currentPassword.isEmpty() || currentPassword.isNull()) {
+        QMessageBox::critical(this->m_base, "Error", "Password cannot be empty.");
+        goto begin;  // NOLINT
+    }
+
+    auto passwordIsCorrect = this->m_base->m_jsonHandler->passwordSameAs(currentPassword);
+    if (!passwordIsCorrect) {
+        QMessageBox::critical(this->m_base, "Error", "Current password is not correct.");
+        goto begin;  // NOLINT
+    }
+
+    QMessageBox msg(QMessageBox::Icon::Warning, "Confirm", "Are you sure to delete encrypted data?", QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
+    if (msg.exec() == QMessageBox::StandardButton::No) return;
+
+    EncryptedFiles files;
+    files.deleteFile(fileName);
+    this->m_base->m_jsonHandler->deleteFile();  //! to prevent write into path again.
+
+    QMessageBox msgSuccess(QMessageBox::Icon::Information, "Success", "Encrypted data deleted successfully!\nYou should login again to continue", QMessageBox::StandardButton::Ok);
     if (msgSuccess.exec() == QMessageBox::StandardButton::Ok) {
         this->m_base->close();
     }

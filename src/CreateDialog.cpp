@@ -33,7 +33,7 @@ void CreateDialog::sl_accepted() {
     QString enteredName = this->m_ui->fileNameLE->text();
 
     // Check if the entered name exists in the combo box
-    int index = this->m_ui->comboBox->findText(enteredName, Qt::MatchContains);
+    int index = this->m_ui->comboBox->findText(enteredName, Qt::MatchExactly);
 
     if (enteredName.isEmpty() || enteredName.isNull() || index >= 0) {
         QMessageBox::warning(this, "Error", "File name is not valid for encryption. Please select not exists and valid file name.");
