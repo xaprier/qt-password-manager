@@ -1,6 +1,7 @@
 #include "RandomizedPasswordDialog.hpp"
 
 #include <qcheckbox.h>
+#include <qclipboard.h>
 #include <qmessagebox.h>
 #include <qpushbutton.h>
 
@@ -24,6 +25,7 @@ void RandomizedPasswordDialog::initConnections() {
     connect(this->m_ui->checkDigits, &QCheckBox::toggled, this, &RandomizedPasswordDialog::sl_checkBoxToggled);
 
     connect(this->m_ui->generateButton, &QPushButton::clicked, this, &RandomizedPasswordDialog::sl_generateClicked);
+    connect(this->m_ui->copyTB, &QPushButton::clicked, this, &RandomizedPasswordDialog::sl_copyClicked);
     connect(this->m_ui->showPasswordCheck, &QCheckBox::stateChanged, this, &RandomizedPasswordDialog::sl_showPassword);
 }
 
@@ -89,4 +91,9 @@ void RandomizedPasswordDialog::sl_showPassword(int state) {
     } else {
         this->m_ui->passwordLE->setEchoMode(QLineEdit::Password);
     }
+}
+
+void RandomizedPasswordDialog::sl_copyClicked(bool checked) {
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText(this->m_ui->passwordLE->text());
 }

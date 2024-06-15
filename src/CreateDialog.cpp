@@ -1,6 +1,7 @@
 #include "CreateDialog.hpp"
 
 #include <qcheckbox.h>
+#include <qclipboard.h>
 #include <qcombobox.h>
 #include <qdialog.h>
 #include <qmessagebox.h>
@@ -22,6 +23,7 @@ CreateDialog::CreateDialog(QWidget *parent) : QDialog(parent),
     connect(this, &QDialog::rejected, this, &CreateDialog::sl_rejected);
     connect(this->m_ui->showPasswordCheck, &QCheckBox::stateChanged, this, &CreateDialog::sl_checkBoxChanged);
     connect(this->m_ui->generateTB, &QToolButton::clicked, this, &CreateDialog::sl_generateClicked);
+    connect(this->m_ui->copyTB, &QToolButton::clicked, this, &CreateDialog::sl_copyClicked);
 }
 
 CreateDialog::~CreateDialog() {
@@ -81,6 +83,10 @@ void CreateDialog::sl_generateClicked(bool checked) {
     auto createdPassword = dialog.getGeneratedPassword();
     if (!createdPassword.isEmpty() && !createdPassword.isNull()) {
         this->m_ui->passwordLE->setText(createdPassword);
-        // todo: copy to clipboard
     }
+}
+
+void CreateDialog::sl_copyClicked(bool checked) {
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText(this->m_ui->passwordLE->text());
 }

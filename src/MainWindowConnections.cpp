@@ -1,5 +1,6 @@
 #include "MainWindowConnections.hpp"
 
+#include <qclipboard.h>
 #include <qdialog.h>
 #include <qjsonobject.h>
 #include <qmessagebox.h>
@@ -19,7 +20,6 @@ void MainWindowConnections::sl_generateTBClicked(bool checked) {
     auto createdPassword = dialog.getGeneratedPassword();
     if (!createdPassword.isEmpty() && !createdPassword.isNull()) {
         this->m_ui->passwordLE->setText(createdPassword);
-        // todo: copy to clipboard
     }
 }
 
@@ -328,4 +328,9 @@ begin:
     if (msgSuccess.exec() == QMessageBox::StandardButton::Ok) {
         this->m_base->close();
     }
+}
+
+void MainWindowConnections::sl_copyClicked(bool checked) {
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText(this->m_ui->passwordLE->text());
 }

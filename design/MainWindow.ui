@@ -77,6 +77,13 @@
               </widget>
              </item>
              <item>
+              <widget class="QToolButton" name="copyTB">
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QToolButton" name="generateTB">
                <property name="text">
                 <string>...</string>

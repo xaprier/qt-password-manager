@@ -1,5 +1,6 @@
 #include "LoginDialog.hpp"
 
+#include <qclipboard.h>
 #include <qdialog.h>
 #include <qdialogbuttonbox.h>
 #include <qmessagebox.h>
@@ -48,7 +49,7 @@ void LoginDialog::sl_accepted() {
     }
 
     // check the password is empty
-    auto passwordLine = this->m_ui->passwordLine;
+    auto passwordLine = this->m_ui->passwordLE;
     QString password = passwordLine->text();
     if (password.isEmpty()) {
         QMessageBox::warning(this, "Error", "Password cannot be empty. Please enter a password.");
@@ -92,8 +93,8 @@ void LoginDialog::sl_newClicked(bool checked) {
 
 void LoginDialog::sl_checkBoxChanged(int state) {
     if (state == Qt::Checked) {
-        this->m_ui->passwordLine->setEchoMode(QLineEdit::Normal);
+        this->m_ui->passwordLE->setEchoMode(QLineEdit::Normal);
     } else {
-        this->m_ui->passwordLine->setEchoMode(QLineEdit::Password);
+        this->m_ui->passwordLE->setEchoMode(QLineEdit::Password);
     }
 }

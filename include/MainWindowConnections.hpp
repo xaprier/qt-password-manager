@@ -36,6 +36,7 @@ class MainWindowConnections : public QObject {  // NOLINT
     void sl_actionChangeNameTriggered(bool checked);
     void sl_actionChangeMasterPasswordTriggered(bool checked);
     void sl_actionDeleteTriggered(bool checked);
+    void sl_copyClicked(bool checked);
 };
 
 #endif  // MAINWINDOWCONNECTIONS_HPP

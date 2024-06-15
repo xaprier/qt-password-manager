@@ -25,6 +25,7 @@ class PasswordChangerDialog : public QDialog {
   private slots:
     void sl_showPasswordCheckStateChanged(int state);
     void sl_generatePasswordTBClicked(bool checked);
+    void sl_copyClicked(bool checked);
 
   private:
     Ui::PasswordChangerDialog *m_ui;

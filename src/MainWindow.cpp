@@ -50,6 +50,7 @@ void MainWindow::initPlatforms() {
 }
 
 void MainWindow::initConnections() {
+    connect(this->m_ui->copyTB, &QToolButton::clicked, this->m_connections, &MainWindowConnections::sl_copyClicked);
     connect(this->m_ui->generateTB, &QToolButton::clicked, this->m_connections, &MainWindowConnections::sl_generateTBClicked);
     connect(this->m_ui->showPasswordCB, &QCheckBox::stateChanged, this->m_connections, &MainWindowConnections::sl_showPasswordCBStateChanged);
     connect(this->m_ui->createPB, &QPushButton::clicked, this->m_connections, &MainWindowConnections::sl_createPBClicked);
