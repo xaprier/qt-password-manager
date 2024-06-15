@@ -22,7 +22,7 @@ JSONHandler::JSONHandler(const QString &fileFullPath, const QString &master_pass
 }
 
 JSONHandler::~JSONHandler() {
-    encryptJSON();  // todo: throw if false
+    if (!this->encryptJSON()) throw JSONHandlerException("JSONHandler deinit error.");
 }
 
 bool JSONHandler::decryptJSON() {
