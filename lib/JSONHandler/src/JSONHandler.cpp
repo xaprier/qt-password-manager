@@ -16,9 +16,7 @@ JSONHandler::JSONHandler(const QString &fileFullPath, const QString &master_pass
                                                                                                          m_wrapper(Cipher(this)),
                                                                                                          m_password(master_password),
                                                                                                          m_fileFullPath(fileFullPath) {
-    if (!this->decryptJSON()) {
-        throw JSONHandlerException("JSONHandler init error");
-    }
+    if (!this->decryptJSON()) throw JSONHandlerException("JSONHandler init error");
 }
 
 JSONHandler::~JSONHandler() {

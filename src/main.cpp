@@ -1,11 +1,7 @@
 #include <qapplication.h>
-#include <qdialog.h>
-
-#include <iostream>
 
 #include "LoginDialog.hpp"
 #include "MainWindow.hpp"
-#include "RandomizedPasswordDialog.hpp"
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
