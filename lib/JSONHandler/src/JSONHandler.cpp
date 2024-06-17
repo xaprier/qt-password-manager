@@ -20,7 +20,7 @@ JSONHandler::JSONHandler(const QString &fileFullPath, const QString &master_pass
 }
 
 JSONHandler::~JSONHandler() {
-    if (!this->encryptJSON()) throw JSONHandlerException("JSONHandler deinit error.");
+    if (!this->encryptJSON()) qWarning() << "JSONHandler deinit error. Maybe file cannot be encrypted?";
 }
 
 bool JSONHandler::decryptJSON() {
