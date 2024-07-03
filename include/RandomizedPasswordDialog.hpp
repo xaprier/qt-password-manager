@@ -24,6 +24,7 @@ class RandomizedPasswordDialog : public QDialog {
     void sl_checkBoxToggled(bool toggle);
     void sl_showPassword(int state);
     void sl_copyClicked(bool checked);
+    void sl_valueChanged(int value);
 
   private:
     void initConnections();
