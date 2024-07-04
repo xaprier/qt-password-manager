@@ -10,6 +10,7 @@
 #include "Auth.hpp"
 #include "CreateDialog.hpp"
 #include "EncFileListLoader.hpp"
+#include "Export.hpp"
 #include "Import.hpp"
 
 LoginDialog::LoginDialog(QWidget* parent) : QDialog(parent),
@@ -35,6 +36,7 @@ LoginDialog::LoginDialog(QWidget* parent) : QDialog(parent),
     connect(this->m_ui->newButton, &QToolButton::clicked, this, &LoginDialog::sl_newClicked);
     connect(this->m_ui->showPasswordCheck, &QCheckBox::stateChanged, this, &LoginDialog::sl_checkBoxChanged);
     connect(this->m_ui->importButton, &QToolButton::clicked, this, &LoginDialog::sl_importClicked);
+    connect(this->m_ui->exportButton, &QToolButton::clicked, this, &LoginDialog::sl_exportClicked);
 }
 
 LoginDialog::~LoginDialog() {
@@ -104,4 +106,8 @@ void LoginDialog::sl_checkBoxChanged(int state) {
 void LoginDialog::sl_importClicked(bool checked) {
     Import import;
     EncFileListLoader loader(this->m_ui->encryptedFiles);  // load encrypted files again
+}
+
+void LoginDialog::sl_exportClicked(bool checked) {
+    Export exp;
 }

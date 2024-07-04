@@ -1,7 +1,5 @@
 #include "ImportDialog.hpp"
 
-#include <QPushButton>
-
 ImportDialog::ImportDialog(QWidget *parent) : QFileDialog(parent) {
     // enable multiple file selection
     this->setFileMode(QFileDialog::ExistingFiles);
@@ -10,9 +8,6 @@ ImportDialog::ImportDialog(QWidget *parent) : QFileDialog(parent) {
     this->setNameFilter("Encrypted files (*.enc)");
 
     connect(this, &QFileDialog::filesSelected, this, &ImportDialog::onFilesSelected);
-}
-
-ImportDialog::~ImportDialog() {
 }
 
 QStringList ImportDialog::getSelectedFiles() const {

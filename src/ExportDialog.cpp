@@ -1,13 +1,74 @@
 #include "ExportDialog.hpp"
 
-#include <qfiledialog.h>
+ExportDialog::ExportDialog(QStringList files, QWidget *parent) : QFileDialog(parent), m_selectedFiles(files), m_Files(new MultiSelectionBox), m_Label(new QLabel) {
+    // Enable only directory mode
+    setFileMode(QFileDialog::Directory);
+    setOption(QFileDialog::ShowDirsOnly, true);
+    setOption(QFileDialog::DontUseNativeDialog, true);  // we need qt layout
 
-#include <QPushButton>
+    foreach (QString file, files) {
+        // remove absolute path and add to m_Files combobox
+        QFileInfo fileInfo(file);
+        QString fileName = fileInfo.fileName();  // Extracts just the file name
+        m_Files->addItem(fileName);
+    }
 
-ExportDialog::ExportDialog(QWidget *parent) : QFileDialog(parent) {}
+    m_Label->setText("Select files to export");
 
-ExportDialog::~ExportDialog() {}
+    // update current layout
+    QList<QPair<QLayoutItem *, QList<int> > > moved_items;
+    auto *layout = static_cast<QGridLayout *>(this->layout());
+    for (int i = 0; i < layout->count(); i++) {
+        int row, column, rowSpan, columnSpan;
+        layout->getItemPosition(i, &row, &column, &rowSpan, &columnSpan);
+        if (row >= 0) {
+            QList<int> list;
+            list << (row + 1) << column << rowSpan << columnSpan;
+            moved_items << qMakePair(layout->takeAt(i), list);
+            i--;  // takeAt has shifted the rest items
+        }
+    }
 
-QString ExportDialog::getSelectedDirectory() const {}
+    // Insert the horizontal layout into the file dialog's layout
+    if (layout) {
+        qDebug() << "layoutu bulduk";
+        layout->addWidget(m_Label, 0, 0);
+        layout->addWidget(m_Files, 0, 1);
+    } else {
+        qDebug() << "layoutu bulamadık";
+    }
 
-QStringList ExportDialog::getSelectedFiles() const {}
+    for (int i = 0; i < moved_items.count(); i++) {
+        layout->addItem(moved_items[i].first,
+                        moved_items[i].second[0],
+                        moved_items[i].second[1],
+                        moved_items[i].second[2],
+                        moved_items[i].second[3]);
+    }
+}
+
+ExportDialog::~ExportDialog() {
+    delete m_Files;
+    delete m_Label;
+}
+
+QString ExportDialog::getSelectedDirectory() const {
+    return selectedFiles().isEmpty() ? QString() : selectedFiles().first();
+}
+
+QStringList ExportDialog::getSelectedFiles() const {
+    auto selectedFileNames = this->m_Files->selectedItems();
+    // return filtered "QStringList m_selectedFiles" with selectedFileNames with ends alg.
+    QStringList filteredFiles;
+
+    for (const QString &file : m_selectedFiles) {
+        QFileInfo fileInfo(file);
+        QString fileName = fileInfo.fileName();
+
+        if (selectedFileNames.contains(fileName)) {
+            filteredFiles.append(file);
+        }
+    }
+
+    return filteredFiles;
+}

@@ -30,6 +30,7 @@ class LoginDialog : public QDialog {
     void sl_newClicked(bool checked);
     void sl_checkBoxChanged(int state);
     void sl_importClicked(bool checked);
+    void sl_exportClicked(bool checked);
 
   private:
     bool verifyPassword(const QString& file, const QString& password);
