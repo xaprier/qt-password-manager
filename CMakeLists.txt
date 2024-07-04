@@ -19,9 +19,10 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 file(GLOB CPP_HILES "src/*.cpp")
 file(GLOB HPP_HILES "include/*.hpp")
 file(GLOB UI_HILES "design/*.ui")
+file(GLOB QRC_HILES "assets/*.qrc")
 
 set(PROJECT_SOURCES
-    ${CPP_HILES} ${HPP_HILES} ${UI_HILES}
+    ${CPP_HILES} ${HPP_HILES} ${UI_HILES} ${QRC_HILES}
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -45,7 +46,6 @@ else()
     else()
         add_executable(${PROJECT_NAME}
             ${PROJECT_SOURCES}
-            design/dialog.ui
         )
     endif()
 endif()
