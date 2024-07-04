@@ -31,6 +31,7 @@ LoginDialog::LoginDialog(QWidget* parent) : QDialog(parent),
             }
         }
     }
+
     connect(this, &QDialog::accepted, this, &LoginDialog::sl_accepted);
     connect(this, &QDialog::rejected, this, &LoginDialog::sl_rejected);
     connect(this->m_ui->newButton, &QToolButton::clicked, this, &LoginDialog::sl_newClicked);
