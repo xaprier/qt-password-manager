@@ -26,17 +26,17 @@ CreateEncryptedFile::CreateEncryptedFile(const QString &fileName, const QString 
     QDir dir(settingsFileInfo.absolutePath());
     if (!dir.exists()) {
         if (!dir.mkpath(settingsFileInfo.absolutePath())) {
-            throw CreateEncryptedFileException("Failed to create directory: " + settingsFileInfo.absolutePath());
+            throw CreateEncryptedFileException(QObject::tr("Failed to create directory: %1").arg(settingsFileInfo.absolutePath()));
         }
     }
 
     // write encrypted into file
-    QFile file(settingsFileInfo.absolutePath() + "/" + fileName + ".enc");
+    QFile file(settingsFileInfo.absolutePath() + QDir::separator() + fileName + ".enc");
     if (file.open(QIODevice::WriteOnly)) {
         file.write(encrypted);
         file.close();
-        qDebug() << "Default JSON file created as encrypted successfully.";
+        qDebug() << QObject::tr("Default JSON file created as encrypted successfully.");
     } else {
-        throw CreateEncryptedFileException("File cannot open: " + file.fileName());
+        throw CreateEncryptedFileException(QObject::tr("File cannot open: %1").arg(file.fileName()));
     }
 }

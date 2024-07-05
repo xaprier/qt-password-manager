@@ -38,14 +38,14 @@ void CreateDialog::sl_accepted() {
     int index = this->m_ui->comboBox->findText(enteredName, Qt::MatchExactly);
 
     if (enteredName.isEmpty() || enteredName.isNull() || index >= 0) {
-        QMessageBox::warning(this, "Error", "File name is not valid for encryption. Please select not exists and valid file name.");
+        QMessageBox::warning(this, QObject::tr("Error"), QObject::tr("File name is not valid for encryption. Please select not exists and valid file name."));
         return;
     }
 
     // check password is exists
     QString password = this->m_ui->passwordLE->text();
     if (password.isEmpty() || !password.isValidUtf16()) {
-        QMessageBox::warning(this, "Error", "Password is not valid for encryption. Please select valid password.");
+        QMessageBox::warning(this, QObject::tr("Error"), QObject::tr("Password is not valid for encryption. Please select valid password."));
         return;
     }
 
@@ -56,7 +56,7 @@ void CreateDialog::sl_accepted() {
     try {
         CreateEncryptedFile(fileName, password);
     } catch (const CreateEncryptedFileException &e) {
-        QMessageBox::critical(this, "Exception Occured", e.message());
+        QMessageBox::critical(this, QObject::tr("Exception Occured"), e.message());
         return;
     }
 

@@ -19,7 +19,7 @@ LoginDialog::LoginDialog(QWidget* parent) : QDialog(parent),
     EncFileListLoader loader(this->m_ui->encryptedFiles);
 
     if (this->m_ui->encryptedFiles->count() <= 0) {
-        auto msgBox = QMessageBox(QMessageBox::Icon::Warning, "No encrypted database found", "There is no encrypted databases. Do you want to create one", QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
+        auto msgBox = QMessageBox(QMessageBox::Icon::Warning, tr("No encrypted database found"), tr("There is no encrypted databases. Do you want to create one"), QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
         if (msgBox.exec() == QMessageBox::StandardButton::Yes) {
             CreateDialog d;
             while (!d.isCreated()) {
@@ -49,7 +49,7 @@ void LoginDialog::sl_accepted() {
     auto combobox = this->m_ui->encryptedFiles;
 
     if (combobox->currentIndex() == -1) {
-        QMessageBox::warning(this, "Error", "No encrypted file selected. Please select an encrypted file.");
+        QMessageBox::warning(this, tr("Error"), tr("No encrypted file selected. Please select an encrypted file."));
         return;
     }
 
@@ -57,7 +57,7 @@ void LoginDialog::sl_accepted() {
     auto passwordLine = this->m_ui->passwordLE;
     QString password = passwordLine->text();
     if (password.isEmpty()) {
-        QMessageBox::warning(this, "Error", "Password cannot be empty. Please enter a password.");
+        QMessageBox::warning(this, tr("Error"), tr("Password cannot be empty. Please enter a password."));
         return;
     }
 
@@ -69,9 +69,9 @@ void LoginDialog::sl_accepted() {
         this->m_masterPassword = password;
         this->m_filePath = fullFilePath;
         this->setLogged(true);
-        QMessageBox::information(this, "Success", "Login successful for file: " + selectedFile);
+        QMessageBox::information(this, tr("Success"), tr("Login successful for file: %1").arg(selectedFile));
     } else {
-        QMessageBox::warning(this, "Error", "Invalid password. Please try again.");
+        QMessageBox::warning(this, tr("Error"), tr("Invalid password. Please try again."));
     }
 }
 

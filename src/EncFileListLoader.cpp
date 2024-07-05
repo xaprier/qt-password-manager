@@ -17,7 +17,7 @@ void EncFileListLoader::loadEncFiles() {
     QDir dir(settingsFileInfo.absolutePath());
     if (!dir.exists()) {
         if (!dir.mkpath(settingsFileInfo.absolutePath())) {
-            throw EncFileListLoaderException("Failed to create directory: " + settingsFileInfo.absolutePath());
+            throw EncFileListLoaderException(QObject::tr("Failed to create directory: %1").arg(settingsFileInfo.absolutePath()));
         }
     }
 

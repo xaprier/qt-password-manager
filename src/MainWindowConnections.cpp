@@ -42,7 +42,7 @@ void MainWindowConnections::sl_createPBClicked(bool checked) {
     bool isPlatformNotSelected = this->m_ui->platformCombo->currentIndex() == -1;
 
     if (isNameEmpty || isPasswordEmpty || isPlatformNotSelected) {
-        QMessageBox::warning(this->m_base, "Error", "Please fill all fields");
+        QMessageBox::warning(this->m_base, tr("Error"), tr("Please fill all fields"));
         return;
     }
 
@@ -62,7 +62,7 @@ void MainWindowConnections::sl_createPBClicked(bool checked) {
     }
 
     if (samePlatform && sameName) {
-        QMessageBox::warning(this->m_base, "Error", "There is another one with same name and same platform.\nPlease edit it or create with using another inputs.");
+        QMessageBox::warning(this->m_base, tr("Error"), tr("There is another one with same name and same platform.\nPlease edit it or create with using another inputs."));
         return;
     }
 
@@ -88,7 +88,7 @@ void MainWindowConnections::sl_createPBClicked(bool checked) {
 void MainWindowConnections::sl_deletePBClicked(bool checked) {
     bool isPlatformNotSelected = this->m_ui->platformsLW->selectedItems().isEmpty();
     if (isPlatformNotSelected) {
-        QMessageBox::warning(this->m_base, "Error", "There is no selected platform to delete.");
+        QMessageBox::warning(this->m_base, tr("Error"), tr("There is no selected platform to delete."));
         return;
     }
 
@@ -98,11 +98,11 @@ void MainWindowConnections::sl_deletePBClicked(bool checked) {
     // remove index from jsonarray
     auto array = this->m_base->m_jsonHandler->platforms();
     if (array.size() < index || index < 0) {
-        QMessageBox::warning(this->m_base, "Error", "Index error. There is no platform with that index.");
+        QMessageBox::warning(this->m_base, tr("Error"), tr("Index error. There is no platform with that index."));
         return;
     }
 
-    QMessageBox msg(QMessageBox::Icon::Warning, "Confirm", "Are you sure to delete?", QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
+    QMessageBox msg(QMessageBox::Icon::Warning, tr("Confirm"), tr("Are you sure to delete?"), QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
     if (msg.exec() == QMessageBox::StandardButton::No) return;
 
     array.removeAt(index);
@@ -131,7 +131,7 @@ void MainWindowConnections::sl_itemClickedLW(QListWidgetItem *item) {
     // get item information
     auto array = this->m_base->m_jsonHandler->platforms();
     if (array.size() < index || index < 0) {
-        QMessageBox::warning(this->m_base, "Error", "Index error. There is no platform with that index.");
+        QMessageBox::warning(this->m_base, tr("Error"), tr("Index error. There is no platform with that index."));
         return;
     }
 
@@ -158,14 +158,14 @@ void MainWindowConnections::sl_updatePBClicked(bool checked) {
     bool isPlatformNotSelected = this->m_ui->platformCombo->currentIndex() == -1;
 
     if (isNameEmpty || isPasswordEmpty || isPlatformNotSelected) {
-        QMessageBox::warning(this->m_base, "Error", "Please fill all fields");
+        QMessageBox::warning(this->m_base, tr("Error"), tr("Please fill all fields"));
         return;
     }
 
     int index = this->m_ui->platformsLW->currentRow();
     auto array = this->m_base->m_jsonHandler->platforms();
     if (array.size() < index || index < 0) {
-        QMessageBox::warning(this->m_base, "Error", "Index error. There is no platform with that index.");
+        QMessageBox::warning(this->m_base, tr("Error"), tr("Index error. There is no platform with that index."));
         return;
     }
 
@@ -185,11 +185,11 @@ void MainWindowConnections::sl_updatePBClicked(bool checked) {
     }
 
     if (samePlatform && sameName) {
-        QMessageBox::warning(this->m_base, "Error", "There is another one with same name and same platform.\nPlease edit it or create with using another inputs.");
+        QMessageBox::warning(this->m_base, tr("Error"), tr("There is another one with same name and same platform.\nPlease edit it or create with using another inputs."));
         return;
     }
 
-    QMessageBox msg(QMessageBox::Icon::Warning, "Confirm", "Are you sure to update?", QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
+    QMessageBox msg(QMessageBox::Icon::Warning, tr("Confirm"), tr("Are you sure to update?"), QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
     if (msg.exec() == QMessageBox::StandardButton::No) return;
 
     QJsonObject object = array.at(index).toObject();
@@ -221,38 +221,38 @@ begin:
     auto newName = dialog.getEnteredName();
     auto oldName = this->m_base->m_jsonHandler->name();
     if (newName.isEmpty() || newName.isNull()) {
-        QMessageBox::critical(this->m_base, "Error", "Name cannot be empty.");
+        QMessageBox::critical(this->m_base, tr("Error"), tr("Name cannot be empty."));
         goto begin;  // NOLINT
     }
 
     if (newName == oldName) {
-        QMessageBox::critical(this->m_base, "Error", "Name cannot be same as old.");
+        QMessageBox::critical(this->m_base, tr("Error"), tr("Name cannot be same as old."));
         goto begin;  // NOLINT
     }
 
     EncryptedFiles files;
     if (files.contains(newName)) {
-        QMessageBox::critical(this->m_base, "Error", "Name must be unique. Please set unused name.");
+        QMessageBox::critical(this->m_base, tr("Error"), tr("Name must be unique. Please set unused name."));
         goto begin;  // NOLINT
     }
 
     auto currentPassword = dialog.getCurrentPassword();
     if (currentPassword.isEmpty() || currentPassword.isNull()) {
-        QMessageBox::critical(this->m_base, "Error", "Current password cannot be empty.");
+        QMessageBox::critical(this->m_base, tr("Error"), tr("Current password cannot be empty."));
         goto begin;  // NOLINT
     }
 
     if (!this->m_base->m_jsonHandler->passwordSameAs(currentPassword)) {
-        QMessageBox::critical(this->m_base, "Error", "Current password is not correct.");
+        QMessageBox::critical(this->m_base, tr("Error"), tr("Current password is not correct."));
         goto begin;  // NOLINT
     }
 
-    QMessageBox msg(QMessageBox::Icon::Warning, "Confirm", "Are you sure to update name?", QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
+    QMessageBox msg(QMessageBox::Icon::Warning, tr("Confirm"), tr("Are you sure to update name?"), QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
     if (msg.exec() == QMessageBox::StandardButton::No) return;
 
     this->m_base->m_jsonHandler->setName(newName);
 
-    QMessageBox msgSuccess(QMessageBox::Icon::Information, "Success", "Name changed successfully.\nYou should login again to continue", QMessageBox::StandardButton::Ok);
+    QMessageBox msgSuccess(QMessageBox::Icon::Information, tr("Success"), tr("Name changed successfully.\nYou should login again to continue"), QMessageBox::StandardButton::Ok);
     if (msgSuccess.exec() == QMessageBox::StandardButton::Ok) {
         this->m_base->close();
     }
@@ -268,31 +268,31 @@ begin:
     auto newPassword = dialog.getNewPassword();
     auto currentPassword = dialog.getCurrentPassword();
     if (newPassword.isEmpty() || newPassword.isNull() || !dialog.passwordEnteredCorrectly()) {
-        QMessageBox::critical(this->m_base, "Error", "New passwords must be equal and cannot be empty.");
+        QMessageBox::critical(this->m_base, tr("Error"), tr("New passwords must be equal and cannot be empty."));
         goto begin;  // NOLINT
     }
 
     if (currentPassword.isEmpty() || currentPassword.isNull()) {
-        QMessageBox::critical(this->m_base, "Error", "Current password cannot be empty.");
+        QMessageBox::critical(this->m_base, tr("Error"), tr("Current password cannot be empty."));
         goto begin;  // NOLINT
     }
 
     if (currentPassword == newPassword) {
-        QMessageBox::critical(this->m_base, "Error", "Current password and new password cannot be same.");
+        QMessageBox::critical(this->m_base, tr("Error"), tr("Current password and new password cannot be same."));
         goto begin;  // NOLINT
     }
 
     auto currentPasswordIsCorrect = this->m_base->m_jsonHandler->passwordSameAs(currentPassword);
     if (!currentPasswordIsCorrect) {
-        QMessageBox::critical(this->m_base, "Error", "Current password is not correct.");
+        QMessageBox::critical(this->m_base, tr("Error"), tr("Current password is not correct."));
         goto begin;  // NOLINT
     }
 
-    QMessageBox msg(QMessageBox::Icon::Warning, "Confirm", "Are you sure to update master password?", QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
+    QMessageBox msg(QMessageBox::Icon::Warning, tr("Confirm"), tr("Are you sure to update master password?"), QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
     if (msg.exec() == QMessageBox::StandardButton::No) return;
 
     this->m_base->m_jsonHandler->setMasterPassword(newPassword);
-    QMessageBox msgSuccess(QMessageBox::Icon::Information, "Success", "Master password changed successfully.\nYou should login again to continue", QMessageBox::StandardButton::Ok);
+    QMessageBox msgSuccess(QMessageBox::Icon::Information, tr("Success"), tr("Master password changed successfully.\nYou should login again to continue"), QMessageBox::StandardButton::Ok);
     if (msgSuccess.exec() == QMessageBox::StandardButton::Ok) {
         this->m_base->close();
     }
@@ -307,24 +307,24 @@ begin:
     if (result != QDialog::Accepted) return;
     auto currentPassword = dialog.getCurrentPassword();
     if (currentPassword.isEmpty() || currentPassword.isNull()) {
-        QMessageBox::critical(this->m_base, "Error", "Password cannot be empty.");
+        QMessageBox::critical(this->m_base, tr("Error"), tr("Password cannot be empty."));
         goto begin;  // NOLINT
     }
 
     auto passwordIsCorrect = this->m_base->m_jsonHandler->passwordSameAs(currentPassword);
     if (!passwordIsCorrect) {
-        QMessageBox::critical(this->m_base, "Error", "Current password is not correct.");
+        QMessageBox::critical(this->m_base, tr("Error"), tr("Current password is not correct."));
         goto begin;  // NOLINT
     }
 
-    QMessageBox msg(QMessageBox::Icon::Warning, "Confirm", "Are you sure to delete encrypted data?", QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
+    QMessageBox msg(QMessageBox::Icon::Warning, tr("Confirm"), tr("Are you sure to delete encrypted data?"), QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
     if (msg.exec() == QMessageBox::StandardButton::No) return;
 
     EncryptedFiles files;
     files.deleteFile(fileName);
     this->m_base->m_jsonHandler->deleteFile();  //! to prevent write into path again.
 
-    QMessageBox msgSuccess(QMessageBox::Icon::Information, "Success", "Encrypted data deleted successfully!\nYou should login again to continue", QMessageBox::StandardButton::Ok);
+    QMessageBox msgSuccess(QMessageBox::Icon::Information, tr("Success"), tr("Encrypted data deleted successfully!\nYou should login again to continue"), QMessageBox::StandardButton::Ok);
     if (msgSuccess.exec() == QMessageBox::StandardButton::Ok) {
         this->m_base->close();
     }

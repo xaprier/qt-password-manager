@@ -42,7 +42,7 @@ void RandomizedPasswordDialog::sl_generateClicked(bool clicked) {
     }
 
     if (checkedCount == 0) {
-        QMessageBox::warning(this, "Error", "You have to select at least 1 character set");
+        QMessageBox::warning(this, tr("Error"), tr("You have to select at least 1 character set"));
         return;
     }
 
@@ -60,7 +60,7 @@ void RandomizedPasswordDialog::sl_generateClicked(bool clicked) {
     RandomizedPassword random(set, lengthOfPassword, this);
     auto password = random.getRandomizedPassword();
     if (password.length() <= 0) {
-        QMessageBox::warning(this, "Error", "Random password cannot be created");
+        QMessageBox::warning(this, tr("Error"), tr("Random password cannot be created"));
     }
     this->m_ui->passwordLE->setText(password);
     this->m_generatedPassword = password;
@@ -80,7 +80,7 @@ void RandomizedPasswordDialog::sl_checkBoxToggled(bool toggle) {
 
         // If no checkbox is checked, recheck the sender checkbox
         if (checkedCount == 0) {
-            QMessageBox::warning(this, "Error", "There must be at least 1 state.");
+            QMessageBox::warning(this, tr("Error"), tr("There must be at least 1 state."));
 
             senderCheckBox->setChecked(true);
         }

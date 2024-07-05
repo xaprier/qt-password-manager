@@ -5,7 +5,7 @@ ImportDialog::ImportDialog(QWidget *parent) : QFileDialog(parent) {
     this->setFileMode(QFileDialog::ExistingFiles);
 
     // filter with .enc files
-    this->setNameFilter("Encrypted files (*.enc)");
+    this->setNameFilter(tr("Encrypted files") + " (*.enc)");
 
     connect(this, &QFileDialog::filesSelected, this, &ImportDialog::onFilesSelected);
 }

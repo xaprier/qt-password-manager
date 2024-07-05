@@ -22,24 +22,24 @@ Export::Export(QObject *base) : QObject(base) {
 
             // Check if source file exists
             if (!QFile::exists(sourcePath)) {
-                qDebug() << "Source file does not exist:" << sourcePath;
-                QMessageBox::warning(nullptr, "Copy Error", "Source file does not exist: " + sourcePath);
+                qDebug() << tr("Source file does not exist: %1").arg(sourcePath);
+                QMessageBox::warning(nullptr, tr("Copy Error"), tr("Source file does not exist: %1").arg(sourcePath));
                 continue;
             }
 
             // Check if destination file already exists
             if (QFile::exists(destinationPath)) {
-                qDebug() << "Destination file already exists:" << destinationPath;
-                QMessageBox::warning(nullptr, "Copy Error", "Destination file already exists: " + destinationPath);
+                qDebug() << tr("Destination file already exists: %1").arg(destinationPath);
+                QMessageBox::warning(nullptr, tr("Copy Error"), tr("Destination file already exists: %1").arg(destinationPath));
                 continue;
             }
 
             // Attempt to copy file
             if (QFile::copy(sourcePath, destinationPath)) {
-                qDebug() << "Copied:" << sourcePath << "to" << destinationPath;
+                qDebug() << tr("Copied: %1 to %2").arg(sourcePath, destinationPath);
             } else {
-                qDebug() << "Failed to copy file:" << sourcePath << "to" << destinationPath;
-                QMessageBox::warning(nullptr, "Copy Error", "Failed to copy file '" + sourcePath + "' to '" + destinationPath + "'");
+                qDebug() << tr("Failed to copy file '%1' to '%2'").arg(sourcePath, destinationPath);
+                QMessageBox::warning(nullptr, tr("Copy Error"), tr("Failed to copy file '%1' to '%2'").arg(sourcePath, destinationPath));
             }
         }
     }

@@ -56,7 +56,7 @@ void PasswordChangerDialog::sl_copyClicked(bool checked) {
             text2 = this->m_ui->newPasswordLE2->text();
 
     if (text1 != text2) {
-        QMessageBox::warning(this, "Error", "Password are not same.");
+        QMessageBox::warning(this, tr("Error"), tr("Password are not same."));
         return;
     }
 
