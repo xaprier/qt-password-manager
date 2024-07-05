@@ -16,6 +16,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
+# 4 - add qm file to qrc file and load it in code
+file(GLOB CPP_HILES "src/*.cpp")
+file(GLOB HPP_HILES "include/*.hpp")
+file(GLOB UI_HILES "design/*.ui")
+file(GLOB QRC_HILES "**/*.qrc")
+file(GLOB TS_FILES "translations/*.ts")
+
+set(PROJECT_SOURCES
+    ${CPP_HILES} ${HPP_HILES} ${UI_HILES} ${QRC_HILES}
+)
+
 set(LANGS tr de)
 
 # 1 - first create an translation file to translate texts.
@@ -30,19 +41,12 @@ endforeach()
 
 # 3 - after translate and build we should configure file to get file to correct directory
 foreach(QM_FILE ${QM_FILES})
-    configure_file(${QM_FILE} ${CMAKE_SOURCE_DIR}/translations COPYONLY)
+    if(EXISTS ${QM_FILE})
+        configure_file(${QM_FILE} ${CMAKE_SOURCE_DIR}/translations COPYONLY)
+    else()
+        list(APPEND PROJECT_SOURCES ${TS_FILES} ${QM_FILES})
+    endif()
 endforeach()
-
-# 4 - add qm file to qrc file and load it in code
-file(GLOB CPP_HILES "src/*.cpp")
-file(GLOB HPP_HILES "include/*.hpp")
-file(GLOB UI_HILES "design/*.ui")
-file(GLOB QRC_HILES "**/*.qrc")
-file(GLOB TS_FILES "translations/*.ts")
-
-set(PROJECT_SOURCES
-    ${CPP_HILES} ${HPP_HILES} ${UI_HILES} ${QRC_HILES} # ${TS_FILES} ${QM_FILES} # after configure_file, comment these
-)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(${PROJECT_NAME}
