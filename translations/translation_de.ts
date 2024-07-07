@@ -45,7 +45,6 @@
 <context>
     <name>Export</name>
     <message>
-        <location filename="../src/Export.cpp" line="25"/>
         <location filename="../src/Export.cpp" line="26"/>
         <source>Source file does not exist: %1</source>
         <translation>Quelldatei existiert nicht: %1</translation>
@@ -58,18 +57,15 @@
         <translation>Kopierfehler</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="32"/>
         <location filename="../src/Export.cpp" line="33"/>
         <source>Destination file already exists: %1</source>
         <translation>Zieldatei existiert bereits: %1</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="39"/>
         <source>Copied: %1 to %2</source>
-        <translation>Kopiert: %1 nach %2</translation>
+        <translation type="vanished">Kopiert: %1 nach %2</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="41"/>
         <location filename="../src/Export.cpp" line="42"/>
         <source>Failed to copy file &apos;%1&apos; to &apos;%2&apos;</source>
         <translation>Fehler beim Kopieren der Datei &apos;%1&apos; nach &apos;%2&apos;</translation>
@@ -83,20 +79,17 @@
         <translation>Wählen Sie Dateien zum Exportieren aus</translation>
     </message>
     <message>
-        <location filename="../src/ExportDialog.cpp" line="34"/>
         <source>Layout found</source>
-        <translation>Layout gefunden</translation>
+        <translation type="vanished">Layout gefunden</translation>
     </message>
     <message>
-        <location filename="../src/ExportDialog.cpp" line="38"/>
         <source>layoutu bulamadık</source>
-        <translation>Layout nicht gefunden</translation>
+        <translation type="vanished">Layout nicht gefunden</translation>
     </message>
 </context>
 <context>
     <name>Import</name>
     <message>
-        <location filename="../src/Import.cpp" line="18"/>
         <location filename="../src/Import.cpp" line="19"/>
         <source>Source file does not exist: %1</source>
         <translation>Quelldatei existiert nicht: %1</translation>
@@ -109,18 +102,15 @@
         <translation>Kopierfehler</translation>
     </message>
     <message>
-        <location filename="../src/Import.cpp" line="25"/>
         <location filename="../src/Import.cpp" line="26"/>
         <source>Destination file already exists: %1</source>
         <translation>Zieldatei existiert bereits: %1</translation>
     </message>
     <message>
-        <location filename="../src/Import.cpp" line="32"/>
         <source>Copied &apos;%1&apos; to &apos;%2&apos;</source>
-        <translation>&apos;%1&apos; nach &apos;%2&apos; kopiert</translation>
+        <translation type="vanished">&apos;%1&apos; nach &apos;%2&apos; kopiert</translation>
     </message>
     <message>
-        <location filename="../src/Import.cpp" line="34"/>
         <location filename="../src/Import.cpp" line="35"/>
         <source>Failed to copy file &apos;%1&apos; to &apos;%2&apos;</source>
         <translation>Fehler beim Kopieren der Datei &apos;%1&apos; nach &apos;%2&apos;</translation>
@@ -299,152 +289,152 @@
     <message>
         <location filename="../src/MainWindowConnections.cpp" line="45"/>
         <location filename="../src/MainWindowConnections.cpp" line="65"/>
-        <location filename="../src/MainWindowConnections.cpp" line="91"/>
-        <location filename="../src/MainWindowConnections.cpp" line="101"/>
-        <location filename="../src/MainWindowConnections.cpp" line="134"/>
-        <location filename="../src/MainWindowConnections.cpp" line="161"/>
-        <location filename="../src/MainWindowConnections.cpp" line="168"/>
-        <location filename="../src/MainWindowConnections.cpp" line="188"/>
-        <location filename="../src/MainWindowConnections.cpp" line="224"/>
-        <location filename="../src/MainWindowConnections.cpp" line="229"/>
-        <location filename="../src/MainWindowConnections.cpp" line="235"/>
-        <location filename="../src/MainWindowConnections.cpp" line="241"/>
-        <location filename="../src/MainWindowConnections.cpp" line="246"/>
-        <location filename="../src/MainWindowConnections.cpp" line="271"/>
-        <location filename="../src/MainWindowConnections.cpp" line="276"/>
-        <location filename="../src/MainWindowConnections.cpp" line="281"/>
-        <location filename="../src/MainWindowConnections.cpp" line="287"/>
-        <location filename="../src/MainWindowConnections.cpp" line="310"/>
-        <location filename="../src/MainWindowConnections.cpp" line="316"/>
+        <location filename="../src/MainWindowConnections.cpp" line="89"/>
+        <location filename="../src/MainWindowConnections.cpp" line="99"/>
+        <location filename="../src/MainWindowConnections.cpp" line="132"/>
+        <location filename="../src/MainWindowConnections.cpp" line="159"/>
+        <location filename="../src/MainWindowConnections.cpp" line="166"/>
+        <location filename="../src/MainWindowConnections.cpp" line="186"/>
+        <location filename="../src/MainWindowConnections.cpp" line="220"/>
+        <location filename="../src/MainWindowConnections.cpp" line="225"/>
+        <location filename="../src/MainWindowConnections.cpp" line="231"/>
+        <location filename="../src/MainWindowConnections.cpp" line="237"/>
+        <location filename="../src/MainWindowConnections.cpp" line="242"/>
+        <location filename="../src/MainWindowConnections.cpp" line="267"/>
+        <location filename="../src/MainWindowConnections.cpp" line="272"/>
+        <location filename="../src/MainWindowConnections.cpp" line="277"/>
+        <location filename="../src/MainWindowConnections.cpp" line="283"/>
+        <location filename="../src/MainWindowConnections.cpp" line="306"/>
+        <location filename="../src/MainWindowConnections.cpp" line="312"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
         <location filename="../src/MainWindowConnections.cpp" line="45"/>
-        <location filename="../src/MainWindowConnections.cpp" line="161"/>
+        <location filename="../src/MainWindowConnections.cpp" line="159"/>
         <source>Please fill all fields</source>
         <translation>Bitte füllen Sie alle Felder aus</translation>
     </message>
     <message>
         <location filename="../src/MainWindowConnections.cpp" line="65"/>
-        <location filename="../src/MainWindowConnections.cpp" line="188"/>
+        <location filename="../src/MainWindowConnections.cpp" line="186"/>
         <source>There is another one with same name and same platform.
 Please edit it or create with using another inputs.</source>
         <translation>Es gibt bereits einen Eintrag mit gleichem Namen und Plattform.
 Bitte bearbeiten Sie ihn oder erstellen Sie einen neuen mit anderen Eingaben.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="91"/>
+        <location filename="../src/MainWindowConnections.cpp" line="89"/>
         <source>There is no selected platform to delete.</source>
         <translation>Es wurde keine Plattform zum Löschen ausgewählt.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="101"/>
-        <location filename="../src/MainWindowConnections.cpp" line="134"/>
-        <location filename="../src/MainWindowConnections.cpp" line="168"/>
+        <location filename="../src/MainWindowConnections.cpp" line="99"/>
+        <location filename="../src/MainWindowConnections.cpp" line="132"/>
+        <location filename="../src/MainWindowConnections.cpp" line="166"/>
         <source>Index error. There is no platform with that index.</source>
         <translation>Indexfehler. Es gibt keine Plattform mit diesem Index.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="105"/>
-        <location filename="../src/MainWindowConnections.cpp" line="192"/>
-        <location filename="../src/MainWindowConnections.cpp" line="250"/>
-        <location filename="../src/MainWindowConnections.cpp" line="291"/>
-        <location filename="../src/MainWindowConnections.cpp" line="320"/>
+        <location filename="../src/MainWindowConnections.cpp" line="103"/>
+        <location filename="../src/MainWindowConnections.cpp" line="190"/>
+        <location filename="../src/MainWindowConnections.cpp" line="246"/>
+        <location filename="../src/MainWindowConnections.cpp" line="287"/>
+        <location filename="../src/MainWindowConnections.cpp" line="316"/>
         <source>Confirm</source>
         <translation>Bestätigen</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="105"/>
+        <location filename="../src/MainWindowConnections.cpp" line="103"/>
         <source>Are you sure to delete?</source>
         <translation>Möchten Sie wirklich löschen?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="192"/>
+        <location filename="../src/MainWindowConnections.cpp" line="190"/>
         <source>Are you sure to update?</source>
         <translation>Möchten Sie wirklich aktualisieren?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="224"/>
+        <location filename="../src/MainWindowConnections.cpp" line="220"/>
         <source>Name cannot be empty.</source>
         <translation>Name darf nicht leer sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="229"/>
+        <location filename="../src/MainWindowConnections.cpp" line="225"/>
         <source>Name cannot be same as old.</source>
         <translation>Name darf nicht dem alten entsprechen.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="235"/>
+        <location filename="../src/MainWindowConnections.cpp" line="231"/>
         <source>Name must be unique. Please set unused name.</source>
         <translation>Name muss eindeutig sein. Bitte verwenden Sie einen nicht verwendeten Namen.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="241"/>
-        <location filename="../src/MainWindowConnections.cpp" line="276"/>
+        <location filename="../src/MainWindowConnections.cpp" line="237"/>
+        <location filename="../src/MainWindowConnections.cpp" line="272"/>
         <source>Current password cannot be empty.</source>
         <translation>Aktuelles Passwort darf nicht leer sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="246"/>
-        <location filename="../src/MainWindowConnections.cpp" line="287"/>
-        <location filename="../src/MainWindowConnections.cpp" line="316"/>
+        <location filename="../src/MainWindowConnections.cpp" line="242"/>
+        <location filename="../src/MainWindowConnections.cpp" line="283"/>
+        <location filename="../src/MainWindowConnections.cpp" line="312"/>
         <source>Current password is not correct.</source>
         <translation>Das aktuelle Passwort ist nicht korrekt.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="250"/>
+        <location filename="../src/MainWindowConnections.cpp" line="246"/>
         <source>Are you sure to update name?</source>
         <translation>Möchten Sie den Namen wirklich aktualisieren?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="255"/>
-        <location filename="../src/MainWindowConnections.cpp" line="295"/>
-        <location filename="../src/MainWindowConnections.cpp" line="327"/>
+        <location filename="../src/MainWindowConnections.cpp" line="251"/>
+        <location filename="../src/MainWindowConnections.cpp" line="291"/>
+        <location filename="../src/MainWindowConnections.cpp" line="323"/>
         <source>Success</source>
         <translation>Erfolg</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="255"/>
+        <location filename="../src/MainWindowConnections.cpp" line="251"/>
         <source>Name changed successfully.
 You should login again to continue</source>
         <translation>Name erfolgreich geändert.
 Bitte melden Sie sich erneut an, um fortzufahren</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="271"/>
+        <location filename="../src/MainWindowConnections.cpp" line="267"/>
         <source>New passwords must be equal and cannot be empty.</source>
         <translation>Die neuen Passwörter müssen gleich sein und dürfen nicht leer sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="281"/>
+        <location filename="../src/MainWindowConnections.cpp" line="277"/>
         <source>Current password and new password cannot be same.</source>
         <translation>Das aktuelle Passwort und das neue Passwort dürfen nicht identisch sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="291"/>
+        <location filename="../src/MainWindowConnections.cpp" line="287"/>
         <source>Are you sure to update master password?</source>
         <translation>Möchten Sie das Master-Passwort wirklich aktualisieren?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="295"/>
+        <location filename="../src/MainWindowConnections.cpp" line="291"/>
         <source>Master password changed successfully.
 You should login again to continue</source>
         <translation>Master-Passwort erfolgreich geändert.
 Bitte melden Sie sich erneut an, um fortzufahren</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="310"/>
+        <location filename="../src/MainWindowConnections.cpp" line="306"/>
         <source>Password cannot be empty.</source>
         <translation>Passwort darf nicht leer sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="320"/>
+        <location filename="../src/MainWindowConnections.cpp" line="316"/>
         <source>Are you sure to delete encrypted data?</source>
         <translation>Möchten Sie die verschlüsselten Daten wirklich löschen?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="327"/>
+        <location filename="../src/MainWindowConnections.cpp" line="323"/>
         <source>Encrypted data deleted successfully!
 You should login again to continue</source>
         <translation>Verschlüsselte Daten erfolgreich gelöscht!
@@ -608,14 +598,176 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
         <translation>Datei konnte nicht geöffnet werden: %1</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="19"/>
+        <location filename="../src/main.cpp" line="20"/>
         <source>Loaded language Turkish</source>
         <translation>Türkische Sprache geladen</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="24"/>
+        <location filename="../src/main.cpp" line="25"/>
         <source>Loaded language German</source>
         <translation>Deutsche Sprache geladen</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/main.cpp" line="12"/>
+        <location filename="../lib/Cipher/main.cpp" line="24"/>
+        <location filename="../lib/Cipher/main.cpp" line="67"/>
+        <location filename="../lib/Cipher/main.cpp" line="81"/>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="293"/>
+        <source>Cant open file: %1</source>
+        <translation>Kann Datei nicht öffnen: %1</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="22"/>
+        <source>Could not load public key: %1</source>
+        <translation>Konnte öffentlichen Schlüssel nicht laden: %1</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="44"/>
+        <source>Could not load private key: %1</source>
+        <translation>Konnte privaten Schlüssel nicht laden: %1</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="67"/>
+        <source>Could not encrypt: %1</source>
+        <translation>Konnte nicht verschlüsseln: %1</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="87"/>
+        <source>Could not decrypt: %1</source>
+        <translation>Konnte nicht entschlüsseln: %1</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="108"/>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="197"/>
+        <source>EVP_BytesToKey() error: %1</source>
+        <translation>EVP_BytesToKey() Fehler: %1</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="118"/>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="133"/>
+        <source>EVP_EncryptInit_ex() failed: %1</source>
+        <translation>EVP_EncryptInit_ex() fehlgeschlagen: %1</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="143"/>
+        <source>EVP_EncryptUpdate() failed: %1</source>
+        <translation>EVP_EncryptUpdate() fehlgeschlagen: %</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="152"/>
+        <source>EVP_EncryptFinal() failed: %1</source>
+        <translation>EVP_EncryptFinal() fehlgeschlagen: %</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="183"/>
+        <source>Could not load salt from data!</source>
+        <translation>Konnte Salz aus den Daten nicht laden!</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="207"/>
+        <source>EVP_DecryptInit_ex() error: %1</source>
+        <translation>EVP_DecryptInit_ex() Fehler: %1</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="222"/>
+        <source>EVP_DecryptUpdate() error: %1</source>
+        <translation>EVP_DecryptUpdate() Fehler: %1</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/Cipher.cpp" line="231"/>
+        <source>EVP_DecryptFinal_ex() error: %1</source>
+        <translation>EVP_DecryptFinal_ex() Fehler: %1</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/RandomizedPassword.cpp" line="11"/>
+        <source>No character sets selected.</source>
+        <translation>Keine Zeichensätze ausgewählt.</translation>
+    </message>
+    <message>
+        <location filename="../lib/Cipher/src/RandomizedPassword.cpp" line="41"/>
+        <source>Failed to generate random bytes.</source>
+        <translation>Fehler beim Generieren von Zufallsbytes.</translation>
+    </message>
+    <message>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="20"/>
+        <source>Cannot read file: %1</source>
+        <translation>Datei kann nicht gelesen werden: %1</translation>
+    </message>
+    <message>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="29"/>
+        <source>Failed to parse JSON: %1</source>
+        <translation>JSON konnte nicht analysiert werden: %1</translation>
+    </message>
+    <message>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="38"/>
+        <source>Will not encrypt because of file deleted</source>
+        <translation>Wird nicht verschlüsselt, da die Datei gelöscht wurde.</translation>
+    </message>
+    <message>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="44"/>
+        <source>Encrypted filename change detected</source>
+        <translation>Verschlüsselter Dateiname wurde geändert festgestellt.</translation>
+    </message>
+    <message>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="54"/>
+        <source>Cannot write file %1</source>
+        <translation>Kann Datei %1 nicht schreiben.</translation>
+    </message>
+    <message>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="63"/>
+        <source>Failed to remove old file: </source>
+        <translation>Fehler beim Entfernen der alten Datei:</translation>
+    </message>
+    <message>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="65"/>
+        <source>Old file removed: </source>
+        <translation>Alte Datei entfernt:</translation>
+    </message>
+    <message>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="77"/>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="91"/>
+        <source>Cannot open file: </source>
+        <translation>Datei kann nicht geöffnet werden:</translation>
+    </message>
+    <message>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="111"/>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="118"/>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="124"/>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="133"/>
+        <source>Decrypted JSON is not valid</source>
+        <translation>Entschlüsseltes JSON ist ungültig.</translation>
+    </message>
+    <message>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="112"/>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="119"/>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="126"/>
+        <location filename="../lib/JSONHandler/src/JSONHandler.cpp" line="135"/>
+        <source>Invalid JSON format. Required area not found.</source>
+        <translation>Ungültiges JSON-Format. Erforderlicher Bereich nicht gefunden.</translation>
+    </message>
+    <message>
+        <location filename="../src/Export.cpp" line="25"/>
+        <location filename="../src/Import.cpp" line="18"/>
+        <source>Source file does not exist: %1</source>
+        <translation>Quelldatei existiert nicht: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/Export.cpp" line="32"/>
+        <location filename="../src/Import.cpp" line="25"/>
+        <source>Destination file already exists: %1</source>
+        <translation>Zieldatei existiert bereits: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/Export.cpp" line="39"/>
+        <location filename="../src/Import.cpp" line="32"/>
+        <source>Copied &apos;%1&apos; to &apos;%2&apos;</source>
+        <translation>&apos;%1&apos; nach &apos;%2&apos; kopiert</translation>
+    </message>
+    <message>
+        <location filename="../src/Export.cpp" line="41"/>
+        <location filename="../src/Import.cpp" line="34"/>
+        <source>Failed to copy file &apos;%1&apos; to &apos;%2&apos;</source>
+        <translation>Fehler beim Kopieren der Datei &apos;%1&apos; nach &apos;%2&apos;</translation>
     </message>
 </context>
 <context>

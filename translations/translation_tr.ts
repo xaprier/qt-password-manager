@@ -44,7 +44,7 @@
     </message>
     <message>
         <source>Copied: %1 to %2</source>
-        <translation>Kopyalandı: %1&apos;den %2&apos;ye</translation>
+        <translation type="vanished">Kopyalandı: %1&apos;den %2&apos;ye</translation>
     </message>
     <message>
         <source>Failed to copy file &apos;%1&apos; to &apos;%2&apos;</source>
@@ -59,11 +59,11 @@
     </message>
     <message>
         <source>Layout found</source>
-        <translation>Düzen bulundu</translation>
+        <translation type="vanished">Düzen bulundu</translation>
     </message>
     <message>
         <source>layoutu bulamadık</source>
-        <translation>Düzen bulunamadı</translation>
+        <translation type="vanished">Düzen bulunamadı</translation>
     </message>
 </context>
 <context>
@@ -86,7 +86,7 @@
     </message>
     <message>
         <source>Copied &apos;%1&apos; to &apos;%2&apos;</source>
-        <translation>%1&apos;den %2&apos;ye kopyalandı</translation>
+        <translation type="vanished">%1&apos;den %2&apos;ye kopyalandı</translation>
     </message>
     <message>
         <source>Failed to copy file &apos;%1&apos; to &apos;%2&apos;</source>
@@ -424,6 +424,122 @@ You should login again to continue</source>
     <message>
         <source>Loaded language German</source>
         <translation>Almanca dili yüklendi</translation>
+    </message>
+    <message>
+        <source>Cant open file: %1</source>
+        <translation>Dosya açılamıyor: %1</translation>
+    </message>
+    <message>
+        <source>Could not load public key: %1</source>
+        <translation>Genel anahtar yüklenemiyor: %1</translation>
+    </message>
+    <message>
+        <source>Could not load private key: %1</source>
+        <translation>Gizli anahtar yüklenemiyor: %1</translation>
+    </message>
+    <message>
+        <source>Could not encrypt: %1</source>
+        <translation>Şifrelenemiyor: %1</translation>
+    </message>
+    <message>
+        <source>Could not decrypt: %1</source>
+        <translation>Şifre çözülemiyor: %1</translation>
+    </message>
+    <message>
+        <source>EVP_BytesToKey() error: %1</source>
+        <translation>EVP_BytesToKey() hatası: %1</translation>
+    </message>
+    <message>
+        <source>EVP_EncryptInit_ex() failed: %1</source>
+        <translation>EVP_EncryptInit_ex() başarısız oldu: %1</translation>
+    </message>
+    <message>
+        <source>EVP_EncryptUpdate() failed: %1</source>
+        <translation>EVP_EncryptUpdate() başarısız oldu: %1</translation>
+    </message>
+    <message>
+        <source>EVP_EncryptFinal() failed: %1</source>
+        <translation>EVP_EncryptFinal() başarısız oldu: %1</translation>
+    </message>
+    <message>
+        <source>Could not load salt from data!</source>
+        <translation>Verilerden tuz yüklenemedi!</translation>
+    </message>
+    <message>
+        <source>EVP_DecryptInit_ex() error: %1</source>
+        <translation>EVP_DecryptInit_ex() hatası: %1</translation>
+    </message>
+    <message>
+        <source>EVP_DecryptUpdate() error: %1</source>
+        <translation>EVP_DecryptUpdate() hatası: %1</translation>
+    </message>
+    <message>
+        <source>EVP_DecryptFinal_ex() error: %1</source>
+        <translation>EVP_DecryptFinal_ex() hatası: %1</translation>
+    </message>
+    <message>
+        <source>No character sets selected.</source>
+        <translation>Hiçbir karakter seti seçilmedi.</translation>
+    </message>
+    <message>
+        <source>Failed to generate random bytes.</source>
+        <translation>Rastgele baytlar oluşturulamadı</translation>
+    </message>
+    <message>
+        <source>Cannot read file: %1</source>
+        <translation>Dosya okunamadı: %1</translation>
+    </message>
+    <message>
+        <source>Failed to parse JSON: %1</source>
+        <translation>JSON dosyası ayrıştırılamadı: %1</translation>
+    </message>
+    <message>
+        <source>Will not encrypt because of file deleted</source>
+        <translation>Dosya silindiğinden şifrelenmeyecek.</translation>
+    </message>
+    <message>
+        <source>Encrypted filename change detected</source>
+        <translation>Şifrelenmiş dosya ismi değişikliği tespit edildi</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1</source>
+        <translation>Dosyaya yazılamadı %1</translation>
+    </message>
+    <message>
+        <source>Failed to remove old file: </source>
+        <translation>Eski dosya silinemedi: </translation>
+    </message>
+    <message>
+        <source>Old file removed: </source>
+        <translation>Eski dosya silindi: </translation>
+    </message>
+    <message>
+        <source>Cannot open file: </source>
+        <translation>Dosya açılamadı: </translation>
+    </message>
+    <message>
+        <source>Decrypted JSON is not valid</source>
+        <translation>Şifresi çözülen JSON dosyası geçerli değil.</translation>
+    </message>
+    <message>
+        <source>Invalid JSON format. Required area not found.</source>
+        <translation>Geçersiz JSON dosya formatı. Gerekli alan bulunamadı.</translation>
+    </message>
+    <message>
+        <source>Source file does not exist: %1</source>
+        <translation>Kaynak dosya mevcut değil: %1</translation>
+    </message>
+    <message>
+        <source>Destination file already exists: %1</source>
+        <translation>Hedef dosya zaten mevcut: %1</translation>
+    </message>
+    <message>
+        <source>Copied &apos;%1&apos; to &apos;%2&apos;</source>
+        <translation>%1&apos;den %2&apos;ye kopyalandı</translation>
+    </message>
+    <message>
+        <source>Failed to copy file &apos;%1&apos; to &apos;%2&apos;</source>
+        <translation>%1&apos;den %2&apos;ye kopyalanırken hata oluştu</translation>
     </message>
 </context>
 <context>
