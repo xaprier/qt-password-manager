@@ -2,7 +2,6 @@
 #define ENCRYPTEDFILES_HPP
 
 #include <qalgorithms.h>
-#include <qdebug.h>
 #include <qdir.h>
 #include <qfile.h>
 #include <qfileinfo.h>

@@ -1,12 +1,14 @@
 #include "RandomizedPassword.hpp"
 
+#include <qobject.h>
+
 #include "RandomizedPasswordException.hpp"
 
 RandomizedPassword::RandomizedPassword(CharacterSet charSet, int charCount, QObject* parent)
     : QObject{parent} {
     QString charset = getCharacterSet(charSet);
     if (charset.isEmpty()) {
-        throw RandomizedPasswordException("No character sets selected.");
+        throw RandomizedPasswordException(QObject::tr("No character sets selected."));
         return;
     }
     generatePassword(charCount, charset);
@@ -36,7 +38,7 @@ void RandomizedPassword::generatePassword(int length, const QString& charset) {
     QByteArray password;
     unsigned char buffer[length];       // NOLINT
     if (!RAND_bytes(buffer, length)) {  // NOLINT
-        throw RandomizedPasswordException("Failed to generate random bytes.");
+        throw RandomizedPasswordException(QObject::tr("Failed to generate random bytes."));
         return;
     }
 

@@ -31,11 +31,8 @@ ExportDialog::ExportDialog(QStringList files, QWidget *parent) : QFileDialog(par
 
     // Insert the horizontal layout into the file dialog's layout
     if (layout) {
-        qDebug() << tr("Layout found");
         layout->addWidget(m_Label, 0, 0);
         layout->addWidget(m_Files, 0, 1);
-    } else {
-        qDebug() << tr("layoutu bulamadık");
     }
 
     for (int i = 0; i < moved_items.count(); i++) {

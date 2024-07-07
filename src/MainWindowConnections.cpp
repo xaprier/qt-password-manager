@@ -73,8 +73,6 @@ void MainWindowConnections::sl_createPBClicked(bool checked) {
 
     array.append(object);  // add to qjsonarray
 
-    qDebug() << "Array: " << array;
-
     // update the array
     this->m_base->m_jsonHandler->setPlatforms(array);
 
@@ -198,8 +196,6 @@ void MainWindowConnections::sl_updatePBClicked(bool checked) {
     object["password"] = password;
 
     array[index] = object;
-
-    qDebug() << "Array: " << array;
 
     // update the array
     this->m_base->m_jsonHandler->setPlatforms(array);

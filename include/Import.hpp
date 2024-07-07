@@ -1,12 +1,12 @@
 #ifndef IMPORT_HPP
 #define IMPORT_HPP
 
-#include <QDebug>
 #include <QMessageBox>
 #include <QObject>
 #include <QSettings>
 
 #include "ImportDialog.hpp"
+#include "Logger.hpp"
 
 class Import : public QObject {
     Q_OBJECT

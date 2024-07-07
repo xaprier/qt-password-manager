@@ -2,7 +2,6 @@
 #define ENCFILELISTLOADER_HPP
 
 #include <QComboBox>
-#include <QDebug>
 #include <QDir>
 #include <QFileInfoList>
 #include <QSettings>

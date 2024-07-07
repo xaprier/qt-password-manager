@@ -1,14 +1,5 @@
 #include "JSONHandler.hpp"
 
-#include <qexception.h>
-#include <qfileinfo.h>
-#include <qjsonarray.h>
-#include <qjsondocument.h>
-#include <qjsonobject.h>
-#include <qjsonvalue.h>
-#include <qobject.h>
-#include <qsettings.h>
-
 #include "JSONHandlerException.hpp"
 
 JSONHandler::JSONHandler(const QString &fileFullPath, const QString &master_password, QObject *parent) : QObject(parent),
@@ -20,13 +11,13 @@ JSONHandler::JSONHandler(const QString &fileFullPath, const QString &master_pass
 }
 
 JSONHandler::~JSONHandler() {
-    if (!this->encryptJSON()) qWarning() << "JSONHandler deinit error. Maybe file cannot be encrypted?";
+    if (!this->encryptJSON()) Logger::log_static(LoggingLevel::WARNING, __LINE__, __PRETTY_FUNCTION__, "JSONHandler deinit error. Maybe file cannot be encrypted?");
 }
 
 bool JSONHandler::decryptJSON() {
     QByteArray encrypted;
     if (!this->readFile(m_fileFullPath, encrypted)) {
-        qDebug() << "Cannot read file: " << m_fileFullPath;
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Cannot read file: %1").arg(m_fileFullPath).toStdString());
         return false;
     }
 
@@ -35,7 +26,7 @@ bool JSONHandler::decryptJSON() {
     m_json = QJsonDocument::fromJson(m_decrypted, &error);
 
     if (m_json.isNull()) {
-        qWarning() << "Failed to parse JSON:" << error.errorString();
+        Logger::log_static(LoggingLevel::WARNING, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Failed to parse JSON: %1").arg(error.errorString()).toStdString());
         return false;
     }
 
@@ -43,26 +34,24 @@ bool JSONHandler::decryptJSON() {
 }
 
 bool JSONHandler::encryptJSON() {
-    qDebug() << "[JSONHandler] encryptJSON: " << m_fileFullPath << m_password.toUtf8() << m_json;
     if (m_deleted) {
-        qDebug() << "[JSONHandler] encryptJSON: will not encrypt because of file deleted";
+        Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Will not encrypt because of file deleted").toStdString());
         return true;
     }
 
     QString filePath = m_fileFullPath;
     if (m_nameChanged) {
-        qDebug() << "[JSONHandler] encryptJSON: nameChanged";
+        Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Encrypted filename change detected").toStdString());
         auto newName = m_json.object()["name"].toString();
         // update file name in m_fileFullPath
         QFileInfo info(m_fileFullPath);
         filePath = info.absolutePath() + "/" + newName + ".enc";
     }
-    qDebug() << "Path: " << filePath;
 
     auto last = m_json.toJson();
     auto encrypted = m_wrapper.encryptAES(m_password.toUtf8(), last);
     if (!this->writeFile(filePath, encrypted)) {
-        qDebug() << "Cannot write file: " << filePath;
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Cannot write file %1").arg(filePath).toStdString());
         return false;
     }
 
@@ -71,9 +60,9 @@ bool JSONHandler::encryptJSON() {
         QFile oldFile(m_fileFullPath);
         if (oldFile.exists()) {
             if (!oldFile.remove()) {
-                qDebug() << "Failed to remove old file:" << m_fileFullPath;
+                Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Failed to remove old file: ").arg(m_fileFullPath).toStdString());
             } else {
-                qDebug() << "Old file removed:" << m_fileFullPath;
+                Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Old file removed: ").arg(m_fileFullPath).toStdString());
             }
         }
     }
@@ -85,7 +74,7 @@ bool JSONHandler::readFile(QString filename, QByteArray &data) const {
     QFile file(filename);
 
     if (!file.open(QFile::ReadOnly)) {
-        qCritical() << "Cant open file: " << file.errorString();
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Cannot open file: ").arg(file.errorString()).toStdString());
         return false;
     }
 
@@ -99,7 +88,7 @@ bool JSONHandler::writeFile(QString filename, QByteArray &data) const {
     QFile file(filename);
 
     if (!file.open(QFile::WriteOnly)) {
-        qCritical() << "Cant open file: " << file.errorString();
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Cannot open file: ").arg(file.errorString()).toStdString());
         return false;
     }
 
@@ -119,31 +108,31 @@ const QByteArray JSONHandler::getDefaultJSON(const QString &fileName) {
 }
 
 const QJsonArray JSONHandler::platforms() const {
-    if (m_json.isNull()) throw JSONHandlerException("Decrypted JSON is not valid");
-    if (!m_json.object().contains("datas")) throw JSONHandlerException("Invalid JSON format. Required area not found.");
+    if (m_json.isNull()) throw JSONHandlerException(QObject::tr("Decrypted JSON is not valid"));
+    if (!m_json.object().contains("datas")) throw JSONHandlerException(QObject::tr("Invalid JSON format. Required area not found."));
     QJsonArray datas = m_json.object()["datas"].toArray();
     return datas;
 }
 
 const QString JSONHandler::name() const {
-    if (m_json.isNull()) throw JSONHandlerException("Decrypted JSON is not valid");
-    if (!m_json.object().contains("name")) throw JSONHandlerException("Invalid JSON format. Required area not found.");
+    if (m_json.isNull()) throw JSONHandlerException(QObject::tr("Decrypted JSON is not valid"));
+    if (!m_json.object().contains("name")) throw JSONHandlerException(QObject::tr("Invalid JSON format. Required area not found."));
     return m_json.object()["name"].toString();
 }
 
 void JSONHandler::setName(const QString &name) {
-    if (m_json.isNull()) throw JSONHandlerException("Decrypted JSON is not valid");
+    if (m_json.isNull()) throw JSONHandlerException(QObject::tr("Decrypted JSON is not valid"));
     QJsonObject jsonObj = m_json.object();
-    if (!jsonObj.contains("name")) throw JSONHandlerException("Invalid JSON format. Required area not found.");
+    if (!jsonObj.contains("name")) throw JSONHandlerException(QObject::tr("Invalid JSON format. Required area not found."));
     jsonObj["name"] = QJsonValue(name);
     m_json.setObject(jsonObj);
     m_nameChanged = true;
 }
 
 void JSONHandler::setPlatforms(const QJsonArray &platforms) {
-    if (m_json.isNull()) throw JSONHandlerException("Decrypted JSON is not valid");
+    if (m_json.isNull()) throw JSONHandlerException(QObject::tr("Decrypted JSON is not valid"));
     QJsonObject jsonObj = m_json.object();
-    if (!jsonObj.contains("datas")) throw JSONHandlerException("Invalid JSON format. Required area not found.");
+    if (!jsonObj.contains("datas")) throw JSONHandlerException(QObject::tr("Invalid JSON format. Required area not found."));
     jsonObj["datas"] = QJsonValue(platforms);
     m_json.setObject(jsonObj);
 }

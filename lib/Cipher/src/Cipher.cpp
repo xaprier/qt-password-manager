@@ -1,5 +1,7 @@
 #include "Cipher.hpp"
 
+#include <openssl/err.h>
+
 Cipher::Cipher(QObject *parent)
     : QObject{parent} {
     initialize();
@@ -17,7 +19,7 @@ RSA *Cipher::getPublicKey(QByteArray &data) {
     RSA *rsaPublicKey = PEM_read_bio_RSA_PUBKEY(bio, NULL, NULL, NULL);
 
     if (!rsaPublicKey) {
-        qCritical() << "Could not load public key" << ERR_error_string(ERR_get_error(), NULL);
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Could not load public key: %1").arg(ERR_error_string(ERR_get_error(), nullptr)).toStdString());
     }
 
     BIO_free(bio);
@@ -39,7 +41,7 @@ RSA *Cipher::getPrivateKey(QByteArray &data) {
     RSA *rsaPrivateKey = PEM_read_bio_RSAPrivateKey(bio, NULL, NULL, NULL);
 
     if (!rsaPrivateKey) {
-        qCritical() << "Could not load private key" << ERR_error_string(ERR_get_error(), NULL);
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Could not load private key: %1").arg(ERR_error_string(ERR_get_error(), nullptr)).toStdString());
     }
 
     BIO_free(bio);
@@ -55,14 +57,14 @@ RSA *Cipher::getPrivateKey(QString filename) {
 QByteArray Cipher::encryptRSA(RSA *key, QByteArray &data) {
     QByteArray buffer;
     int dataSize = data.length();
-    const unsigned char *str = (const unsigned char *)data.constData();
+    auto *str = (const unsigned char *)data.constData();
 
     int rsaLen = RSA_size(key);
-    unsigned char *ed = (unsigned char *)malloc(rsaLen);
+    auto *ed = (unsigned char *)malloc(rsaLen);
 
     int resultLen = RSA_public_encrypt(dataSize, str, ed, key, PADDING);
     if (resultLen == -1) {
-        qCritical() << "Could not encrypt: " << ERR_error_string(ERR_get_error(), NULL);
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Could not encrypt: %1").arg(ERR_error_string(ERR_get_error(), nullptr)).toStdString());
         free(ed);
         return buffer;
     }
@@ -75,14 +77,14 @@ QByteArray Cipher::encryptRSA(RSA *key, QByteArray &data) {
 
 QByteArray Cipher::decryptRSA(RSA *key, QByteArray &data) {
     QByteArray buffer;
-    const unsigned char *encryptedData = (const unsigned char *)data.constData();
+    auto *encryptedData = (const unsigned char *)data.constData();
 
     int rsaLen = RSA_size(key);
-    unsigned char *decryptedBin = (unsigned char *)malloc(rsaLen);
+    auto *decryptedBin = (unsigned char *)malloc(rsaLen);
 
     int resultLen = RSA_private_decrypt(rsaLen, encryptedData, decryptedBin, key, PADDING);
     if (resultLen == -1) {
-        qCritical() << "Could not decrypt: " << ERR_error_string(ERR_get_error(), NULL);
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Could not decrypt: %1").arg(ERR_error_string(ERR_get_error(), nullptr)).toStdString());
         free(decryptedBin);
         return buffer;
     }
@@ -95,15 +97,15 @@ QByteArray Cipher::decryptRSA(RSA *key, QByteArray &data) {
 QByteArray Cipher::encryptAES(QByteArray passphrase, QByteArray &data) {
     QByteArray msalt = randomBytes(SALTSIZE);
     int rounds = 1;
-    unsigned char *key = new unsigned char[KEYSIZE];
-    unsigned char *iv = new unsigned char[IVSIZE];
+    auto *key = new unsigned char[KEYSIZE];
+    auto *iv = new unsigned char[IVSIZE];
 
-    const unsigned char *salt = (const unsigned char *)msalt.constData();
-    const unsigned char *password = (const unsigned char *)passphrase.constData();
+    auto *salt = (const unsigned char *)msalt.constData();
+    auto *password = (const unsigned char *)passphrase.constData();
     int i = EVP_BytesToKey(EVP_aes_256_cbc(), EVP_sha1(), salt, password, passphrase.length(), rounds, key, iv);
 
     if (i != KEYSIZE) {
-        qCritical() << "EVP_BytesToKey() error: " << ERR_error_string(ERR_get_error(), NULL);
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("EVP_BytesToKey() error: %1").arg(ERR_error_string(ERR_get_error(), nullptr)).toStdString());
         delete[] key;
         delete[] iv;
         return QByteArray();
@@ -113,7 +115,7 @@ QByteArray Cipher::encryptAES(QByteArray passphrase, QByteArray &data) {
     EVP_CIPHER_CTX_init(en);
 
     if (!EVP_EncryptInit_ex(en, EVP_aes_256_cbc(), NULL, key, iv)) {
-        qCritical() << "EVP_EncryptInit_ex() failed: " << ERR_error_string(ERR_get_error(), NULL);
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("EVP_EncryptInit_ex() failed: %1").arg(ERR_error_string(ERR_get_error(), nullptr)).toStdString());
         EVP_CIPHER_CTX_free(en);
         delete[] key;
         delete[] iv;
@@ -125,10 +127,10 @@ QByteArray Cipher::encryptAES(QByteArray passphrase, QByteArray &data) {
 
     int c_len = len + AES_BLOCK_SIZE, f_len = 0;
 
-    unsigned char *cipherText = (unsigned char *)malloc(c_len);
+    auto *cipherText = (unsigned char *)malloc(c_len);
 
     if (!EVP_EncryptInit_ex(en, NULL, NULL, NULL, NULL)) {
-        qCritical() << "EVP_EncryptInit_ex() failed: " << ERR_error_string(ERR_get_error(), NULL);
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("EVP_EncryptInit_ex() failed: %1").arg(ERR_error_string(ERR_get_error(), nullptr)).toStdString());
         EVP_CIPHER_CTX_free(en);
         delete[] key;
         delete[] iv;
@@ -138,7 +140,7 @@ QByteArray Cipher::encryptAES(QByteArray passphrase, QByteArray &data) {
 
     // May have to repeat this for large files
     if (!EVP_EncryptUpdate(en, cipherText, &c_len, (unsigned char *)input, len)) {
-        qCritical() << "EVP_EncryptUpdate() failed: " << ERR_error_string(ERR_get_error(), NULL);
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("EVP_EncryptUpdate() failed: %1").arg(ERR_error_string(ERR_get_error(), nullptr)).toStdString());
         EVP_CIPHER_CTX_free(en);
         delete[] key;
         delete[] iv;
@@ -147,7 +149,7 @@ QByteArray Cipher::encryptAES(QByteArray passphrase, QByteArray &data) {
     }
 
     if (!EVP_EncryptFinal(en, cipherText + c_len, &f_len)) {
-        qCritical() << "EVP_EncryptFinal() failed: " << ERR_error_string(ERR_get_error(), NULL);
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("EVP_EncryptFinal() failed: %1").arg(ERR_error_string(ERR_get_error(), nullptr)).toStdString());
         EVP_CIPHER_CTX_free(en);
         delete[] key;
         delete[] iv;
@@ -178,21 +180,21 @@ QByteArray Cipher::decryptAES(QByteArray passphrase, QByteArray &data) {
         msalt = data.mid(8, 8);
         data = data.mid(16);  // start position to 16
     } else {
-        qWarning() << "Could not load salt from data!";
+        Logger::log_static(LoggingLevel::WARNING, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Could not load salt from data!").toStdString());
         msalt = randomBytes(SALTSIZE);
     }
 
     int rounds = 1;
-    unsigned char *key = new unsigned char[KEYSIZE];
-    unsigned char *iv = new unsigned char[IVSIZE];
+    auto *key = new unsigned char[KEYSIZE];
+    auto *iv = new unsigned char[IVSIZE];
 
-    const unsigned char *salt = (const unsigned char *)msalt.constData();
-    const unsigned char *password = (const unsigned char *)passphrase.constData();
+    auto *salt = (const unsigned char *)msalt.constData();
+    auto *password = (const unsigned char *)passphrase.constData();
 
     int i = EVP_BytesToKey(EVP_aes_256_cbc(), EVP_sha1(), salt, password, passphrase.length(), rounds, key, iv);
 
     if (i != KEYSIZE) {
-        qCritical() << "EVP_BytesToKey() error: " << ERR_error_string(ERR_get_error(), NULL);
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("EVP_BytesToKey() error: %1").arg(ERR_error_string(ERR_get_error(), NULL)).toStdString());
         delete[] key;
         delete[] iv;
         return QByteArray();
@@ -202,7 +204,7 @@ QByteArray Cipher::decryptAES(QByteArray passphrase, QByteArray &data) {
     EVP_CIPHER_CTX_init(dec);
 
     if (!EVP_DecryptInit_ex(dec, EVP_aes_256_cbc(), NULL, key, iv)) {
-        qCritical() << "EVP_DecryptInit_ex failed: " << ERR_error_string(ERR_get_error(), NULL);
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("EVP_DecryptInit_ex() error: %1").arg(ERR_error_string(ERR_get_error(), NULL)).toStdString());
         EVP_CIPHER_CTX_free(dec);
         delete[] key;
         delete[] iv;
@@ -213,11 +215,11 @@ QByteArray Cipher::decryptAES(QByteArray passphrase, QByteArray &data) {
     int len = data.size();
 
     int p_len = len, f_len = 0;
-    unsigned char *plain = (unsigned char *)malloc(p_len + AES_BLOCK_SIZE);
+    auto *plain = (unsigned char *)malloc(p_len + AES_BLOCK_SIZE);
 
     // May have to do this multiple times for large data
     if (!EVP_DecryptUpdate(dec, plain, &p_len, (unsigned char *)input, len)) {
-        qCritical() << "EVP_DecryptUpdate failed: " << ERR_error_string(ERR_get_error(), NULL);
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("EVP_DecryptUpdate() error: %1").arg(ERR_error_string(ERR_get_error(), NULL)).toStdString());
         free(plain);
         EVP_CIPHER_CTX_free(dec);
         delete[] key;
@@ -226,7 +228,7 @@ QByteArray Cipher::decryptAES(QByteArray passphrase, QByteArray &data) {
     }
 
     if (!EVP_DecryptFinal_ex(dec, plain + p_len, &f_len)) {
-        qCritical() << "EVP_DecryptFinal_ex failed: " << ERR_error_string(ERR_get_error(), NULL);
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("EVP_DecryptFinal_ex() error: %1").arg(ERR_error_string(ERR_get_error(), NULL)).toStdString());
         free(plain);
         EVP_CIPHER_CTX_free(dec);
         delete[] key;
@@ -248,7 +250,7 @@ QByteArray Cipher::decryptAES(QByteArray passphrase, QByteArray &data) {
 }
 
 QByteArray Cipher::randomBytes(int size) {
-    unsigned char *arr = new unsigned char[size];
+    auto *arr = new unsigned char[size];
     RAND_bytes(arr, size);
 
     QByteArray buffer = QByteArray(reinterpret_cast<char *>(arr), size);
@@ -275,7 +277,7 @@ QByteArray Cipher::readFile(QString filename) {
     QByteArray data;
     QFile file(filename);
     if (!file.open(QFile::ReadOnly)) {
-        qCritical() << file.errorString();
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, file.errorString().toStdString());
         return data;
     }
 
@@ -286,9 +288,9 @@ QByteArray Cipher::readFile(QString filename) {
 
 void Cipher::writeFile(QString filename, QByteArray &data) {
     QFile file(filename);
-    ;
+
     if (!file.open(QFile::ReadWrite)) {
-        qCritical() << "Cant open file: " << file.errorString();
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Cant open file: %1").arg(file.errorString()).toStdString());
         return;
     }
 

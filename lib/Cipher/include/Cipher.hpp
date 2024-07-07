@@ -11,9 +11,10 @@
 #include <openssl/rsa.h>
 #include <qglobal.h>
 
-#include <QDebug>
 #include <QFile>
 #include <QObject>
+
+#include "Logger.hpp"
 
 // The PADDING parameter means RSA will pad your data for you
 // #define PADDING RSA_PKCS1_OAEP_PADDING

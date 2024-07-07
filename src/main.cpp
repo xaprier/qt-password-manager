@@ -5,6 +5,7 @@
 
 #include <QTranslator>
 
+#include "Logger.hpp"
 #include "LoginDialog.hpp"
 #include "MainWindow.hpp"
 
@@ -16,12 +17,12 @@ void setAppLanguage(QApplication &app) {
     switch (locale.language()) {
         case QLocale::Turkish:
             if (translator.load(":/translations/translation_tr.qm")) {
-                qDebug() << QObject::tr("Loaded language Turkish");
+                Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Loaded language Turkish").toStdString());
             }
             break;
         case QLocale::German:
             if (translator.load(":/translations/translation_de.qm")) {
-                qDebug() << QObject::tr("Loaded language German");
+                Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Loaded language German").toStdString());
             }
             break;
         case QLocale::English:

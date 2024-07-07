@@ -1,7 +1,6 @@
 #ifndef EXPORTDIALOG_HPP
 #define EXPORTDIALOG_HPP
 
-#include <QDebug>
 #include <QFileDialog>
 #include <QGridLayout>
 #include <QLabel>

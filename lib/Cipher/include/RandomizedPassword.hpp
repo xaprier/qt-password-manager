@@ -2,11 +2,10 @@
 #define RANDOMIZEDPASSWORD_HPP
 
 #include <openssl/rand.h>
-#include <qglobal.h>
 
-#include <QDebug>
 #include <QFile>
 #include <QObject>
+#include <QtGlobal>
 
 class RandomizedPassword : public QObject {
     Q_OBJECT
@@ -23,6 +22,11 @@ class RandomizedPassword : public QObject {
     explicit RandomizedPassword(CharacterSet charSet, int charCount, QObject* parent = nullptr);
     ~RandomizedPassword();
 
+    /**
+     * @brief Get the randomized password which was created
+     *
+     * @return QByteArray
+     */
     [[nodiscard]] inline const QByteArray getRandomizedPassword() { return m_randomizedPassword; }
 
   private:

@@ -1,14 +1,14 @@
 #ifndef JSONHANDLER_HPP
 #define JSONHANDLER_HPP
 
-#include <qglobal.h>
-#include <qjsonarray.h>
-#include <qjsondocument.h>
-#include <qjsonobject.h>
-#include <qobject.h>
-#include <qsettings.h>
+#include <QFileInfo>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QSettings>
 
 #include "Cipher.hpp"
+#include "Logger.hpp"
 
 class JSONHandler : public QObject {
     Q_DISABLE_COPY_MOVE(JSONHandler)

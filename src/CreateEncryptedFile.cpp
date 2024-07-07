@@ -35,7 +35,7 @@ CreateEncryptedFile::CreateEncryptedFile(const QString &fileName, const QString 
     if (file.open(QIODevice::WriteOnly)) {
         file.write(encrypted);
         file.close();
-        qDebug() << QObject::tr("Default JSON file created as encrypted successfully.");
+        Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Default JSON file created as encrypted successfully.").toStdString());
     } else {
         throw CreateEncryptedFileException(QObject::tr("File cannot open: %1").arg(file.fileName()));
     }

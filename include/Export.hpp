@@ -1,12 +1,12 @@
 #ifndef EXPORT_HPP
 #define EXPORT_HPP
 
-#include <QDebug>
 #include <QMessageBox>
 #include <QObject>
 #include <QSettings>
 
 #include "ExportDialog.hpp"
+#include "Logger.hpp"
 
 class Export : public QObject {
     Q_OBJECT

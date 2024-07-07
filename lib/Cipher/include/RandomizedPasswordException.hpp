@@ -1,7 +1,7 @@
 #ifndef RANDOMIZEDPASSWORDEXCEPTION_HPP
 #define RANDOMIZEDPASSWORDEXCEPTION_HPP
 
-#include <qexception.h>
+#include <QException>
 
 class RandomizedPasswordException : public QException {
   public:

@@ -61,12 +61,9 @@ void CreateDialog::sl_accepted() {
     }
 
     this->m_isCreated = true;
-
-    qDebug() << "Accepted";
 }
 
 void CreateDialog::sl_rejected() {
-    qDebug() << "Rejected";
 }
 
 void CreateDialog::sl_checkBoxChanged(int state) {

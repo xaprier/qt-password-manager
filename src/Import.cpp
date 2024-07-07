@@ -15,23 +15,23 @@ Import::Import(QObject *base) : QObject(base) {
 
             // Check if source file exists
             if (!QFile::exists(sourcePath)) {
-                qDebug() << tr("Source file does not exist: %1").arg(sourcePath);
+                Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Source file does not exist: %1").arg(sourcePath).toStdString());
                 QMessageBox::warning(nullptr, tr("Copy Error"), tr("Source file does not exist: %1").arg(sourcePath));
                 continue;
             }
 
             // Check if destination file already exists
             if (QFile::exists(destinationPath)) {
-                qDebug() << tr("Destination file already exists: %1").arg(destinationPath);
+                Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Destination file already exists: %1").arg(destinationPath).toStdString());
                 QMessageBox::warning(nullptr, tr("Copy Error"), tr("Destination file already exists: %1").arg(destinationPath));
                 continue;
             }
 
             // Attempt to copy file
             if (QFile::copy(sourcePath, destinationPath)) {
-                qDebug() << tr("Copied '%1' to '%2'").arg(sourcePath, destinationPath);
+                Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Copied '%1' to '%2'").arg(sourcePath, destinationPath).toStdString());
             } else {
-                qDebug() << tr("Failed to copy file '%1' to '%2'").arg(sourcePath, destinationPath);
+                Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Failed to copy file '%1' to '%2'").arg(sourcePath, destinationPath).toStdString());
                 QMessageBox::warning(nullptr, tr("Copy Error"), tr("Failed to copy file '%1' to '%2'").arg(sourcePath, destinationPath));
             }
         }
