@@ -3,8 +3,8 @@
 #include "JSONHandlerException.hpp"
 
 JSONHandler::JSONHandler(const QString &fileFullPath, const QString &master_password, QObject *parent) : QObject(parent),
-                                                                                                         m_settings(QSettings("xaprier", "Password Manager", this)),
-                                                                                                         m_wrapper(Cipher(this)),
+                                                                                                         m_settings(std::make_unique<QSettings>("xaprier", "Password Manager", this)),
+                                                                                                         m_wrapper(std::make_unique<Cipher>(this)),
                                                                                                          m_password(master_password),
                                                                                                          m_fileFullPath(fileFullPath) {
     if (!this->decryptJSON()) throw JSONHandlerException("JSONHandler init error");
@@ -21,7 +21,7 @@ bool JSONHandler::decryptJSON() {
         return false;
     }
 
-    m_decrypted = m_wrapper.decryptAES(m_password.toUtf8(), encrypted);
+    m_decrypted = m_wrapper->decryptAES(m_password.toUtf8(), encrypted);
     QJsonParseError error{};
     m_json = QJsonDocument::fromJson(m_decrypted, &error);
 
@@ -49,7 +49,7 @@ bool JSONHandler::encryptJSON() {
     }
 
     auto last = m_json.toJson();
-    auto encrypted = m_wrapper.encryptAES(m_password.toUtf8(), last);
+    auto encrypted = m_wrapper->encryptAES(m_password.toUtf8(), last);
     if (!this->writeFile(filePath, encrypted)) {
         Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Cannot write file %1").arg(filePath).toStdString());
         return false;

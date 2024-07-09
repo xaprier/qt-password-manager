@@ -5,39 +5,39 @@
     <name>CreateDialog</name>
     <message>
         <location filename="../design/CreateDialog.ui" line="14"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_CreateDialog.h" line="126"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="126"/>
         <source>Create</source>
         <translation>Erstellen</translation>
     </message>
     <message>
         <location filename="../design/CreateDialog.ui" line="22"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_CreateDialog.h" line="127"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="127"/>
         <source>Current File Names</source>
         <translation>Aktuelle Dateinamen</translation>
     </message>
     <message>
         <location filename="../design/CreateDialog.ui" line="29"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_CreateDialog.h" line="128"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="128"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
         <location filename="../design/CreateDialog.ui" line="36"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_CreateDialog.h" line="129"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="129"/>
         <source>File Name</source>
         <translation>Dateiname</translation>
     </message>
     <message>
         <location filename="../design/CreateDialog.ui" line="43"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_CreateDialog.h" line="130"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="130"/>
         <source>Master Password</source>
         <translation>Master-Passwort</translation>
     </message>
     <message>
         <location filename="../design/CreateDialog.ui" line="60"/>
         <location filename="../design/CreateDialog.ui" line="83"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_CreateDialog.h" line="132"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_CreateDialog.h" line="133"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="132"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="133"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -128,13 +128,13 @@
     <name>LoginDialog</name>
     <message>
         <location filename="../design/LoginDialog.ui" line="20"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_LoginDialog.h" line="104"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="104"/>
         <source>Login</source>
         <translation>Anmelden</translation>
     </message>
     <message>
         <location filename="../design/LoginDialog.ui" line="41"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_LoginDialog.h" line="105"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="105"/>
         <source>Master Password</source>
         <translation>Master-Passwort</translation>
     </message>
@@ -142,15 +142,15 @@
         <location filename="../design/LoginDialog.ui" line="48"/>
         <location filename="../design/LoginDialog.ui" line="62"/>
         <location filename="../design/LoginDialog.ui" line="69"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_LoginDialog.h" line="106"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_LoginDialog.h" line="108"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_LoginDialog.h" line="109"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="106"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="108"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="109"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
         <location filename="../design/LoginDialog.ui" line="55"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_LoginDialog.h" line="107"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="107"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
@@ -201,85 +201,85 @@
     <name>MainWindow</name>
     <message>
         <location filename="../design/MainWindow.ui" line="14"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="193"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="193"/>
         <source>Password Manager</source>
         <translation>Passwort-Manager</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="21"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="197"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="197"/>
         <source>Platforms</source>
         <translation>Plattformen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="33"/>
         <location filename="../design/MainWindow.ui" line="147"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="198"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="208"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="198"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="208"/>
         <source>Manage</source>
         <translation>Verwalten</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="54"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="199"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="199"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="61"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="200"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="200"/>
         <source>Select Platform</source>
         <translation>Plattform auswählen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="75"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="201"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="201"/>
         <source>Password</source>
         <translation>Passwort</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="82"/>
         <location filename="../design/MainWindow.ui" line="89"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="202"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="203"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="202"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="203"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="98"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="204"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="204"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="107"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="205"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="205"/>
         <source>Create</source>
         <translation>Erstellen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="114"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="206"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="206"/>
         <source>Update</source>
         <translation>Aktualisieren</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="121"/>
         <location filename="../design/MainWindow.ui" line="169"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="196"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="207"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="196"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="207"/>
         <source>Delete</source>
         <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="159"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="194"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="194"/>
         <source>Change Master Password</source>
         <translation>Master-Passwort ändern</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="164"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_MainWindow.h" line="195"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="195"/>
         <source>Change Name</source>
         <translation>Name ändern</translation>
     </message>
@@ -445,25 +445,25 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <name>NameChangerDialog</name>
     <message>
         <location filename="../design/NameChangerDialog.ui" line="14"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_NameChangerDialog.h" line="84"/>
+        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="84"/>
         <source>Change Name</source>
         <translation>Name ändern</translation>
     </message>
     <message>
         <location filename="../design/NameChangerDialog.ui" line="28"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_NameChangerDialog.h" line="86"/>
+        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="86"/>
         <source>Current Password</source>
         <translation>Aktuelles Passwort</translation>
     </message>
     <message>
         <location filename="../design/NameChangerDialog.ui" line="35"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_NameChangerDialog.h" line="87"/>
+        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="87"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
         <location filename="../design/NameChangerDialog.ui" line="57"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_NameChangerDialog.h" line="88"/>
+        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="88"/>
         <source>New Name</source>
         <translation>Neuer Name</translation>
     </message>
@@ -472,49 +472,49 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <name>PasswordChangerDialog</name>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="14"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_PasswordChangerDialog.h" line="137"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="137"/>
         <source>Change Password</source>
         <translation>Passwort ändern</translation>
     </message>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="20"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_PasswordChangerDialog.h" line="138"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="138"/>
         <source>Old Password</source>
         <translation>Altes Passwort</translation>
     </message>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="31"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_PasswordChangerDialog.h" line="139"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="139"/>
         <source>Current Password</source>
         <translation>Aktuelles Passwort</translation>
     </message>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="38"/>
         <location filename="../design/PasswordChangerDialog.ui" line="80"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_PasswordChangerDialog.h" line="140"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_PasswordChangerDialog.h" line="144"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="140"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="144"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="50"/>
         <location filename="../design/PasswordChangerDialog.ui" line="61"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_PasswordChangerDialog.h" line="141"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_PasswordChangerDialog.h" line="142"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="141"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="142"/>
         <source>New Password</source>
         <translation>Neues Passwort</translation>
     </message>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="71"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_PasswordChangerDialog.h" line="143"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="143"/>
         <source>New Password Again</source>
         <translation>Neues Passwort erneut eingeben</translation>
     </message>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="87"/>
         <location filename="../design/PasswordChangerDialog.ui" line="94"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_PasswordChangerDialog.h" line="145"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_PasswordChangerDialog.h" line="146"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="145"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="146"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -533,19 +533,19 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <name>PasswordConfirmationDialog</name>
     <message>
         <location filename="../design/PasswordConfirmationDialog.ui" line="14"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_PasswordConfirmationDialog.h" line="83"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordConfirmationDialog.h" line="83"/>
         <source>Dialog</source>
         <translation>Dialog</translation>
     </message>
     <message>
         <location filename="../design/PasswordConfirmationDialog.ui" line="38"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_PasswordConfirmationDialog.h" line="84"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordConfirmationDialog.h" line="84"/>
         <source>Current Password</source>
         <translation>Aktuelles Passwort</translation>
     </message>
     <message>
         <location filename="../design/PasswordConfirmationDialog.ui" line="45"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_PasswordConfirmationDialog.h" line="85"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordConfirmationDialog.h" line="85"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
@@ -774,61 +774,61 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <name>RandomizedPasswordDialog</name>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="14"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_RandomizedPasswordDialog.h" line="179"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="179"/>
         <source>Create Password</source>
         <translation>Passwort erstellen</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="22"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_RandomizedPasswordDialog.h" line="180"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="180"/>
         <source>Password Length</source>
         <translation>Passwortlänge</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="94"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_RandomizedPasswordDialog.h" line="182"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="182"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="101"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_RandomizedPasswordDialog.h" line="183"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="183"/>
         <source>Generate</source>
         <translation>Generieren</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="108"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_RandomizedPasswordDialog.h" line="184"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="184"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="132"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_RandomizedPasswordDialog.h" line="185"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="185"/>
         <source>Character Set</source>
         <translation>Zeichensatz</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="141"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_RandomizedPasswordDialog.h" line="186"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="186"/>
         <source>Lower Case</source>
         <translation>Kleinbuchstaben</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="151"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_RandomizedPasswordDialog.h" line="187"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="187"/>
         <source>Upper Case</source>
         <translation>Großbuchstaben</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="158"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_RandomizedPasswordDialog.h" line="188"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="188"/>
         <source>Special Characters</source>
         <translation>Sonderzeichen</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="165"/>
-        <location filename="../build/qt-password-manager_autogen/design/ui_RandomizedPasswordDialog.h" line="189"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="189"/>
         <source>Digits</source>
         <translation>Zahlen</translation>
     </message>

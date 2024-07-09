@@ -47,6 +47,6 @@ You can run the sample program with this command
 
 - CMake(Building project)
 - GCC/Clang(Compiler for building project)
-- Qt(GUI and Core libraries, 5 and later)
+- Qt(GUI and Core libraries, 5.15.2 and later)
 - OpenSSL(Library for encryption, 1.1 and later)
 - Git(Just for cloning repository)

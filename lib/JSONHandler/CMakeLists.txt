@@ -14,7 +14,26 @@ file(GLOB HPP_FILES "include/*.hpp")
 
 add_library(${PROJECT_NAME} SHARED ${CPP_FILES} ${HPP_FILES})
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt${QT_VERSION_MAJOR}::Core Cipher Logger)
-target_include_directories(${PROJECT_NAME} PUBLIC include)
+target_include_directories(${PROJECT_NAME} PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include/${PROJECT_NAME}>
+)
 
 add_executable(${PROJECT_NAME}_TEST main.cpp)
 target_link_libraries(${PROJECT_NAME}_TEST ${PROJECT_NAME} Qt${QT_VERSION_MAJOR}::Core Cipher Logger)
+
+# Installation rules
+install(TARGETS ${PROJECT_NAME}
+  EXPORT ${PROJECT_NAME}Targets
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
+install(FILES ${HPP_FILES} DESTINATION include/${PROJECT_NAME})
+
+install(EXPORT ${PROJECT_NAME}Targets
+  FILE ${PROJECT_NAME}Config.cmake
+  NAMESPACE ${PROJECT_NAME}::
+  DESTINATION lib/cmake/${PROJECT_NAME}
+)

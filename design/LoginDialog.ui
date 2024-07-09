@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Login</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../res/res.qrc">
+    <normaloff>:/icons/xpwm.png</normaloff>:/icons/xpwm.png</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
@@ -84,7 +88,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../res/res.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

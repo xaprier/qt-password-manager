@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Create</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../res/res.qrc">
+    <normaloff>:/icons/xpwm.png</normaloff>:/icons/xpwm.png</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
@@ -103,7 +107,9 @@
   <tabstop>fileNameLE</tabstop>
   <tabstop>passwordLE</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../res/res.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

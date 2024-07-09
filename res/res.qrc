@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>xpwm.png</file>
+    </qresource>
+</RCC>

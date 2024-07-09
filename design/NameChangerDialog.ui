@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Change Name</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../res/res.qrc">
+    <normaloff>:/icons/xpwm.png</normaloff>:/icons/xpwm.png</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -70,7 +74,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../res/res.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

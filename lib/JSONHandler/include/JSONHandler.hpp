@@ -7,6 +7,8 @@
 #include <QJsonObject>
 #include <QSettings>
 
+#include <memory>
+
 #include "Cipher.hpp"
 #include "Logger.hpp"
 
@@ -40,8 +42,8 @@ class JSONHandler : public QObject {
     QByteArray m_decrypted;
     QString m_fileFullPath;
     QString m_password;
-    QSettings m_settings;
-    Cipher m_wrapper;
+    std::unique_ptr<QSettings> m_settings;
+    std::unique_ptr<Cipher> m_wrapper;
 };
 
 #endif  // JSONHANDLER_HPP

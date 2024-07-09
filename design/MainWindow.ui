@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Password Manager</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../res/res.qrc">
+    <normaloff>:/icons/xpwm.png</normaloff>:/icons/xpwm.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_3">
     <item row="0" column="0">
@@ -170,6 +174,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../res/res.qrc"/>
+ </resources>
  <connections/>
 </ui>

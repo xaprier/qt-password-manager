@@ -32,10 +32,15 @@ void setAppLanguage(QApplication &app) {
     app.installTranslator(&translator);
 }
 
+void setAppIcon(QApplication &app) {
+    app.setWindowIcon(QIcon(":/icons/xpwm.png"));
+}
+
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
 
     setAppLanguage(a);
+    setAppIcon(a);
 
     while (true) {
         LoginDialog login;

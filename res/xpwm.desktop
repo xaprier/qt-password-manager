@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Password Manager
+Comment=Local Password Manager using OpenSSL
+Exec=xpwm
+Icon=xpwm
+Categories=Utility;
