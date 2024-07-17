@@ -19,8 +19,10 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
 
 if(Qt5Widgets_FOUND)
     message(STATUS "Qt version: ${Qt5Widgets_VERSION}")
+elseif(Qt6Widgets_FOUND)
+    message(STATUS "Qt version: ${Qt6Widgets_VERSION}")
 else()
-    message(FATAL_ERROR "Qt5Widgets not found")
+    message(FATAL_ERROR "Qt5Widgets or Qt6Widgets not found")
 endif()
 
 # 4 - add qm file to qrc file and load it in code

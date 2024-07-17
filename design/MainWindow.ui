@@ -82,15 +82,29 @@
              </item>
              <item>
               <widget class="QToolButton" name="copyTB">
+               <property name="toolTip">
+                <string>Copy entered password</string>
+               </property>
                <property name="text">
                 <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../assets/icons.qrc">
+                 <normaloff>:/icons/copy.svg</normaloff>:/icons/copy.svg</iconset>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QToolButton" name="generateTB">
+               <property name="toolTip">
+                <string>Generate new password</string>
+               </property>
                <property name="text">
                 <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../assets/icons.qrc">
+                 <normaloff>:/icons/generate.svg</normaloff>:/icons/generate.svg</iconset>
                </property>
               </widget>
              </item>
@@ -175,6 +189,7 @@
   </action>
  </widget>
  <resources>
+  <include location="../assets/icons.qrc"/>
   <include location="../res/res.qrc"/>
  </resources>
  <connections/>

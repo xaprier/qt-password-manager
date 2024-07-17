@@ -10,6 +10,9 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 find_package(OpenSSL REQUIRED)
 
+message(STATUS "OpenSSL found: ${OPENSSL_INCLUDE_DIR}")
+message(STATUS "OpenSSL version: ${OPENSSL_VERSION}")
+
 file(GLOB CPP_FILES "src/*.cpp")
 file(GLOB HPP_FILES "include/*.hpp")
 

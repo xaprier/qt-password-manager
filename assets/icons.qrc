@@ -12,4 +12,10 @@
         <file>reddit.svg</file>
         <file>other.svg</file>
     </qresource>
+    <qresource prefix="/icons">
+        <file>import.svg</file>
+        <file>export.svg</file>
+        <file>generate.svg</file>
+        <file>copy.svg</file>
+    </qresource>
 </RCC>

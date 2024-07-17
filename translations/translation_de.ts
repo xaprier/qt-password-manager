@@ -5,41 +5,53 @@
     <name>CreateDialog</name>
     <message>
         <location filename="../design/CreateDialog.ui" line="14"/>
-        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="126"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="136"/>
         <source>Create</source>
         <translation>Erstellen</translation>
     </message>
     <message>
-        <location filename="../design/CreateDialog.ui" line="22"/>
-        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="127"/>
+        <location filename="../design/CreateDialog.ui" line="26"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="137"/>
         <source>Current File Names</source>
         <translation>Aktuelle Dateinamen</translation>
     </message>
     <message>
-        <location filename="../design/CreateDialog.ui" line="29"/>
-        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="128"/>
+        <location filename="../design/CreateDialog.ui" line="33"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="138"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
-        <location filename="../design/CreateDialog.ui" line="36"/>
-        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="129"/>
+        <location filename="../design/CreateDialog.ui" line="40"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="139"/>
         <source>File Name</source>
         <translation>Dateiname</translation>
     </message>
     <message>
-        <location filename="../design/CreateDialog.ui" line="43"/>
-        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="130"/>
+        <location filename="../design/CreateDialog.ui" line="47"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="140"/>
         <source>Master Password</source>
         <translation>Master-Passwort</translation>
     </message>
     <message>
-        <location filename="../design/CreateDialog.ui" line="60"/>
-        <location filename="../design/CreateDialog.ui" line="83"/>
-        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="132"/>
-        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="133"/>
+        <location filename="../design/CreateDialog.ui" line="64"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="143"/>
+        <source>Generate new password</source>
+        <translation>Neues Passwort generieren</translation>
+    </message>
+    <message>
+        <location filename="../design/CreateDialog.ui" line="67"/>
+        <location filename="../design/CreateDialog.ui" line="97"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="145"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="149"/>
         <source>...</source>
         <translation>...</translation>
+    </message>
+    <message>
+        <location filename="../design/CreateDialog.ui" line="94"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="147"/>
+        <source>Copy entered/generated password</source>
+        <translation>Eingegebenes/generiertes Passwort kopieren</translation>
     </message>
 </context>
 <context>
@@ -128,31 +140,49 @@
     <name>LoginDialog</name>
     <message>
         <location filename="../design/LoginDialog.ui" line="20"/>
-        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="104"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="117"/>
         <source>Login</source>
         <translation>Anmelden</translation>
     </message>
     <message>
-        <location filename="../design/LoginDialog.ui" line="41"/>
-        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="105"/>
+        <location filename="../design/LoginDialog.ui" line="45"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="118"/>
         <source>Master Password</source>
         <translation>Master-Passwort</translation>
     </message>
     <message>
-        <location filename="../design/LoginDialog.ui" line="48"/>
-        <location filename="../design/LoginDialog.ui" line="62"/>
-        <location filename="../design/LoginDialog.ui" line="69"/>
-        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="106"/>
-        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="108"/>
-        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="109"/>
+        <location filename="../design/LoginDialog.ui" line="52"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="120"/>
+        <source>Export encrypted file/files</source>
+        <translation>Verschlüsselte Datei/Dateien exportieren</translation>
+    </message>
+    <message>
+        <location filename="../design/LoginDialog.ui" line="55"/>
+        <location filename="../design/LoginDialog.ui" line="76"/>
+        <location filename="../design/LoginDialog.ui" line="90"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="122"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="127"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="131"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../design/LoginDialog.ui" line="55"/>
-        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="107"/>
+        <location filename="../design/LoginDialog.ui" line="66"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="123"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
+    </message>
+    <message>
+        <location filename="../design/LoginDialog.ui" line="73"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="125"/>
+        <source>Create new encrypted file</source>
+        <translation>Neue verschlüsselte Datei erstellen</translation>
+    </message>
+    <message>
+        <location filename="../design/LoginDialog.ui" line="87"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="129"/>
+        <source>Import new encrypted file/files</source>
+        <translation>Neue verschlüsselte Datei/Dateien importieren</translation>
     </message>
     <message>
         <location filename="../src/LoginDialog.cpp" line="22"/>
@@ -201,85 +231,97 @@
     <name>MainWindow</name>
     <message>
         <location filename="../design/MainWindow.ui" line="14"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="193"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="203"/>
         <source>Password Manager</source>
         <translation>Passwort-Manager</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="21"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="197"/>
+        <location filename="../design/MainWindow.ui" line="25"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="207"/>
         <source>Platforms</source>
         <translation>Plattformen</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="33"/>
-        <location filename="../design/MainWindow.ui" line="147"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="198"/>
+        <location filename="../design/MainWindow.ui" line="37"/>
+        <location filename="../design/MainWindow.ui" line="165"/>
         <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="208"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="224"/>
         <source>Manage</source>
         <translation>Verwalten</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="54"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="199"/>
+        <location filename="../design/MainWindow.ui" line="58"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="209"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="61"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="200"/>
+        <location filename="../design/MainWindow.ui" line="65"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="210"/>
         <source>Select Platform</source>
         <translation>Plattform auswählen</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="75"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="201"/>
+        <location filename="../design/MainWindow.ui" line="79"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="211"/>
         <source>Password</source>
         <translation>Passwort</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="82"/>
+        <location filename="../design/MainWindow.ui" line="86"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="213"/>
+        <source>Copy entered password</source>
+        <translation>Eingegebenes Passwort kopieren</translation>
+    </message>
+    <message>
         <location filename="../design/MainWindow.ui" line="89"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="202"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="203"/>
+        <location filename="../design/MainWindow.ui" line="103"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="215"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="219"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="98"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="204"/>
+        <location filename="../design/MainWindow.ui" line="100"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="217"/>
+        <source>Generate new password</source>
+        <translation>Neues Passwort generieren</translation>
+    </message>
+    <message>
+        <location filename="../design/MainWindow.ui" line="116"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="220"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="107"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="205"/>
+        <location filename="../design/MainWindow.ui" line="125"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="221"/>
         <source>Create</source>
         <translation>Erstellen</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="114"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="206"/>
+        <location filename="../design/MainWindow.ui" line="132"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="222"/>
         <source>Update</source>
         <translation>Aktualisieren</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="121"/>
-        <location filename="../design/MainWindow.ui" line="169"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="196"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="207"/>
+        <location filename="../design/MainWindow.ui" line="139"/>
+        <location filename="../design/MainWindow.ui" line="187"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="206"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="223"/>
         <source>Delete</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="159"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="194"/>
+        <location filename="../design/MainWindow.ui" line="177"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="204"/>
         <source>Change Master Password</source>
         <translation>Master-Passwort ändern</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="164"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="195"/>
+        <location filename="../design/MainWindow.ui" line="182"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="205"/>
         <source>Change Name</source>
         <translation>Name ändern</translation>
     </message>
@@ -445,25 +487,25 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <name>NameChangerDialog</name>
     <message>
         <location filename="../design/NameChangerDialog.ui" line="14"/>
-        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="84"/>
+        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="88"/>
         <source>Change Name</source>
         <translation>Name ändern</translation>
     </message>
     <message>
-        <location filename="../design/NameChangerDialog.ui" line="28"/>
-        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="86"/>
+        <location filename="../design/NameChangerDialog.ui" line="32"/>
+        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="90"/>
         <source>Current Password</source>
         <translation>Aktuelles Passwort</translation>
     </message>
     <message>
-        <location filename="../design/NameChangerDialog.ui" line="35"/>
-        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="87"/>
+        <location filename="../design/NameChangerDialog.ui" line="39"/>
+        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="91"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
-        <location filename="../design/NameChangerDialog.ui" line="57"/>
-        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="88"/>
+        <location filename="../design/NameChangerDialog.ui" line="61"/>
+        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="92"/>
         <source>New Name</source>
         <translation>Neuer Name</translation>
     </message>
@@ -472,49 +514,49 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <name>PasswordChangerDialog</name>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="14"/>
-        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="137"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="147"/>
         <source>Change Password</source>
         <translation>Passwort ändern</translation>
     </message>
     <message>
-        <location filename="../design/PasswordChangerDialog.ui" line="20"/>
-        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="138"/>
+        <location filename="../design/PasswordChangerDialog.ui" line="24"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="148"/>
         <source>Old Password</source>
         <translation>Altes Passwort</translation>
     </message>
     <message>
-        <location filename="../design/PasswordChangerDialog.ui" line="31"/>
-        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="139"/>
+        <location filename="../design/PasswordChangerDialog.ui" line="35"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="149"/>
         <source>Current Password</source>
         <translation>Aktuelles Passwort</translation>
     </message>
     <message>
-        <location filename="../design/PasswordChangerDialog.ui" line="38"/>
-        <location filename="../design/PasswordChangerDialog.ui" line="80"/>
-        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="140"/>
-        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="144"/>
+        <location filename="../design/PasswordChangerDialog.ui" line="42"/>
+        <location filename="../design/PasswordChangerDialog.ui" line="84"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="150"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="154"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
-        <location filename="../design/PasswordChangerDialog.ui" line="50"/>
-        <location filename="../design/PasswordChangerDialog.ui" line="61"/>
-        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="141"/>
-        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="142"/>
+        <location filename="../design/PasswordChangerDialog.ui" line="54"/>
+        <location filename="../design/PasswordChangerDialog.ui" line="65"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="151"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="152"/>
         <source>New Password</source>
         <translation>Neues Passwort</translation>
     </message>
     <message>
-        <location filename="../design/PasswordChangerDialog.ui" line="71"/>
-        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="143"/>
+        <location filename="../design/PasswordChangerDialog.ui" line="75"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="153"/>
         <source>New Password Again</source>
         <translation>Neues Passwort erneut eingeben</translation>
     </message>
     <message>
-        <location filename="../design/PasswordChangerDialog.ui" line="87"/>
-        <location filename="../design/PasswordChangerDialog.ui" line="94"/>
-        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="145"/>
-        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="146"/>
+        <location filename="../design/PasswordChangerDialog.ui" line="91"/>
+        <location filename="../design/PasswordChangerDialog.ui" line="102"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="155"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="156"/>
         <source>...</source>
         <translation>...</translation>
     </message>
@@ -533,19 +575,19 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <name>PasswordConfirmationDialog</name>
     <message>
         <location filename="../design/PasswordConfirmationDialog.ui" line="14"/>
-        <location filename="../build/xpwm_autogen/design/ui_PasswordConfirmationDialog.h" line="83"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordConfirmationDialog.h" line="87"/>
         <source>Dialog</source>
         <translation>Dialog</translation>
     </message>
     <message>
-        <location filename="../design/PasswordConfirmationDialog.ui" line="38"/>
-        <location filename="../build/xpwm_autogen/design/ui_PasswordConfirmationDialog.h" line="84"/>
+        <location filename="../design/PasswordConfirmationDialog.ui" line="42"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordConfirmationDialog.h" line="88"/>
         <source>Current Password</source>
         <translation>Aktuelles Passwort</translation>
     </message>
     <message>
-        <location filename="../design/PasswordConfirmationDialog.ui" line="45"/>
-        <location filename="../build/xpwm_autogen/design/ui_PasswordConfirmationDialog.h" line="85"/>
+        <location filename="../design/PasswordConfirmationDialog.ui" line="49"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordConfirmationDialog.h" line="89"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
@@ -774,61 +816,125 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <name>RandomizedPasswordDialog</name>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="14"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="179"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="186"/>
         <source>Create Password</source>
         <translation>Passwort erstellen</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="22"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="180"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="26"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="187"/>
         <source>Password Length</source>
         <translation>Passwortlänge</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="94"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="182"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="98"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="189"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="101"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="183"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="105"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="190"/>
         <source>Generate</source>
         <translation>Generieren</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="108"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="184"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="112"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="192"/>
+        <source>Copy Password</source>
+        <translation>Passwort kopieren</translation>
+    </message>
+    <message>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="115"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="194"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="132"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="185"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="143"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="195"/>
         <source>Character Set</source>
         <translation>Zeichensatz</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="141"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="186"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="152"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="197"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Include lower case characters like;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;a b c d e f g h i j k l m&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;n o p q r s t u v w x y z&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kleinbuchstaben einbeziehen wie;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;a b c d e f g h i j k l m&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;n o p q r s t u v w x y z&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="155"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="199"/>
         <source>Lower Case</source>
         <translation>Kleinbuchstaben</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="151"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="187"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="165"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="201"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Include upper case characters like;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;A B C D E F G H I J K L M&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;N O P Q R S T U V W X Y Z&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//DE&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Großbuchstaben einbeziehen wie;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;A B C D E F G H I J K L M&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;N O P Q R S T U V W X Y Z&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="177"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="213"/>
         <source>Upper Case</source>
         <translation>Großbuchstaben</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="158"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="188"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="184"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="215"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Include special characters like;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;! @ # $ % ^ &amp;amp; * ( ) - _ = + [ ] { } | ; : , . &amp;lt; &amp;gt; ?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//DE&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Sonderzeichen einbeziehen wie;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;! @ # $ % ^ &amp;amp; * ( ) - _ = + [ ] { } | ; : , . &amp;lt; &amp;gt; ?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="195"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="225"/>
         <source>Special Characters</source>
         <translation>Sonderzeichen</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="165"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="189"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="202"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="227"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Include digits like;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;0 1 2 3 4 5 6 7 8 9&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zahlen wie;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;0 1 2 3 4 5 6 7 8 9&lt;/span&gt; einbeziehen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="205"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="229"/>
         <source>Digits</source>
         <translation>Zahlen</translation>
     </message>
