@@ -1,13 +1,14 @@
-#include <qapplication.h>
 #include <qlocale.h>
 #include <qobject.h>
 #include <qtranslator.h>
 
 #include <QTranslator>
 
+#include "Application.hpp"
 #include "Logger.hpp"
 #include "LoginDialog.hpp"
 #include "MainWindow.hpp"
+#include "RandomizedPassword.hpp"
 
 QTranslator translator;
 
@@ -36,11 +37,22 @@ void setAppIcon(QApplication &app) {
     app.setWindowIcon(QIcon(":/icons/xpwm.png"));
 }
 
-int main(int argc, char *argv[]) {
-    QApplication a(argc, argv);
+QString getQSS() {
+    QFile styleFile(":/qss/style.qss");
+    if (!styleFile.open(QFile::ReadOnly)) {
+        Logger::log_static(LoggingLevel::ERROR, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Style file cannot be opened").toStdString());
+        return QString();
+    }
 
-    setAppLanguage(a);
-    setAppIcon(a);
+    QString style(styleFile.readAll());
+    return style;
+}
+
+int main(int argc, char *argv[]) {
+    Application app(argc, argv, "XPwm", "0.1", "xaprier", getQSS());
+
+    setAppLanguage(app);
+    setAppIcon(app);
 
     while (true) {
         LoginDialog login;
@@ -48,7 +60,7 @@ int main(int argc, char *argv[]) {
         if (result == QDialog::Accepted && login.isLogged()) {
             MainWindow window(login);
             window.show();
-            a.exec();
+            app.exec();
         } else if (result == QDialog::Rejected)
             break;
     }

@@ -2,4 +2,12 @@
     <qresource prefix="/icons">
         <file>xpwm.png</file>
     </qresource>
+    <qresource prefix="/qss">
+        <file>style.qss</file>
+    </qresource>
+    <qresource prefix="/qssicons">
+        <file>vs15/checkbox-check-disabled.png</file>
+        <file>vs15/checkbox-check.png</file>
+        <file>vs15/combobox-down.png</file>
+    </qresource>
 </RCC>
