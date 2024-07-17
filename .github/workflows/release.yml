@@ -1,0 +1,93 @@
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+name: Create Tag/Release and Build Deployment
+
+env:
+  QT_VERSION: 5.15.2
+  NAME: XPwm
+
+jobs:
+  release:
+    runs-on: ubuntu-20.04
+    outputs:
+      release_created: ${{ steps.create_release.outputs.release_created }}
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Release
+        id: create_release
+        uses: xaprier/actions-semver@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          draft: false
+          prerelease: false
+          include-letter-v: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  build-linux:
+    needs: [release]
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        arch: [x86_64, aarch64]
+    if: needs.release.outputs.release_created == 'true'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Install dependencies for build
+        run: |
+          sudo add-apt-repository universe
+          sudo apt-get update
+          sudo apt-get install -y cmake libfuse2
+      
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          aqtversion: '==3.1.*'
+          version: ${{ env.QT_VERSION }}
+          host: 'linux'
+          target: 'desktop'
+          arch: 'gcc_64'
+          modules: 'qtwaylandcompositor'
+      
+      - name: Configure Project
+        run: cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$GITHUB_WORKSPACE/qt/Qt/${{ env.QT_VERSION }}/gcc_64/lib/cmake -DCMAKE_INSTALL_PREFIX=/usr
+
+      - name: Build Project
+        run: make -j`nproc` install DESTDIR=AppDir
+
+      - name: Install LinuxDeployQt
+        run: |
+          wget -c -nv https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage -O linuxdeployqt.AppImage
+          chmod +x linuxdeployqt.AppImage
+
+      - name: Build AppImage
+        run: |
+          ./linuxdeployqt.AppImage AppDir/usr/share/applications/xpwm.desktop -bundle-non-qt-libs -appimage
+
+      - name: Remove linuxdeployqt and rename AppImage
+        run: |
+          rm linuxdeployqt.AppImage
+          APPIMAGE_FILE=$(ls | grep '\.AppImage$')
+          mv $APPIMAGE_FILE ${{ env.NAME }}-${{ matrix.arch }}.AppImage
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.release.outputs.upload_url }}
+          asset_path: ./${{ env.NAME }}-${{ matrix.arch }}.AppImage
+          asset_name: ${{ env.NAME }}-${{ matrix.arch }}.AppImage
+          asset_content_type: application/octet-stream

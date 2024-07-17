@@ -49,7 +49,7 @@ QString getQSS() {
 }
 
 int main(int argc, char *argv[]) {
-    Application app(argc, argv, "XPwm", "0.1", "xaprier", getQSS());
+    Application app(argc, argv, "XPwm", "1.0", "xaprier", getQSS());
 
     setAppLanguage(app);
     setAppIcon(app);
