@@ -252,6 +252,7 @@ QToolBar::separator {
 
 QToolButton {
   padding: 4px;
+  icon-size: 24px;
 }
 
 QToolButton:hover, QToolButton:focus {

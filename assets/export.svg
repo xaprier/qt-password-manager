@@ -3,8 +3,8 @@
 	.st0{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st1{fill:none;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}
 </style>
-<polyline class="st0" points="7,24 7,29 25,29 25,9 "></polyline>
-<polyline class="st0" points="19,3 19,9 25,9 19,3 7,3 7,8 "></polyline>
-<line class="st0" x1="16" y1="16" x2="3" y2="16"></line>
-<polyline class="st0" points="7,12 3,16 7,20 "></polyline>
+<polyline class="st0" points="7,24 7,29 25,29 25,9 " id="id_101" style="stroke: rgb(255, 98, 0);"></polyline>
+<polyline class="st0" points="19,3 19,9 25,9 19,3 7,3 7,8 " id="id_102" style="stroke: rgb(255, 98, 0);"></polyline>
+<line class="st0" x1="16" y1="16" x2="3" y2="16" id="id_103" style="stroke: rgb(255, 98, 0);"></line>
+<polyline class="st0" points="7,12 3,16 7,20 " id="id_104" style="stroke: rgb(255, 98, 0);"></polyline>
 </svg>
