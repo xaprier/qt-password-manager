@@ -18,7 +18,7 @@ Clone the repository to your directory
 git clone --recursive https://github.com/xaprier/qt-password-manager.git
 ```
 
-Enter the direcotry of the source code
+Enter the directory of the source code
 
 ```sh
 cd qt-password-manager/
@@ -41,6 +41,28 @@ You can run the sample program with this command
 
 ```sh
 ./qt-password-manager
+```
+
+### 🛠️ Install Instructions for Linux/UNIX
+
+There is an install script named `install.sh` that can be used for Arch-based and newer Debian-based systems. If your system does not meet these requirements, you can try the AppImage file available in the releases section.
+
+Clone the repository to your directory
+
+```sh
+git clone --recursive https://github.com/xaprier/qt-password-manager.git
+```
+
+Enter the directory of the source code
+
+```sh
+cd qt-password-manager/
+```
+
+Execute bash script
+
+```sh
+./install.sh
 ```
 
 ### 📚 Dependencies

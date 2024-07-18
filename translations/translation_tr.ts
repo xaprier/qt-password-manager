@@ -569,6 +569,10 @@ You should login again to continue</source>
         <source>Failed to copy file &apos;%1&apos; to &apos;%2&apos;</source>
         <translation>%1&apos;den %2&apos;ye kopyalanırken hata oluştu</translation>
     </message>
+    <message>
+        <source>Style file cannot be opened</source>
+        <translation>Stil dosyası açılamadı</translation>
+    </message>
 </context>
 <context>
     <name>RandomizedPasswordDialog</name>

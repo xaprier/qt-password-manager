@@ -640,14 +640,19 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
         <translation>Datei konnte nicht geöffnet werden: %1</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="20"/>
+        <location filename="../src/main.cpp" line="21"/>
         <source>Loaded language Turkish</source>
         <translation>Türkische Sprache geladen</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="25"/>
+        <location filename="../src/main.cpp" line="26"/>
         <source>Loaded language German</source>
         <translation>Deutsche Sprache geladen</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="43"/>
+        <source>Style file cannot be opened</source>
+        <translation>Die Style-Datei kann nicht geöffnet werden</translation>
     </message>
     <message>
         <location filename="../lib/Cipher/main.cpp" line="12"/>
@@ -816,61 +821,61 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <name>RandomizedPasswordDialog</name>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="14"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="186"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="187"/>
         <source>Create Password</source>
         <translation>Passwort erstellen</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="26"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="187"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="188"/>
         <source>Password Length</source>
         <translation>Passwortlänge</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="98"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="189"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="190"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="105"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="190"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="108"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="191"/>
         <source>Generate</source>
         <translation>Generieren</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="112"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="192"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="115"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="193"/>
         <source>Copy Password</source>
         <translation>Passwort kopieren</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="115"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="194"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="118"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="195"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="143"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="195"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="146"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="196"/>
         <source>Character Set</source>
         <translation>Zeichensatz</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="152"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="197"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="155"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="198"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Include lower case characters like;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;a b c d e f g h i j k l m&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;n o p q r s t u v w x y z&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kleinbuchstaben einbeziehen wie;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;a b c d e f g h i j k l m&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;n o p q r s t u v w x y z&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="155"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="199"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="158"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="200"/>
         <source>Lower Case</source>
         <translation>Kleinbuchstaben</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="165"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="201"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="168"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="202"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -893,14 +898,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;N O P Q R S T U V W X Y Z&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="177"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="213"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="180"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="214"/>
         <source>Upper Case</source>
         <translation>Großbuchstaben</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="184"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="215"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="187"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="216"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -921,20 +926,20 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;! @ # $ % ^ &amp;amp; * ( ) - _ = + [ ] { } | ; : , . &amp;lt; &amp;gt; ?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="195"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="225"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="198"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="226"/>
         <source>Special Characters</source>
         <translation>Sonderzeichen</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="202"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="227"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="205"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="228"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Include digits like;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;0 1 2 3 4 5 6 7 8 9&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zahlen wie;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;0 1 2 3 4 5 6 7 8 9&lt;/span&gt; einbeziehen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../design/RandomizedPasswordDialog.ui" line="205"/>
-        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="229"/>
+        <location filename="../design/RandomizedPasswordDialog.ui" line="208"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="230"/>
         <source>Digits</source>
         <translation>Zahlen</translation>
     </message>
