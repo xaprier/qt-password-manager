@@ -36,11 +36,11 @@ Than our Makefile is ready for build the source code. We have to access the dire
 cd build && make -j$(nproc)
 ```
 
-Than our compiled binary is ready for run in the directory of the makefile with the name "qt-password-manager"
+Than our compiled binary is ready for run in the directory of the makefile with the name "xpwm"
 You can run the sample program with this command
 
 ```sh
-./qt-password-manager
+./xpwm
 ```
 
 ### 🛠️ Install Instructions for Linux/UNIX
@@ -64,6 +64,8 @@ Execute bash script
 ```sh
 ./install.sh
 ```
+
+You can search the application `Password Manager`
 
 ### 📚 Dependencies
 

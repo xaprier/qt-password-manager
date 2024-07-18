@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(xpwm VERSION 1.0.1 LANGUAGES CXX)
+project(xpwm VERSION 1.0.2 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -10,6 +10,7 @@ add_subdirectory(res) # icon and .desktop file for gnu/linux
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
+add_compile_options(-fno-sized-deallocation)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
