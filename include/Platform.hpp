@@ -1,12 +1,9 @@
 #ifndef PLATFORM_HPP
 #define PLATFORM_HPP
 
-#include <qjsonobject.h>
-#include <qobject.h>
-#include <qobjectdefs.h>
-
 #include <QIcon>
 #include <QJsonObject>
+#include <QObject>
 #include <QString>
 
 class Platform : public QObject {

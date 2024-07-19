@@ -1,14 +1,10 @@
-#include <qlocale.h>
-#include <qobject.h>
-#include <qtranslator.h>
-
+#include <QLocale>
 #include <QTranslator>
 
 #include "Application.hpp"
 #include "Logger.hpp"
 #include "LoginDialog.hpp"
 #include "MainWindow.hpp"
-#include "RandomizedPassword.hpp"
 
 QTranslator translator;
 
@@ -49,7 +45,7 @@ QString getQSS() {
 }
 
 int main(int argc, char *argv[]) {
-    Application app(argc, argv, "XPwm", "1.0.2", "xaprier", getQSS());
+    Application app(argc, argv, "XPwm", "1.0.3", "xaprier", getQSS());
 
     setAppLanguage(app);
     setAppIcon(app);

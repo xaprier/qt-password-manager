@@ -1,7 +1,5 @@
 #include "NameChangerDialog.hpp"
 
-#include <qcheckbox.h>
-
 NameChangerDialog::NameChangerDialog(QWidget *parent) : QDialog(parent),
                                                         m_ui(new Ui::NameChangerDialog) {
     m_ui->setupUi(this);

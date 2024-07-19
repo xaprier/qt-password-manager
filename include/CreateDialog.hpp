@@ -1,9 +1,7 @@
 #ifndef CREATEDIALOG_HPP
 #define CREATEDIALOG_HPP
 
-#include <qcombobox.h>
-#include <qglobal.h>
-
+#include <QComboBox>
 #include <QDialog>
 
 namespace Ui {

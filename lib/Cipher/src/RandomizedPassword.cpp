@@ -1,7 +1,5 @@
 #include "RandomizedPassword.hpp"
 
-#include <qobject.h>
-
 #include "RandomizedPasswordException.hpp"
 
 RandomizedPassword::RandomizedPassword(CharacterSet charSet, int charCount, QObject* parent)

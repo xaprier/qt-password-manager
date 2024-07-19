@@ -1,13 +1,11 @@
 #include "CreateEncryptedFile.hpp"
 
-#include <qexception.h>
-
 #include <QDir>
 #include <QFileInfo>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QSettings>
+#include <QStandardPaths>
 
 #include "Cipher.hpp"
 #include "CreateEncryptedFileException.hpp"
@@ -18,9 +16,9 @@ CreateEncryptedFile::CreateEncryptedFile(const QString &fileName, const QString 
     auto json = JSONHandler::getDefaultJSON(fileName);
     auto encrypted = cipher.encryptAES(masterPassword.toUtf8(), json);
 
-    // get QSettings path
-    QString settingsPath = QSettings("xaprier", "Password Manager").fileName();
-    QFileInfo settingsFileInfo(settingsPath);
+    // get appdata path
+    QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QFileInfo settingsFileInfo(appDataPath);
 
     // create path if not exists
     QDir dir(settingsFileInfo.absolutePath());

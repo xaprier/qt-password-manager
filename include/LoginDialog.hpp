@@ -1,8 +1,6 @@
 #ifndef LOGINDIALOG_HPP
 #define LOGINDIALOG_HPP
 
-#include <qglobal.h>
-
 #include <QDialog>
 #include <QMessageBox>
 

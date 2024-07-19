@@ -3,7 +3,7 @@
 
 #include <QMessageBox>
 #include <QObject>
-#include <QSettings>
+#include <QStandardPaths>
 
 #include "ImportDialog.hpp"
 #include "Logger.hpp"

@@ -13,7 +13,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 file(GLOB CPP_FILES "src/*.cpp")
 file(GLOB HPP_FILES "include/*.hpp")
 
-add_library(${PROJECT_NAME} SHARED ${CPP_FILES} ${HPP_FILES})
+add_library(${PROJECT_NAME} STATIC ${CPP_FILES} ${HPP_FILES})
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt${QT_VERSION_MAJOR}::Core Cipher Logger)
 target_include_directories(${PROJECT_NAME} PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

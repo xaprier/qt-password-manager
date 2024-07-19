@@ -1,8 +1,6 @@
 #ifndef MAINWINDOW_HPP
 #define MAINWINDOW_HPP
 
-#include <qglobal.h>
-
 #include <QMainWindow>
 #include <memory>
 

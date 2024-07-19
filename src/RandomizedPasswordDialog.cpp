@@ -1,10 +1,5 @@
 #include "RandomizedPasswordDialog.hpp"
 
-#include <qcheckbox.h>
-#include <qclipboard.h>
-#include <qmessagebox.h>
-#include <qpushbutton.h>
-
 #include "../design/ui_RandomizedPasswordDialog.h"
 #include "RandomizedPassword.hpp"
 

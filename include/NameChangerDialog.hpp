@@ -1,8 +1,6 @@
 #ifndef NAMECHANGERDIALOG_HPP
 #define NAMECHANGERDIALOG_HPP
 
-#include <qglobal.h>
-
 #include <QDialog>
 
 #include "../design/ui_NameChangerDialog.h"

@@ -1,8 +1,6 @@
 #ifndef PASSWORDCHANGER_HPP
 #define PASSWORDCHANGER_HPP
 
-#include <qglobal.h>
-
 #include <QDialog>
 
 #include "../design/ui_PasswordChangerDialog.h"

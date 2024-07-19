@@ -1,4 +1,3 @@
-#include <qobject.h>
 
 #include <iostream>
 

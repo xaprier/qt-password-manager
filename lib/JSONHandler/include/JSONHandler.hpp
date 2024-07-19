@@ -5,8 +5,6 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QSettings>
-
 #include <memory>
 
 #include "Cipher.hpp"
@@ -42,7 +40,6 @@ class JSONHandler : public QObject {
     QByteArray m_decrypted;
     QString m_fileFullPath;
     QString m_password;
-    std::unique_ptr<QSettings> m_settings;
     std::unique_ptr<Cipher> m_wrapper;
 };
 

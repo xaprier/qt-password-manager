@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(xpwm VERSION 1.0.2 LANGUAGES CXX)
+project(xpwm VERSION 1.0.3 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -27,11 +27,11 @@ else()
 endif()
 
 # 4 - add qm file to qrc file and load it in code
-file(GLOB CPP_HILES "src/*.cpp")
-file(GLOB HPP_HILES "include/*.hpp")
-file(GLOB UI_HILES "design/*.ui")
-file(GLOB QRC_HILES "**/*.qrc")
-file(GLOB TS_FILES "translations/*.ts")
+file(GLOB_RECURSE CPP_HILES "src/*.cpp")
+file(GLOB_RECURSE HPP_HILES "include/*.hpp")
+file(GLOB_RECURSE UI_HILES "design/*.ui")
+file(GLOB_RECURSE QRC_HILES "**/*.qrc")
+file(GLOB_RECURSE TS_FILES "translations/*.ts")
 
 set(PROJECT_SOURCES
     ${CPP_HILES} ${HPP_HILES} ${UI_HILES} ${QRC_HILES}

@@ -1,26 +1,24 @@
 #ifndef ENCRYPTEDFILES_HPP
 #define ENCRYPTEDFILES_HPP
 
-#include <qalgorithms.h>
-#include <qdir.h>
-#include <qfile.h>
-#include <qfileinfo.h>
-#include <qglobal.h>
-#include <qobject.h>
-#include <qobjectdefs.h>
-#include <qsettings.h>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
+#include <QObject>
+#include <QtAlgorithms>
 
 #include "EncryptedFile.hpp"
+#include "Logger.hpp"
 
 class EncryptedFiles : public QObject {
     Q_OBJECT
     Q_DISABLE_COPY_MOVE(EncryptedFiles)
   public:
     EncryptedFiles(QObject *parent = nullptr) : QObject(parent) {
-        QSettings settings("xaprier", "Password Manager", this);
-        QFileInfo info(settings.fileName());
-        QString fullPath = info.absolutePath();
-        QDir encryptedFilesPath(fullPath);
+        QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+        QDir().mkpath(appDataPath);  // Ensure the directory exists
+        QDir encryptedFilesPath(appDataPath);
+        Logger::log_static(appDataPath.toStdString());
 
         // Get all files with .enc extension
         QStringList encFiles = encryptedFilesPath.entryList(QStringList() << "*.enc", QDir::Files);

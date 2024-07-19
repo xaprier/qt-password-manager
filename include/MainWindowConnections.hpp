@@ -1,10 +1,9 @@
 #ifndef MAINWINDOWCONNECTIONS_HPP
 #define MAINWINDOWCONNECTIONS_HPP
 
-#include <qglobal.h>
-#include <qobject.h>
-
+#include <QClipboard>
 #include <QListWidgetItem>
+#include <QMessageBox>
 #include <QObject>
 
 #include "MainWindow.hpp"

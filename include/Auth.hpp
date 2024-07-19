@@ -1,8 +1,8 @@
 #ifndef AUTH_HPP
 #define AUTH_HPP
 
-#include <qobjectdefs.h>
-
+#include <QJsonDocument>
+#include <QJsonParseError>
 #include <QObject>
 
 class Auth : public QObject {

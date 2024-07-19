@@ -1,7 +1,5 @@
 #include "Auth.hpp"
 
-#include <qjsondocument.h>
-
 #include "Cipher.hpp"
 
 Auth::Auth(const QString &fileName, const QString &masterPassword, QObject *parent) : QObject(parent) {

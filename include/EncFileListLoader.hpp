@@ -4,7 +4,7 @@
 #include <QComboBox>
 #include <QDir>
 #include <QFileInfoList>
-#include <QSettings>
+#include <QStandardPaths>
 #include <QString>
 
 class EncFileListLoader {

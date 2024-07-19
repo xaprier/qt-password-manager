@@ -8,9 +8,9 @@ EncFileListLoader::EncFileListLoader(QComboBox* comboBox) : comboBox(comboBox) {
 }
 
 void EncFileListLoader::loadEncFiles() {
-    // get default qsettings directory for getting files
-    QString settingsPath = QSettings("xaprier", "Password Manager").fileName();
-    QFileInfo settingsFileInfo(settingsPath);
+    // get appdata path
+    QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QFileInfo settingsFileInfo(appDataPath);
     QDir settingsDir = settingsFileInfo.dir();
 
     // create path if not exists

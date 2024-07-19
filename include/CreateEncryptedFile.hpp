@@ -1,9 +1,8 @@
 #ifndef CREATEENCRYPTEDFILE_HPP
 #define CREATEENCRYPTEDFILE_HPP
 
-#include <qglobal.h>
-#include <qobject.h>
-#include <qobjectdefs.h>
+#include <QObject>
+#include <QtGlobal>
 
 class CreateEncryptedFile : public QObject {
     Q_OBJECT

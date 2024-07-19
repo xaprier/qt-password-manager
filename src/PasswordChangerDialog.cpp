@@ -1,11 +1,5 @@
 #include "PasswordChangerDialog.hpp"
 
-#include <qcheckbox.h>
-#include <qclipboard.h>
-#include <qmessagebox.h>
-#include <qobject.h>
-#include <qtoolbutton.h>
-
 #include "RandomizedPasswordDialog.hpp"
 
 PasswordChangerDialog::PasswordChangerDialog(QWidget *parent) : QDialog(parent),

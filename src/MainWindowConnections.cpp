@@ -1,13 +1,5 @@
 #include "MainWindowConnections.hpp"
 
-#include <qclipboard.h>
-#include <qdialog.h>
-#include <qjsonobject.h>
-#include <qmessagebox.h>
-#include <qnamespace.h>
-#include <qobject.h>
-#include <qtoolbutton.h>
-
 #include "EncryptedFiles.hpp"
 #include "NameChangerDialog.hpp"
 #include "PasswordChangerDialog.hpp"

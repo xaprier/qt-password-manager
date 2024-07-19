@@ -573,6 +573,10 @@ You should login again to continue</source>
         <source>Style file cannot be opened</source>
         <translation>Stil dosyası açılamadı</translation>
     </message>
+    <message>
+        <source>There are no encrypted files on or not exists: %1</source>
+        <translation>Hiç şifrelenmiş dosya yok veya mevcut değil: %1</translation>
+    </message>
 </context>
 <context>
     <name>RandomizedPasswordDialog</name>

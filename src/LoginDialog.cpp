@@ -1,11 +1,5 @@
 #include "LoginDialog.hpp"
 
-#include <qclipboard.h>
-#include <qdialog.h>
-#include <qdialogbuttonbox.h>
-#include <qmessagebox.h>
-#include <qtoolbutton.h>
-
 #include "../design/ui_LoginDialog.h"
 #include "Auth.hpp"
 #include "CreateDialog.hpp"
@@ -62,9 +56,9 @@ void LoginDialog::sl_accepted() {
     }
 
     QString selectedFile = combobox->currentText();
-    QString settingsPath = QSettings("xaprier", "Password Manager").fileName();
-    QFileInfo settingsFileInfo(settingsPath);
-    QString fullFilePath = settingsFileInfo.absolutePath() + "/" + selectedFile + ".enc";
+    QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QDir dir(appDataPath);
+    QString fullFilePath = dir.absolutePath() + QDir::separator() + selectedFile + ".enc";
     if (verifyPassword(fullFilePath, password)) {
         this->m_masterPassword = password;
         this->m_filePath = fullFilePath;

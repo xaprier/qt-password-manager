@@ -1,22 +1,23 @@
 #ifndef ENCRYPTEDFILE_HPP
 #define ENCRYPTEDFILE_HPP
 
-#include <qfile.h>
-#include <qfileinfo.h>
-#include <qglobal.h>
-#include <qobject.h>
-#include <qobjectdefs.h>
-#include <qsettings.h>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
+#include <QStandardPaths>
+#include <QtGlobal>
+
+#include "Logger.hpp"
 
 class EncryptedFile : public QObject {
     Q_OBJECT
     Q_DISABLE_COPY_MOVE(EncryptedFile)
   public:
     EncryptedFile(const QString &fileName, QObject *parent = nullptr) : QObject(parent) {
-        QSettings settings("xaprier", "Password Manager", this);
-        QFileInfo info(settings.fileName());
-        QString fullPath = info.absolutePath();
-        m_file = new QFile(fullPath + "/" + fileName + ".enc");
+        QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+        QDir().mkpath(appDataPath);  // Ensure the directory exists
+        m_file = new QFile(appDataPath + "/" + fileName + ".enc");
+        Logger::log_static(appDataPath.toStdString() + "/" + fileName.toStdString() + ".enc");
         m_fileInfo = QFileInfo(*m_file);
         m_fileName = QFileInfo(fileName).baseName();
     }

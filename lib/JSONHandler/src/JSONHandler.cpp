@@ -3,7 +3,6 @@
 #include "JSONHandlerException.hpp"
 
 JSONHandler::JSONHandler(const QString &fileFullPath, const QString &master_password, QObject *parent) : QObject(parent),
-                                                                                                         m_settings(std::make_unique<QSettings>("xaprier", "Password Manager", this)),
                                                                                                          m_wrapper(std::make_unique<Cipher>(this)),
                                                                                                          m_password(master_password),
                                                                                                          m_fileFullPath(fileFullPath) {

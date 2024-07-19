@@ -1,12 +1,16 @@
 #include "Export.hpp"
 
 Export::Export(QObject *base) : QObject(base) {
-    QSettings settings("xaprier", "Password Manager", this);
-    QFileInfo info(settings.fileName());
-    QString fullPath = info.absolutePath();
+    QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+
+    // check directory is exists or empty
+    QDir directory(appDataPath);
+    if (directory.isEmpty() || !directory.exists()) {
+        Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("There are no encrypted files on or not exists: %1").arg(appDataPath).toStdString());
+        return;
+    }
 
     // get .enc file list from path
-    QDir directory(fullPath);
     QStringList encFiles = directory.entryList(QStringList() << "*.enc", QDir::Files);
 
     // get export directory
@@ -17,7 +21,7 @@ Export::Export(QObject *base) : QObject(base) {
 
         for (const QString &file : files) {
             QFileInfo info(file);
-            QString sourcePath = fullPath + QDir::separator() + file;
+            QString sourcePath = appDataPath + QDir::separator() + file;
             QString destinationPath = path + QDir::separator() + info.fileName();
 
             // Check if source file exists

@@ -1,7 +1,5 @@
 #include "PasswordConfirmationDialog.hpp"
 
-#include <qcheckbox.h>
-
 PasswordConfirmationDialog::PasswordConfirmationDialog(QWidget *parent) : QDialog(parent),
                                                                           m_ui(new Ui::PasswordConfirmationDialog) {
     m_ui->setupUi(this);

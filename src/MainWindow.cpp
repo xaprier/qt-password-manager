@@ -1,12 +1,5 @@
 #include "MainWindow.hpp"
 
-#include <qaction.h>
-#include <qalgorithms.h>
-#include <qapplication.h>
-#include <qlistwidget.h>
-#include <qpushbutton.h>
-#include <qtoolbutton.h>
-
 #include "JSONHandler.hpp"
 #include "LoginDialog.hpp"
 #include "MainWindowConnections.hpp"

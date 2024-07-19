@@ -1,12 +1,9 @@
 #include "CreateDialog.hpp"
 
-#include <qcheckbox.h>
-#include <qclipboard.h>
-#include <qcombobox.h>
-#include <qdialog.h>
-#include <qmessagebox.h>
-#include <qnamespace.h>
-#include <qtoolbutton.h>
+#include <QClipboard>
+#include <QDialog>
+#include <QMessageBox>
+#include <QToolButton>
 
 #include "../design/ui_CreateDialog.h"
 #include "CreateEncryptedFile.hpp"

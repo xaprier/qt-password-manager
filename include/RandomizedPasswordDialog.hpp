@@ -1,9 +1,9 @@
 #ifndef RANDOMIZEDPASSWORDDIALOG_HPP
 #define RANDOMIZEDPASSWORDDIALOG_HPP
 
-#include <qglobal.h>
-
+#include <QClipboard>
 #include <QDialog>
+#include <QMessageBox>
 
 namespace Ui {
 class RandomizedPasswordDialog;
