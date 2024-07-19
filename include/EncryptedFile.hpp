@@ -7,6 +7,7 @@
 #include <QStandardPaths>
 #include <QtGlobal>
 
+#include "CreateEncryptedFileException.hpp"
 #include "Logger.hpp"
 
 class EncryptedFile : public QObject {
@@ -15,9 +16,14 @@ class EncryptedFile : public QObject {
   public:
     EncryptedFile(const QString &fileName, QObject *parent = nullptr) : QObject(parent) {
         QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-        QDir().mkpath(appDataPath);  // Ensure the directory exists
-        m_file = new QFile(appDataPath + "/" + fileName + ".enc");
-        Logger::log_static(appDataPath.toStdString() + "/" + fileName.toStdString() + ".enc");
+        QDir dir(appDataPath);
+        if (!dir.exists()) {
+            if (!dir.mkpath(appDataPath)) {
+                throw CreateEncryptedFileException(QObject::tr("Failed to create directory: %1").arg(appDataPath));
+            }
+        }
+        m_file = new QFile(appDataPath + QDir::separator() + fileName + ".enc");
+        Logger::log_static(m_file->fileName().toStdString());
         m_fileInfo = QFileInfo(*m_file);
         m_fileName = QFileInfo(fileName).baseName();
     }

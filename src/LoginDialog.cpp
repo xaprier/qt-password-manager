@@ -63,7 +63,6 @@ void LoginDialog::sl_accepted() {
         this->m_masterPassword = password;
         this->m_filePath = fullFilePath;
         this->setLogged(true);
-        QMessageBox::information(this, tr("Success"), tr("Login successful for file: %1").arg(selectedFile));
     } else {
         QMessageBox::warning(this, tr("Error"), tr("Invalid password. Please try again."));
     }

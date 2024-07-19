@@ -45,7 +45,7 @@ QString getQSS() {
 }
 
 int main(int argc, char *argv[]) {
-    Application app(argc, argv, "XPwm", "1.0.3", "xaprier", getQSS());
+    Application app(argc, argv, "XPwm", "1.0.4", "xaprier", getQSS());
 
     setAppLanguage(app);
     setAppIcon(app);

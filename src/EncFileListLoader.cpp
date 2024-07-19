@@ -10,21 +10,19 @@ EncFileListLoader::EncFileListLoader(QComboBox* comboBox) : comboBox(comboBox) {
 void EncFileListLoader::loadEncFiles() {
     // get appdata path
     QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    QFileInfo settingsFileInfo(appDataPath);
-    QDir settingsDir = settingsFileInfo.dir();
 
     // create path if not exists
-    QDir dir(settingsFileInfo.absolutePath());
+    QDir dir(appDataPath);
     if (!dir.exists()) {
-        if (!dir.mkpath(settingsFileInfo.absolutePath())) {
-            throw EncFileListLoaderException(QObject::tr("Failed to create directory: %1").arg(settingsFileInfo.absolutePath()));
+        if (!dir.mkpath(appDataPath)) {
+            throw EncFileListLoaderException(QObject::tr("Failed to create directory: %1").arg(appDataPath));
         }
     }
 
     // get files with .enc extension
     QStringList filters;
     filters << "*.enc";
-    QFileInfoList encFiles = settingsDir.entryInfoList(filters, QDir::Files);
+    QFileInfoList encFiles = dir.entryInfoList(filters, QDir::Files);
 
     // add file names to combobox
     for (const QFileInfo& fileInfo : encFiles) {

@@ -148,7 +148,7 @@
     </message>
     <message>
         <source>Success</source>
-        <translation>Başarılı</translation>
+        <translation type="vanished">Başarılı</translation>
     </message>
     <message>
         <source>Invalid password. Please try again.</source>
@@ -156,7 +156,7 @@
     </message>
     <message>
         <source>Login successful for file: %1</source>
-        <translation>%1 için giriş başarılı</translation>
+        <translation type="vanished">%1 için giriş başarılı</translation>
     </message>
     <message>
         <source>Export encrypted file/files</source>

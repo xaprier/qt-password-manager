@@ -18,18 +18,17 @@ CreateEncryptedFile::CreateEncryptedFile(const QString &fileName, const QString 
 
     // get appdata path
     QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    QFileInfo settingsFileInfo(appDataPath);
 
     // create path if not exists
-    QDir dir(settingsFileInfo.absolutePath());
+    QDir dir(appDataPath);
     if (!dir.exists()) {
-        if (!dir.mkpath(settingsFileInfo.absolutePath())) {
-            throw CreateEncryptedFileException(QObject::tr("Failed to create directory: %1").arg(settingsFileInfo.absolutePath()));
+        if (!dir.mkpath(appDataPath)) {
+            throw CreateEncryptedFileException(QObject::tr("Failed to create directory: %1").arg(appDataPath));
         }
     }
 
     // write encrypted into file
-    QFile file(settingsFileInfo.absolutePath() + QDir::separator() + fileName + ".enc");
+    QFile file(appDataPath + QDir::separator() + fileName + ".enc");
     if (file.open(QIODevice::WriteOnly)) {
         file.write(encrypted);
         file.close();

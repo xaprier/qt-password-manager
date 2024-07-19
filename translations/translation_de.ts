@@ -5,51 +5,51 @@
     <name>CreateDialog</name>
     <message>
         <location filename="../design/CreateDialog.ui" line="14"/>
-        <location filename="../build/XPwm_autogen/design/ui_CreateDialog.h" line="136"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="136"/>
         <source>Create</source>
         <translation>Erstellen</translation>
     </message>
     <message>
         <location filename="../design/CreateDialog.ui" line="26"/>
-        <location filename="../build/XPwm_autogen/design/ui_CreateDialog.h" line="137"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="137"/>
         <source>Current File Names</source>
         <translation>Aktuelle Dateinamen</translation>
     </message>
     <message>
         <location filename="../design/CreateDialog.ui" line="33"/>
-        <location filename="../build/XPwm_autogen/design/ui_CreateDialog.h" line="138"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="138"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
         <location filename="../design/CreateDialog.ui" line="40"/>
-        <location filename="../build/XPwm_autogen/design/ui_CreateDialog.h" line="139"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="139"/>
         <source>File Name</source>
         <translation>Dateiname</translation>
     </message>
     <message>
         <location filename="../design/CreateDialog.ui" line="47"/>
-        <location filename="../build/XPwm_autogen/design/ui_CreateDialog.h" line="140"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="140"/>
         <source>Master Password</source>
         <translation>Master-Passwort</translation>
     </message>
     <message>
         <location filename="../design/CreateDialog.ui" line="64"/>
-        <location filename="../build/XPwm_autogen/design/ui_CreateDialog.h" line="143"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="143"/>
         <source>Generate new password</source>
         <translation>Neues Passwort generieren</translation>
     </message>
     <message>
         <location filename="../design/CreateDialog.ui" line="67"/>
         <location filename="../design/CreateDialog.ui" line="97"/>
-        <location filename="../build/XPwm_autogen/design/ui_CreateDialog.h" line="145"/>
-        <location filename="../build/XPwm_autogen/design/ui_CreateDialog.h" line="149"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="145"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="149"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
         <location filename="../design/CreateDialog.ui" line="94"/>
-        <location filename="../build/XPwm_autogen/design/ui_CreateDialog.h" line="147"/>
+        <location filename="../build/xpwm_autogen/design/ui_CreateDialog.h" line="147"/>
         <source>Copy entered/generated password</source>
         <translation>Eingegebenes/generiertes Passwort kopieren</translation>
     </message>
@@ -140,19 +140,19 @@
     <name>LoginDialog</name>
     <message>
         <location filename="../design/LoginDialog.ui" line="20"/>
-        <location filename="../build/XPwm_autogen/design/ui_LoginDialog.h" line="117"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="117"/>
         <source>Login</source>
         <translation>Anmelden</translation>
     </message>
     <message>
         <location filename="../design/LoginDialog.ui" line="45"/>
-        <location filename="../build/XPwm_autogen/design/ui_LoginDialog.h" line="118"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="118"/>
         <source>Master Password</source>
         <translation>Master-Passwort</translation>
     </message>
     <message>
         <location filename="../design/LoginDialog.ui" line="52"/>
-        <location filename="../build/XPwm_autogen/design/ui_LoginDialog.h" line="120"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="120"/>
         <source>Export encrypted file/files</source>
         <translation>Verschlüsselte Datei/Dateien exportieren</translation>
     </message>
@@ -160,69 +160,67 @@
         <location filename="../design/LoginDialog.ui" line="55"/>
         <location filename="../design/LoginDialog.ui" line="76"/>
         <location filename="../design/LoginDialog.ui" line="90"/>
-        <location filename="../build/XPwm_autogen/design/ui_LoginDialog.h" line="122"/>
-        <location filename="../build/XPwm_autogen/design/ui_LoginDialog.h" line="127"/>
-        <location filename="../build/XPwm_autogen/design/ui_LoginDialog.h" line="131"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="122"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="127"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="131"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
         <location filename="../design/LoginDialog.ui" line="66"/>
-        <location filename="../build/XPwm_autogen/design/ui_LoginDialog.h" line="123"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="123"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
         <location filename="../design/LoginDialog.ui" line="73"/>
-        <location filename="../build/XPwm_autogen/design/ui_LoginDialog.h" line="125"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="125"/>
         <source>Create new encrypted file</source>
         <translation>Neue verschlüsselte Datei erstellen</translation>
     </message>
     <message>
         <location filename="../design/LoginDialog.ui" line="87"/>
-        <location filename="../build/XPwm_autogen/design/ui_LoginDialog.h" line="129"/>
+        <location filename="../build/xpwm_autogen/design/ui_LoginDialog.h" line="129"/>
         <source>Import new encrypted file/files</source>
         <translation>Neue verschlüsselte Datei/Dateien importieren</translation>
     </message>
     <message>
-        <location filename="../src/LoginDialog.cpp" line="22"/>
+        <location filename="../src/LoginDialog.cpp" line="16"/>
         <source>No encrypted database found</source>
         <translation>Keine verschlüsselte Datenbank gefunden</translation>
     </message>
     <message>
-        <location filename="../src/LoginDialog.cpp" line="22"/>
+        <location filename="../src/LoginDialog.cpp" line="16"/>
         <source>There is no encrypted databases. Do you want to create one</source>
         <translation>Es sind keine verschlüsselten Datenbanken vorhanden. Möchten Sie eine erstellen?</translation>
     </message>
     <message>
-        <location filename="../src/LoginDialog.cpp" line="52"/>
-        <location filename="../src/LoginDialog.cpp" line="60"/>
-        <location filename="../src/LoginDialog.cpp" line="74"/>
+        <location filename="../src/LoginDialog.cpp" line="46"/>
+        <location filename="../src/LoginDialog.cpp" line="54"/>
+        <location filename="../src/LoginDialog.cpp" line="67"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../src/LoginDialog.cpp" line="52"/>
+        <location filename="../src/LoginDialog.cpp" line="46"/>
         <source>No encrypted file selected. Please select an encrypted file.</source>
         <translation>Keine verschlüsselte Datei ausgewählt. Bitte wählen Sie eine verschlüsselte Datei aus.</translation>
     </message>
     <message>
-        <location filename="../src/LoginDialog.cpp" line="60"/>
+        <location filename="../src/LoginDialog.cpp" line="54"/>
         <source>Password cannot be empty. Please enter a password.</source>
         <translation>Das Passwort darf nicht leer sein. Bitte geben Sie ein Passwort ein.</translation>
     </message>
     <message>
-        <location filename="../src/LoginDialog.cpp" line="72"/>
         <source>Success</source>
-        <translation>Erfolg</translation>
+        <translation type="vanished">Erfolg</translation>
     </message>
     <message>
-        <location filename="../src/LoginDialog.cpp" line="72"/>
         <source>Login successful for file: %1</source>
-        <translation>Anmeldung erfolgreich für Datei: %1</translation>
+        <translation type="vanished">Anmeldung erfolgreich für Datei: %1</translation>
     </message>
     <message>
-        <location filename="../src/LoginDialog.cpp" line="74"/>
+        <location filename="../src/LoginDialog.cpp" line="67"/>
         <source>Invalid password. Please try again.</source>
         <translation>Ungültiges Passwort. Bitte versuchen Sie es erneut.</translation>
     </message>
@@ -231,97 +229,97 @@
     <name>MainWindow</name>
     <message>
         <location filename="../design/MainWindow.ui" line="14"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="203"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="203"/>
         <source>Password Manager</source>
         <translation>Passwort-Manager</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="25"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="207"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="207"/>
         <source>Platforms</source>
         <translation>Plattformen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="37"/>
         <location filename="../design/MainWindow.ui" line="165"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="208"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="224"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="208"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="224"/>
         <source>Manage</source>
         <translation>Verwalten</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="58"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="209"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="209"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="65"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="210"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="210"/>
         <source>Select Platform</source>
         <translation>Plattform auswählen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="79"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="211"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="211"/>
         <source>Password</source>
         <translation>Passwort</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="86"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="213"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="213"/>
         <source>Copy entered password</source>
         <translation>Eingegebenes Passwort kopieren</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="89"/>
         <location filename="../design/MainWindow.ui" line="103"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="215"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="219"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="215"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="219"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="100"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="217"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="217"/>
         <source>Generate new password</source>
         <translation>Neues Passwort generieren</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="116"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="220"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="220"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="125"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="221"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="221"/>
         <source>Create</source>
         <translation>Erstellen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="132"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="222"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="222"/>
         <source>Update</source>
         <translation>Aktualisieren</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="139"/>
         <location filename="../design/MainWindow.ui" line="187"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="206"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="223"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="206"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="223"/>
         <source>Delete</source>
         <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="177"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="204"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="204"/>
         <source>Change Master Password</source>
         <translation>Master-Passwort ändern</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="182"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="205"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="205"/>
         <source>Change Name</source>
         <translation>Name ändern</translation>
     </message>
@@ -329,154 +327,154 @@
 <context>
     <name>MainWindowConnections</name>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="45"/>
-        <location filename="../src/MainWindowConnections.cpp" line="65"/>
-        <location filename="../src/MainWindowConnections.cpp" line="89"/>
-        <location filename="../src/MainWindowConnections.cpp" line="99"/>
-        <location filename="../src/MainWindowConnections.cpp" line="132"/>
-        <location filename="../src/MainWindowConnections.cpp" line="159"/>
-        <location filename="../src/MainWindowConnections.cpp" line="166"/>
-        <location filename="../src/MainWindowConnections.cpp" line="186"/>
-        <location filename="../src/MainWindowConnections.cpp" line="220"/>
-        <location filename="../src/MainWindowConnections.cpp" line="225"/>
-        <location filename="../src/MainWindowConnections.cpp" line="231"/>
-        <location filename="../src/MainWindowConnections.cpp" line="237"/>
-        <location filename="../src/MainWindowConnections.cpp" line="242"/>
-        <location filename="../src/MainWindowConnections.cpp" line="267"/>
-        <location filename="../src/MainWindowConnections.cpp" line="272"/>
-        <location filename="../src/MainWindowConnections.cpp" line="277"/>
-        <location filename="../src/MainWindowConnections.cpp" line="283"/>
-        <location filename="../src/MainWindowConnections.cpp" line="306"/>
-        <location filename="../src/MainWindowConnections.cpp" line="312"/>
+        <location filename="../src/MainWindowConnections.cpp" line="37"/>
+        <location filename="../src/MainWindowConnections.cpp" line="57"/>
+        <location filename="../src/MainWindowConnections.cpp" line="81"/>
+        <location filename="../src/MainWindowConnections.cpp" line="91"/>
+        <location filename="../src/MainWindowConnections.cpp" line="124"/>
+        <location filename="../src/MainWindowConnections.cpp" line="151"/>
+        <location filename="../src/MainWindowConnections.cpp" line="158"/>
+        <location filename="../src/MainWindowConnections.cpp" line="178"/>
+        <location filename="../src/MainWindowConnections.cpp" line="212"/>
+        <location filename="../src/MainWindowConnections.cpp" line="217"/>
+        <location filename="../src/MainWindowConnections.cpp" line="223"/>
+        <location filename="../src/MainWindowConnections.cpp" line="229"/>
+        <location filename="../src/MainWindowConnections.cpp" line="234"/>
+        <location filename="../src/MainWindowConnections.cpp" line="259"/>
+        <location filename="../src/MainWindowConnections.cpp" line="264"/>
+        <location filename="../src/MainWindowConnections.cpp" line="269"/>
+        <location filename="../src/MainWindowConnections.cpp" line="275"/>
+        <location filename="../src/MainWindowConnections.cpp" line="298"/>
+        <location filename="../src/MainWindowConnections.cpp" line="304"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="45"/>
-        <location filename="../src/MainWindowConnections.cpp" line="159"/>
+        <location filename="../src/MainWindowConnections.cpp" line="37"/>
+        <location filename="../src/MainWindowConnections.cpp" line="151"/>
         <source>Please fill all fields</source>
         <translation>Bitte füllen Sie alle Felder aus</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="65"/>
-        <location filename="../src/MainWindowConnections.cpp" line="186"/>
+        <location filename="../src/MainWindowConnections.cpp" line="57"/>
+        <location filename="../src/MainWindowConnections.cpp" line="178"/>
         <source>There is another one with same name and same platform.
 Please edit it or create with using another inputs.</source>
         <translation>Es gibt bereits einen Eintrag mit gleichem Namen und Plattform.
 Bitte bearbeiten Sie ihn oder erstellen Sie einen neuen mit anderen Eingaben.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="89"/>
+        <location filename="../src/MainWindowConnections.cpp" line="81"/>
         <source>There is no selected platform to delete.</source>
         <translation>Es wurde keine Plattform zum Löschen ausgewählt.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="99"/>
-        <location filename="../src/MainWindowConnections.cpp" line="132"/>
-        <location filename="../src/MainWindowConnections.cpp" line="166"/>
+        <location filename="../src/MainWindowConnections.cpp" line="91"/>
+        <location filename="../src/MainWindowConnections.cpp" line="124"/>
+        <location filename="../src/MainWindowConnections.cpp" line="158"/>
         <source>Index error. There is no platform with that index.</source>
         <translation>Indexfehler. Es gibt keine Plattform mit diesem Index.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="103"/>
-        <location filename="../src/MainWindowConnections.cpp" line="190"/>
-        <location filename="../src/MainWindowConnections.cpp" line="246"/>
-        <location filename="../src/MainWindowConnections.cpp" line="287"/>
-        <location filename="../src/MainWindowConnections.cpp" line="316"/>
+        <location filename="../src/MainWindowConnections.cpp" line="95"/>
+        <location filename="../src/MainWindowConnections.cpp" line="182"/>
+        <location filename="../src/MainWindowConnections.cpp" line="238"/>
+        <location filename="../src/MainWindowConnections.cpp" line="279"/>
+        <location filename="../src/MainWindowConnections.cpp" line="308"/>
         <source>Confirm</source>
         <translation>Bestätigen</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="103"/>
+        <location filename="../src/MainWindowConnections.cpp" line="95"/>
         <source>Are you sure to delete?</source>
         <translation>Möchten Sie wirklich löschen?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="190"/>
+        <location filename="../src/MainWindowConnections.cpp" line="182"/>
         <source>Are you sure to update?</source>
         <translation>Möchten Sie wirklich aktualisieren?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="220"/>
+        <location filename="../src/MainWindowConnections.cpp" line="212"/>
         <source>Name cannot be empty.</source>
         <translation>Name darf nicht leer sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="225"/>
+        <location filename="../src/MainWindowConnections.cpp" line="217"/>
         <source>Name cannot be same as old.</source>
         <translation>Name darf nicht dem alten entsprechen.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="231"/>
+        <location filename="../src/MainWindowConnections.cpp" line="223"/>
         <source>Name must be unique. Please set unused name.</source>
         <translation>Name muss eindeutig sein. Bitte verwenden Sie einen nicht verwendeten Namen.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="237"/>
-        <location filename="../src/MainWindowConnections.cpp" line="272"/>
+        <location filename="../src/MainWindowConnections.cpp" line="229"/>
+        <location filename="../src/MainWindowConnections.cpp" line="264"/>
         <source>Current password cannot be empty.</source>
         <translation>Aktuelles Passwort darf nicht leer sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="242"/>
-        <location filename="../src/MainWindowConnections.cpp" line="283"/>
-        <location filename="../src/MainWindowConnections.cpp" line="312"/>
+        <location filename="../src/MainWindowConnections.cpp" line="234"/>
+        <location filename="../src/MainWindowConnections.cpp" line="275"/>
+        <location filename="../src/MainWindowConnections.cpp" line="304"/>
         <source>Current password is not correct.</source>
         <translation>Das aktuelle Passwort ist nicht korrekt.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="246"/>
+        <location filename="../src/MainWindowConnections.cpp" line="238"/>
         <source>Are you sure to update name?</source>
         <translation>Möchten Sie den Namen wirklich aktualisieren?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="251"/>
-        <location filename="../src/MainWindowConnections.cpp" line="291"/>
-        <location filename="../src/MainWindowConnections.cpp" line="323"/>
+        <location filename="../src/MainWindowConnections.cpp" line="243"/>
+        <location filename="../src/MainWindowConnections.cpp" line="283"/>
+        <location filename="../src/MainWindowConnections.cpp" line="315"/>
         <source>Success</source>
         <translation>Erfolg</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="251"/>
+        <location filename="../src/MainWindowConnections.cpp" line="243"/>
         <source>Name changed successfully.
 You should login again to continue</source>
         <translation>Name erfolgreich geändert.
 Bitte melden Sie sich erneut an, um fortzufahren</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="267"/>
+        <location filename="../src/MainWindowConnections.cpp" line="259"/>
         <source>New passwords must be equal and cannot be empty.</source>
         <translation>Die neuen Passwörter müssen gleich sein und dürfen nicht leer sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="277"/>
+        <location filename="../src/MainWindowConnections.cpp" line="269"/>
         <source>Current password and new password cannot be same.</source>
         <translation>Das aktuelle Passwort und das neue Passwort dürfen nicht identisch sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="287"/>
+        <location filename="../src/MainWindowConnections.cpp" line="279"/>
         <source>Are you sure to update master password?</source>
         <translation>Möchten Sie das Master-Passwort wirklich aktualisieren?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="291"/>
+        <location filename="../src/MainWindowConnections.cpp" line="283"/>
         <source>Master password changed successfully.
 You should login again to continue</source>
         <translation>Master-Passwort erfolgreich geändert.
 Bitte melden Sie sich erneut an, um fortzufahren</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="306"/>
+        <location filename="../src/MainWindowConnections.cpp" line="298"/>
         <source>Password cannot be empty.</source>
         <translation>Passwort darf nicht leer sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="316"/>
+        <location filename="../src/MainWindowConnections.cpp" line="308"/>
         <source>Are you sure to delete encrypted data?</source>
         <translation>Möchten Sie die verschlüsselten Daten wirklich löschen?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="323"/>
+        <location filename="../src/MainWindowConnections.cpp" line="315"/>
         <source>Encrypted data deleted successfully!
 You should login again to continue</source>
         <translation>Verschlüsselte Daten erfolgreich gelöscht!
@@ -487,25 +485,25 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <name>NameChangerDialog</name>
     <message>
         <location filename="../design/NameChangerDialog.ui" line="14"/>
-        <location filename="../build/XPwm_autogen/design/ui_NameChangerDialog.h" line="88"/>
+        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="88"/>
         <source>Change Name</source>
         <translation>Name ändern</translation>
     </message>
     <message>
         <location filename="../design/NameChangerDialog.ui" line="32"/>
-        <location filename="../build/XPwm_autogen/design/ui_NameChangerDialog.h" line="90"/>
+        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="90"/>
         <source>Current Password</source>
         <translation>Aktuelles Passwort</translation>
     </message>
     <message>
         <location filename="../design/NameChangerDialog.ui" line="39"/>
-        <location filename="../build/XPwm_autogen/design/ui_NameChangerDialog.h" line="91"/>
+        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="91"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
         <location filename="../design/NameChangerDialog.ui" line="61"/>
-        <location filename="../build/XPwm_autogen/design/ui_NameChangerDialog.h" line="92"/>
+        <location filename="../build/xpwm_autogen/design/ui_NameChangerDialog.h" line="92"/>
         <source>New Name</source>
         <translation>Neuer Name</translation>
     </message>
@@ -514,59 +512,59 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <name>PasswordChangerDialog</name>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="14"/>
-        <location filename="../build/XPwm_autogen/design/ui_PasswordChangerDialog.h" line="147"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="147"/>
         <source>Change Password</source>
         <translation>Passwort ändern</translation>
     </message>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="24"/>
-        <location filename="../build/XPwm_autogen/design/ui_PasswordChangerDialog.h" line="148"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="148"/>
         <source>Old Password</source>
         <translation>Altes Passwort</translation>
     </message>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="35"/>
-        <location filename="../build/XPwm_autogen/design/ui_PasswordChangerDialog.h" line="149"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="149"/>
         <source>Current Password</source>
         <translation>Aktuelles Passwort</translation>
     </message>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="42"/>
         <location filename="../design/PasswordChangerDialog.ui" line="84"/>
-        <location filename="../build/XPwm_autogen/design/ui_PasswordChangerDialog.h" line="150"/>
-        <location filename="../build/XPwm_autogen/design/ui_PasswordChangerDialog.h" line="154"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="150"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="154"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="54"/>
         <location filename="../design/PasswordChangerDialog.ui" line="65"/>
-        <location filename="../build/XPwm_autogen/design/ui_PasswordChangerDialog.h" line="151"/>
-        <location filename="../build/XPwm_autogen/design/ui_PasswordChangerDialog.h" line="152"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="151"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="152"/>
         <source>New Password</source>
         <translation>Neues Passwort</translation>
     </message>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="75"/>
-        <location filename="../build/XPwm_autogen/design/ui_PasswordChangerDialog.h" line="153"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="153"/>
         <source>New Password Again</source>
         <translation>Neues Passwort erneut eingeben</translation>
     </message>
     <message>
         <location filename="../design/PasswordChangerDialog.ui" line="91"/>
         <location filename="../design/PasswordChangerDialog.ui" line="102"/>
-        <location filename="../build/XPwm_autogen/design/ui_PasswordChangerDialog.h" line="155"/>
-        <location filename="../build/XPwm_autogen/design/ui_PasswordChangerDialog.h" line="156"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="155"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordChangerDialog.h" line="156"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../src/PasswordChangerDialog.cpp" line="59"/>
+        <location filename="../src/PasswordChangerDialog.cpp" line="53"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../src/PasswordChangerDialog.cpp" line="59"/>
+        <location filename="../src/PasswordChangerDialog.cpp" line="53"/>
         <source>Password are not same.</source>
         <translation>Passwörter stimmen nicht überein.</translation>
     </message>
@@ -575,19 +573,19 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <name>PasswordConfirmationDialog</name>
     <message>
         <location filename="../design/PasswordConfirmationDialog.ui" line="14"/>
-        <location filename="../build/XPwm_autogen/design/ui_PasswordConfirmationDialog.h" line="87"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordConfirmationDialog.h" line="87"/>
         <source>Dialog</source>
         <translation>Dialog</translation>
     </message>
     <message>
         <location filename="../design/PasswordConfirmationDialog.ui" line="42"/>
-        <location filename="../build/XPwm_autogen/design/ui_PasswordConfirmationDialog.h" line="88"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordConfirmationDialog.h" line="88"/>
         <source>Current Password</source>
         <translation>Aktuelles Passwort</translation>
     </message>
     <message>
         <location filename="../design/PasswordConfirmationDialog.ui" line="49"/>
-        <location filename="../build/XPwm_autogen/design/ui_PasswordConfirmationDialog.h" line="89"/>
+        <location filename="../build/xpwm_autogen/design/ui_PasswordConfirmationDialog.h" line="89"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
@@ -603,62 +601,64 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/CreateDialog.cpp" line="41"/>
-        <location filename="../src/CreateDialog.cpp" line="48"/>
+        <location filename="../src/CreateDialog.cpp" line="38"/>
+        <location filename="../src/CreateDialog.cpp" line="45"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../src/CreateDialog.cpp" line="41"/>
+        <location filename="../src/CreateDialog.cpp" line="38"/>
         <source>File name is not valid for encryption. Please select not exists and valid file name.</source>
         <translation>Dateiname ist nicht gültig für die Verschlüsselung. Bitte wählen Sie einen nicht vorhandenen und gültigen Dateinamen.</translation>
     </message>
     <message>
-        <location filename="../src/CreateDialog.cpp" line="48"/>
+        <location filename="../src/CreateDialog.cpp" line="45"/>
         <source>Password is not valid for encryption. Please select valid password.</source>
         <translation>Passwort ist nicht gültig für die Verschlüsselung. Bitte wählen Sie ein gültiges Passwort.</translation>
     </message>
     <message>
-        <location filename="../src/CreateDialog.cpp" line="59"/>
+        <location filename="../src/CreateDialog.cpp" line="56"/>
         <source>Exception Occured</source>
         <translation>Ausnahme aufgetreten</translation>
     </message>
     <message>
-        <location filename="../src/CreateEncryptedFile.cpp" line="29"/>
-        <location filename="../src/EncFileListLoader.cpp" line="20"/>
+        <location filename="../include/EncryptedFile.hpp" line="22"/>
+        <location filename="../include/EncryptedFiles.hpp" line="22"/>
+        <location filename="../src/CreateEncryptedFile.cpp" line="26"/>
+        <location filename="../src/EncFileListLoader.cpp" line="18"/>
         <source>Failed to create directory: %1</source>
         <translation>Verzeichnis konnte nicht erstellt werden: %1</translation>
     </message>
     <message>
-        <location filename="../src/CreateEncryptedFile.cpp" line="38"/>
+        <location filename="../src/CreateEncryptedFile.cpp" line="35"/>
         <source>Default JSON file created as encrypted successfully.</source>
         <translation>Standard JSON-Datei erfolgreich verschlüsselt erstellt.</translation>
     </message>
     <message>
-        <location filename="../src/CreateEncryptedFile.cpp" line="40"/>
+        <location filename="../src/CreateEncryptedFile.cpp" line="37"/>
         <source>File cannot open: %1</source>
         <translation>Datei konnte nicht geöffnet werden: %1</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="21"/>
+        <location filename="../src/main.cpp" line="17"/>
         <source>Loaded language Turkish</source>
         <translation>Türkische Sprache geladen</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="26"/>
+        <location filename="../src/main.cpp" line="22"/>
         <source>Loaded language German</source>
         <translation>Deutsche Sprache geladen</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="43"/>
+        <location filename="../src/main.cpp" line="39"/>
         <source>Style file cannot be opened</source>
         <translation>Die Style-Datei kann nicht geöffnet werden</translation>
     </message>
     <message>
-        <location filename="../lib/Cipher/main.cpp" line="12"/>
-        <location filename="../lib/Cipher/main.cpp" line="24"/>
-        <location filename="../lib/Cipher/main.cpp" line="67"/>
-        <location filename="../lib/Cipher/main.cpp" line="81"/>
+        <location filename="../lib/Cipher/main.cpp" line="11"/>
+        <location filename="../lib/Cipher/main.cpp" line="23"/>
+        <location filename="../lib/Cipher/main.cpp" line="66"/>
+        <location filename="../lib/Cipher/main.cpp" line="80"/>
         <location filename="../lib/Cipher/src/Cipher.cpp" line="293"/>
         <source>Cant open file: %1</source>
         <translation>Kann Datei nicht öffnen: %1</translation>
@@ -726,12 +726,12 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
         <translation>EVP_DecryptFinal_ex() Fehler: %1</translation>
     </message>
     <message>
-        <location filename="../lib/Cipher/src/RandomizedPassword.cpp" line="11"/>
+        <location filename="../lib/Cipher/src/RandomizedPassword.cpp" line="9"/>
         <source>No character sets selected.</source>
         <translation>Keine Zeichensätze ausgewählt.</translation>
     </message>
     <message>
-        <location filename="../lib/Cipher/src/RandomizedPassword.cpp" line="41"/>
+        <location filename="../lib/Cipher/src/RandomizedPassword.cpp" line="39"/>
         <source>Failed to generate random bytes.</source>
         <translation>Fehler beim Generieren von Zufallsbytes.</translation>
     </message>
@@ -827,61 +827,61 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <name>RandomizedPasswordDialog</name>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="14"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="187"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="187"/>
         <source>Create Password</source>
         <translation>Passwort erstellen</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="26"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="188"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="188"/>
         <source>Password Length</source>
         <translation>Passwortlänge</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="98"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="190"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="190"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="108"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="191"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="191"/>
         <source>Generate</source>
         <translation>Generieren</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="115"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="193"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="193"/>
         <source>Copy Password</source>
         <translation>Passwort kopieren</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="118"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="195"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="195"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="146"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="196"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="196"/>
         <source>Character Set</source>
         <translation>Zeichensatz</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="155"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="198"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="198"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Include lower case characters like;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;a b c d e f g h i j k l m&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;n o p q r s t u v w x y z&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kleinbuchstaben einbeziehen wie;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;a b c d e f g h i j k l m&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;n o p q r s t u v w x y z&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="158"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="200"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="200"/>
         <source>Lower Case</source>
         <translation>Kleinbuchstaben</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="168"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="202"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="202"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -905,13 +905,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="180"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="214"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="214"/>
         <source>Upper Case</source>
         <translation>Großbuchstaben</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="187"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="216"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="216"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -933,41 +933,41 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="198"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="226"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="226"/>
         <source>Special Characters</source>
         <translation>Sonderzeichen</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="205"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="228"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="228"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Include digits like;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;0 1 2 3 4 5 6 7 8 9&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zahlen wie;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;0 1 2 3 4 5 6 7 8 9&lt;/span&gt; einbeziehen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../design/RandomizedPasswordDialog.ui" line="208"/>
-        <location filename="../build/XPwm_autogen/design/ui_RandomizedPasswordDialog.h" line="230"/>
+        <location filename="../build/xpwm_autogen/design/ui_RandomizedPasswordDialog.h" line="230"/>
         <source>Digits</source>
         <translation>Zahlen</translation>
     </message>
     <message>
-        <location filename="../src/RandomizedPasswordDialog.cpp" line="45"/>
-        <location filename="../src/RandomizedPasswordDialog.cpp" line="63"/>
-        <location filename="../src/RandomizedPasswordDialog.cpp" line="83"/>
+        <location filename="../src/RandomizedPasswordDialog.cpp" line="40"/>
+        <location filename="../src/RandomizedPasswordDialog.cpp" line="58"/>
+        <location filename="../src/RandomizedPasswordDialog.cpp" line="78"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../src/RandomizedPasswordDialog.cpp" line="45"/>
+        <location filename="../src/RandomizedPasswordDialog.cpp" line="40"/>
         <source>You have to select at least 1 character set</source>
         <translation>Sie müssen mindestens einen Zeichensatz auswählen</translation>
     </message>
     <message>
-        <location filename="../src/RandomizedPasswordDialog.cpp" line="63"/>
+        <location filename="../src/RandomizedPasswordDialog.cpp" line="58"/>
         <source>Random password cannot be created</source>
         <translation>Zufälliges Passwort kann nicht erstellt werden</translation>
     </message>
     <message>
-        <location filename="../src/RandomizedPasswordDialog.cpp" line="83"/>
+        <location filename="../src/RandomizedPasswordDialog.cpp" line="78"/>
         <source>There must be at least 1 state.</source>
         <translation>Es muss mindestens ein Zustand vorhanden sein.</translation>
     </message>

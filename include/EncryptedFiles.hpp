@@ -16,16 +16,21 @@ class EncryptedFiles : public QObject {
   public:
     EncryptedFiles(QObject *parent = nullptr) : QObject(parent) {
         QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-        QDir().mkpath(appDataPath);  // Ensure the directory exists
-        QDir encryptedFilesPath(appDataPath);
+        QDir dir(appDataPath);
+        if (!dir.exists()) {
+            if (!dir.mkpath(appDataPath)) {
+                throw CreateEncryptedFileException(QObject::tr("Failed to create directory: %1").arg(appDataPath));
+            }
+        }
+
         Logger::log_static(appDataPath.toStdString());
 
         // Get all files with .enc extension
-        QStringList encFiles = encryptedFilesPath.entryList(QStringList() << "*.enc", QDir::Files);
+        QStringList encFiles = dir.entryList(QStringList() << "*.enc", QDir::Files);
 
         // Add each .enc file to the files list
         for (const QString &fileName : encFiles) {
-            QString filePath = encryptedFilesPath.absoluteFilePath(fileName);
+            QString filePath = dir.absoluteFilePath(fileName);
             auto *encFile = new EncryptedFile(QFileInfo(filePath).baseName());
             m_files.append(encFile);
         }

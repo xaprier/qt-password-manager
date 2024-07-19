@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(xpwm VERSION 1.0.3 LANGUAGES CXX)
+project(xpwm VERSION 1.0.4 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -58,6 +58,11 @@ foreach(QM_FILE ${QM_FILES})
     endif()
 endforeach()
 
+if(WIN32)
+    set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/res/icon.rc")
+    list(APPEND PROJECT_SOURCES ${app_icon_resource_windows})
+endif()
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(${PROJECT_NAME}
         MANUAL_FINALIZATION
@@ -94,12 +99,38 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-install(TARGETS ${PROJECT_NAME}
-    BUNDLE DESTINATION .
-    RUNTIME DESTINATION bin
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-)
+if(WIN32)
+    install(TARGETS ${PROJECT_NAME}
+        BUNDLE DESTINATION .
+        RUNTIME DESTINATION .
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
+else()
+    install(TARGETS ${PROJECT_NAME}
+        BUNDLE DESTINATION .
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    )
+endif()
+
+if(WIN32)
+    install(CODE "execute_process(
+        COMMAND powershell.exe -ExecutionPolicy Bypass -File \"${CMAKE_CURRENT_SOURCE_DIR}/move_required_libs_for_windows.ps1\"
+        WORKING_DIRECTORY \"${CMAKE_INSTALL_PREFIX}\"
+    )"
+    )
+endif()
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(${PROJECT_NAME})
+endif()
+
+if(WIN32)
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        $<TARGET_FILE:Cipher>
+        $<TARGET_FILE:JSONHandler>
+        $<TARGET_FILE:Logger>
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>
+    )
 endif()
