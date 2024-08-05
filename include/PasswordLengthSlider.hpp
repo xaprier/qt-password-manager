@@ -16,6 +16,11 @@ class PasswordLengthSlider : public QSlider {
 
   protected:
     void mousePressEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *ev) override;
+    void mouseMoveEvent(QMouseEvent *ev) override;
+
+  private:
+    bool m_Clicked = false;
 };
 
 #endif  // PASSWORDLENGTHSLIDER_HPP
