@@ -5,11 +5,11 @@
         <file>github.svg</file>
         <file>gitlab.svg</file>
         <file>google.svg</file>
-        <file>steam.svg</file>
         <file>instagram.svg</file>
         <file>linkedin.svg</file>
         <file>microsoft.svg</file>
         <file>reddit.svg</file>
+        <file>steam.svg</file>
         <file>other.svg</file>
     </qresource>
     <qresource prefix="/icons">

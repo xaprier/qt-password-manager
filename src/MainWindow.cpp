@@ -25,16 +25,16 @@ MainWindow::~MainWindow() {
 
 void MainWindow::initPlatforms() {
     this->m_platforms = {
-        new Google(),
+        new Discord(),
+        new Epic(),
         new GitHub(),
         new GitLab(),
-        new LinkedIn(),
+        new Google(),
         new Instagram(),
-        new Reddit(),
-        new Discord(),
+        new LinkedIn(),
         new Microsoft(),
+        new Reddit(),
         new Steam(),
-        new Epic(),
         new Other()};
 
     for (const Platform *platform : m_platforms) {
