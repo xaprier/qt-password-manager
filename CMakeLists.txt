@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(xpwm VERSION 1.0.4 LANGUAGES CXX)
+project(xpwm VERSION 1.0.6 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -110,14 +110,6 @@ else()
         BUNDLE DESTINATION .
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    )
-endif()
-
-if(WIN32)
-    install(CODE "execute_process(
-        COMMAND powershell.exe -ExecutionPolicy Bypass -File \"${CMAKE_CURRENT_SOURCE_DIR}/move_required_libs_for_windows.ps1\"
-        WORKING_DIRECTORY \"${CMAKE_INSTALL_PREFIX}\"
-    )"
     )
 endif()
 

@@ -91,3 +91,58 @@ jobs:
           asset_path: ./${{ env.NAME }}-${{ matrix.arch }}.AppImage
           asset_name: ${{ env.NAME }}-${{ matrix.arch }}.AppImage
           asset_content_type: application/octet-stream
+
+  build-windows:
+    needs: [release]
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        include:
+          - { sys: mingw64, env: x86_64 }
+    if: needs.release.outputs.release_created == 'true'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: MSYS2 Setup
+        uses: msys2/setup-msys2@v2
+        id: msys2
+        with:
+          msystem: ${{ matrix.sys }}
+          install: mingw-w64-${{ matrix.env }}-openssl mingw-w64-${{ matrix.env }}-glew mingw-w64-${{ matrix.env }}-mesa mingw-w64-${{ matrix.env }}-angleproject mingw-w64-${{ matrix.env }}-qt5-base mingw-w64-${{ matrix.env }}-qt5-tools mingw-w64-${{ matrix.env }}-cmake mingw-w64-${{ matrix.env }}-make mingw-w64-ucrt-${{ matrix.env }}-toolchain
+
+      - name: Update PowerShell PATH
+        run: |
+          $msys2Path = "${{ steps.msys2.outputs.msys2-location }}\\${{ matrix.sys }}\\bin;${{ steps.msys2.outputs.msys2-location }}\\usr\\bin"
+          [System.Environment]::SetEnvironmentVariable('PATH', "$env:PATH;$msys2Path", [System.EnvironmentVariableTarget]::User)
+        shell: pwsh
+
+      - name: Verify CMake Path
+        shell: pwsh
+        run: |
+          Get-Command cmake.exe
+          Get-Command make.exe
+
+      - name: Run deploy.ps1 script
+        shell: pwsh
+        run: |
+          .\deploy.ps1 ${{ steps.msys2.outputs.msys2-location }}\${{ matrix.sys }}\bin
+        env:
+          QT_VERSION: 5.15.2
+          NAME: XPwm
+          MSYSTEM: ${{ matrix.sys }}
+          CMAKE_PREFIX_PATH: ${{ steps.msys2.outputs.msys2-location }}\\${{ matrix.sys }}\\lib\\cmake\\Qt5
+          OPENSSL_ROOT_DIR: ${{ steps.msys2.outputs.msys2-location }}\\${{ matrix.sys }}
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.release.outputs.upload_url }}
+          asset_path: ./build/install/Output/${{ env.NAME }}-x64-installer.exe
+          asset_name: ${{ env.NAME }}-x64-installer.exe
+          asset_content_type: application/x-msdownload

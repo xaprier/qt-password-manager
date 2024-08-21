@@ -1,6 +1,8 @@
+param (
+    [string]$sourceFolder
+)
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$sourceFolder = "C:\msys64\mingw64\bin"
-$destinationFolder = "C:\Program Files (x86)\xpwm\"
+$destinationFolder = Join-Path -Path $scriptDir -ChildPath "build/install"
 $fileListPath = Join-Path -Path $scriptDir -ChildPath "required_libs_for_windows.txt"
 
 if (!(Test-Path $destinationFolder)) {
@@ -16,6 +18,11 @@ foreach ($file in $fileList) {
 }
 
 $exePath = Join-Path -Path $destinationFolder -ChildPath "xpwm.exe"
-Start-Process "windeployqt.exe" -ArgumentList "`"$exePath`" --no-compiler-runtime" -Wait
+& "$sourceFolder\windeployqt.exe" --no-compiler-runtime $exePath
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "Failed operation with windeployqt.exe"
+    exit $LASTEXITCODE
+}
 
 Write-Host "DLL files successfully moved and application deployed."
