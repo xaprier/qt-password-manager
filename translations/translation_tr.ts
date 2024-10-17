@@ -586,6 +586,14 @@ Please edit it or create with using another inputs.</source>
         <source>There are no encrypted files on or not exists: %1</source>
         <translation>Hiç şifrelenmiş dosya yok veya mevcut değil: %1</translation>
     </message>
+    <message>
+        <source>Data directory not exists: %1. Trying to create.</source>
+        <translation>Veri dizini mevcut değil: %1. Oluşturulması deneniyor.</translation>
+    </message>
+    <message>
+        <source>Data directory cannot be created: %1.</source>
+        <translation>Veri dizini oluşturulamadı: %1.</translation>
+    </message>
 </context>
 <context>
     <name>RandomizedPasswordDialog</name>

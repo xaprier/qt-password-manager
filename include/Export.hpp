@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QObject>
 #include <QStandardPaths>
+#include <QToolTip>
 
 #include "ExportDialog.hpp"
 #include "Logger.hpp"

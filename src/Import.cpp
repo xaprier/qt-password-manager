@@ -5,9 +5,12 @@ Import::Import(QObject *base) : QObject(base) {
 
     // check directory is exists or empty
     QDir directory(appDataPath);
-    if (directory.isEmpty() || !directory.exists()) {
-        Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("There are no encrypted files on or not exists: %1").arg(appDataPath).toStdString());
-        return;
+    if (!directory.exists()) {
+        Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Data directory not exists: %1. Trying to create.").arg(appDataPath).toStdString());
+        if (!directory.mkdir(appDataPath)) {
+            Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Data directory cannot be created: %1.").arg(appDataPath).toStdString());
+            return;
+        }
     }
 
     ImportDialog dialog;

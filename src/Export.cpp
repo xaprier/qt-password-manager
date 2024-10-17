@@ -1,12 +1,16 @@
 #include "Export.hpp"
 
+#include <qmessagebox.h>
+
 Export::Export(QObject *base) : QObject(base) {
     QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 
     // check directory is exists or empty
     QDir directory(appDataPath);
     if (directory.isEmpty() || !directory.exists()) {
-        Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("There are no encrypted files on or not exists: %1").arg(appDataPath).toStdString());
+        QString text = QObject::tr("There are no encrypted files on or not exists: %1").arg(appDataPath);
+        Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, text.toStdString());
+        QMessageBox::question(nullptr, "Export Error", text);
         return;
     }
 
