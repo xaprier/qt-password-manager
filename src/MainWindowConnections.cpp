@@ -4,6 +4,8 @@
 #include "NameChangerDialog.hpp"
 #include "PasswordChangerDialog.hpp"
 #include "PasswordConfirmationDialog.hpp"
+#include "Platform.hpp"
+#include "Platforms.hpp"
 #include "RandomizedPasswordDialog.hpp"
 
 void MainWindowConnections::sl_generateTBClicked(bool checked) {
@@ -25,15 +27,18 @@ void MainWindowConnections::sl_showPasswordCBStateChanged(int state) {
 
 void MainWindowConnections::sl_createPBClicked(bool checked) {
     const QString name = this->m_ui->nameLE->text();
+    const QString username = this->m_ui->usernameLE->text();
     const QString password = this->m_ui->passwordLE->text();
-    const QString platformName = this->m_ui->platformCombo->currentText();
 
     // make sure everything is filled
     bool isNameEmpty = name.isEmpty();
     bool isPasswordEmpty = password.isEmpty();
     bool isPlatformNotSelected = this->m_ui->platformCombo->currentIndex() == -1;
 
-    if (isNameEmpty || isPasswordEmpty || isPlatformNotSelected) {
+    Other otherData;
+    const QString platformName = isPlatformNotSelected ? otherData.name() : this->m_ui->platformCombo->currentText();
+
+    if (isNameEmpty || isPasswordEmpty) {
         QMessageBox::warning(this->m_base, tr("Error"), tr("Please fill all fields"));
         return;
     }
@@ -42,24 +47,25 @@ void MainWindowConnections::sl_createPBClicked(bool checked) {
     auto array = this->m_base->m_jsonHandler->platforms();
     bool samePlatform = false;
     bool sameName = false;
+    bool sameUsername = false;
     for (const auto &item : array) {
         if (item.isObject()) {
             auto object = item.toObject();
-            if (object["name"].toString() == name) sameName = true;
+            sameName = object["name"].toString() == name;
+            sameUsername = object["username"].toString() == username;
             auto platform = Platform::fromJson(object);
-            if (platform->name() == platformName) {
-                samePlatform = true;
-            }
+            samePlatform = platform->name() == platformName;
         }
     }
 
-    if (samePlatform && sameName) {
-        QMessageBox::warning(this->m_base, tr("Error"), tr("There is another one with same name and same platform.\nPlease edit it or create with using another inputs."));
+    if (samePlatform && sameName && sameUsername) {
+        QMessageBox::warning(this->m_base, tr("Error"), tr("There is another one with same name, username and same platform.\nPlease edit it or create with using another inputs."));
         return;
     }
 
     QJsonObject object;
     object["name"] = name;
+    object["username"] = username;
     object["platform"] = platformName;
     object["password"] = password;
 
@@ -114,6 +120,7 @@ void MainWindowConnections::sl_itemClickedLW(QListWidgetItem *item) {
 
     // clear fields
     this->m_ui->nameLE->clear();
+    this->m_ui->usernameLE->clear();
     this->m_ui->passwordLE->clear();
     this->m_ui->platformCombo->setCurrentIndex(-1);
     this->m_ui->showPasswordCB->setCheckState(Qt::Unchecked);
@@ -127,11 +134,13 @@ void MainWindowConnections::sl_itemClickedLW(QListWidgetItem *item) {
 
     auto object = array.at(index);
     QString name = object["name"].toString();
+    QString username = object["username"].toString();
     QString platformName = object["platform"].toString();
     QString password = object["password"].toString();
 
     // fill item information
     this->m_ui->nameLE->setText(name);
+    this->m_ui->usernameLE->setText(username);
     this->m_ui->passwordLE->setText(password);
     int firstIndex = this->m_ui->platformCombo->findText(platformName, Qt::MatchFixedString);
     this->m_ui->platformCombo->setCurrentIndex(firstIndex);
@@ -139,15 +148,18 @@ void MainWindowConnections::sl_itemClickedLW(QListWidgetItem *item) {
 
 void MainWindowConnections::sl_updatePBClicked(bool checked) {
     const QString name = this->m_ui->nameLE->text();
+    const QString username = this->m_ui->usernameLE->text();
     const QString password = this->m_ui->passwordLE->text();
-    const QString platformName = this->m_ui->platformCombo->currentText();
 
     // make sure everything is filled
     bool isNameEmpty = name.isEmpty();
     bool isPasswordEmpty = password.isEmpty();
     bool isPlatformNotSelected = this->m_ui->platformCombo->currentIndex() == -1;
 
-    if (isNameEmpty || isPasswordEmpty || isPlatformNotSelected) {
+    OtherData other;
+    const QString platformName = isPlatformNotSelected ? other.name() : this->m_ui->platformCombo->currentText();
+
+    if (isNameEmpty || isPasswordEmpty) {
         QMessageBox::warning(this->m_base, tr("Error"), tr("Please fill all fields"));
         return;
     }
@@ -162,19 +174,19 @@ void MainWindowConnections::sl_updatePBClicked(bool checked) {
     // check there is created one with same name and same platform
     bool samePlatform = false;
     bool sameName = false;
+    bool sameUsername = false;
     for (const auto &item : array) {
         if (item == array.at(index)) continue;
         if (item.isObject()) {
             auto object = item.toObject();
-            if (object["name"].toString() == name) sameName = true;
+            sameName = object["name"].toString() == name;
+            sameUsername = object["username"].toString() == username;
             auto platform = Platform::fromJson(object);
-            if (platform->name() == platformName) {
-                samePlatform = true;
-            }
+            samePlatform = platform->name() == platformName;
         }
     }
 
-    if (samePlatform && sameName) {
+    if (samePlatform && sameName && sameUsername) {
         QMessageBox::warning(this->m_base, tr("Error"), tr("There is another one with same name and same platform.\nPlease edit it or create with using another inputs."));
         return;
     }
@@ -184,6 +196,7 @@ void MainWindowConnections::sl_updatePBClicked(bool checked) {
 
     QJsonObject object = array.at(index).toObject();
     object["name"] = name;
+    object["username"] = username;
     object["platform"] = platformName;
     object["password"] = password;
 

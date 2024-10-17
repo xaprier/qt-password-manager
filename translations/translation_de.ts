@@ -229,97 +229,103 @@
     <name>MainWindow</name>
     <message>
         <location filename="../design/MainWindow.ui" line="14"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="203"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="209"/>
         <source>Password Manager</source>
         <translation>Passwort-Manager</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="25"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="207"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="213"/>
         <source>Platforms</source>
         <translation>Plattformen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="37"/>
-        <location filename="../design/MainWindow.ui" line="165"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="208"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="224"/>
+        <location filename="../design/MainWindow.ui" line="172"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="214"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="231"/>
         <source>Manage</source>
         <translation>Verwalten</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="58"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="209"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="215"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="65"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="210"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="216"/>
+        <source>Username</source>
+        <translation>Benutzernamen</translation>
+    </message>
+    <message>
+        <location filename="../design/MainWindow.ui" line="72"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="217"/>
         <source>Select Platform</source>
         <translation>Plattform auswählen</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="79"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="211"/>
+        <location filename="../design/MainWindow.ui" line="86"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="218"/>
         <source>Password</source>
         <translation>Passwort</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="86"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="213"/>
+        <location filename="../design/MainWindow.ui" line="93"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="220"/>
         <source>Copy entered password</source>
         <translation>Eingegebenes Passwort kopieren</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="89"/>
-        <location filename="../design/MainWindow.ui" line="103"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="215"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="219"/>
+        <location filename="../design/MainWindow.ui" line="96"/>
+        <location filename="../design/MainWindow.ui" line="110"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="222"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="226"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="100"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="217"/>
+        <location filename="../design/MainWindow.ui" line="107"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="224"/>
         <source>Generate new password</source>
         <translation>Neues Passwort generieren</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="116"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="220"/>
+        <location filename="../design/MainWindow.ui" line="123"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="227"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="125"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="221"/>
+        <location filename="../design/MainWindow.ui" line="132"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="228"/>
         <source>Create</source>
         <translation>Erstellen</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="132"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="222"/>
+        <location filename="../design/MainWindow.ui" line="139"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="229"/>
         <source>Update</source>
         <translation>Aktualisieren</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="139"/>
-        <location filename="../design/MainWindow.ui" line="187"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="206"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="223"/>
+        <location filename="../design/MainWindow.ui" line="146"/>
+        <location filename="../design/MainWindow.ui" line="194"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="212"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="230"/>
         <source>Delete</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="177"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="204"/>
+        <location filename="../design/MainWindow.ui" line="184"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="210"/>
         <source>Change Master Password</source>
         <translation>Master-Passwort ändern</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="182"/>
-        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="205"/>
+        <location filename="../design/MainWindow.ui" line="189"/>
+        <location filename="../build/xpwm_autogen/design/ui_MainWindow.h" line="211"/>
         <source>Change Name</source>
         <translation>Name ändern</translation>
     </message>
@@ -327,154 +333,159 @@
 <context>
     <name>MainWindowConnections</name>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="37"/>
-        <location filename="../src/MainWindowConnections.cpp" line="57"/>
-        <location filename="../src/MainWindowConnections.cpp" line="81"/>
-        <location filename="../src/MainWindowConnections.cpp" line="91"/>
-        <location filename="../src/MainWindowConnections.cpp" line="124"/>
-        <location filename="../src/MainWindowConnections.cpp" line="151"/>
-        <location filename="../src/MainWindowConnections.cpp" line="158"/>
-        <location filename="../src/MainWindowConnections.cpp" line="178"/>
-        <location filename="../src/MainWindowConnections.cpp" line="212"/>
-        <location filename="../src/MainWindowConnections.cpp" line="217"/>
-        <location filename="../src/MainWindowConnections.cpp" line="223"/>
-        <location filename="../src/MainWindowConnections.cpp" line="229"/>
-        <location filename="../src/MainWindowConnections.cpp" line="234"/>
-        <location filename="../src/MainWindowConnections.cpp" line="259"/>
-        <location filename="../src/MainWindowConnections.cpp" line="264"/>
-        <location filename="../src/MainWindowConnections.cpp" line="269"/>
-        <location filename="../src/MainWindowConnections.cpp" line="275"/>
-        <location filename="../src/MainWindowConnections.cpp" line="298"/>
-        <location filename="../src/MainWindowConnections.cpp" line="304"/>
+        <location filename="../src/MainWindowConnections.cpp" line="42"/>
+        <location filename="../src/MainWindowConnections.cpp" line="62"/>
+        <location filename="../src/MainWindowConnections.cpp" line="87"/>
+        <location filename="../src/MainWindowConnections.cpp" line="97"/>
+        <location filename="../src/MainWindowConnections.cpp" line="131"/>
+        <location filename="../src/MainWindowConnections.cpp" line="163"/>
+        <location filename="../src/MainWindowConnections.cpp" line="170"/>
+        <location filename="../src/MainWindowConnections.cpp" line="190"/>
+        <location filename="../src/MainWindowConnections.cpp" line="225"/>
+        <location filename="../src/MainWindowConnections.cpp" line="230"/>
+        <location filename="../src/MainWindowConnections.cpp" line="236"/>
+        <location filename="../src/MainWindowConnections.cpp" line="242"/>
+        <location filename="../src/MainWindowConnections.cpp" line="247"/>
+        <location filename="../src/MainWindowConnections.cpp" line="272"/>
+        <location filename="../src/MainWindowConnections.cpp" line="277"/>
+        <location filename="../src/MainWindowConnections.cpp" line="282"/>
+        <location filename="../src/MainWindowConnections.cpp" line="288"/>
+        <location filename="../src/MainWindowConnections.cpp" line="311"/>
+        <location filename="../src/MainWindowConnections.cpp" line="317"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="37"/>
-        <location filename="../src/MainWindowConnections.cpp" line="151"/>
+        <location filename="../src/MainWindowConnections.cpp" line="42"/>
+        <location filename="../src/MainWindowConnections.cpp" line="163"/>
         <source>Please fill all fields</source>
         <translation>Bitte füllen Sie alle Felder aus</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="57"/>
-        <location filename="../src/MainWindowConnections.cpp" line="178"/>
+        <location filename="../src/MainWindowConnections.cpp" line="190"/>
         <source>There is another one with same name and same platform.
 Please edit it or create with using another inputs.</source>
         <translation>Es gibt bereits einen Eintrag mit gleichem Namen und Plattform.
 Bitte bearbeiten Sie ihn oder erstellen Sie einen neuen mit anderen Eingaben.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="81"/>
+        <location filename="../src/MainWindowConnections.cpp" line="87"/>
         <source>There is no selected platform to delete.</source>
         <translation>Es wurde keine Plattform zum Löschen ausgewählt.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="91"/>
-        <location filename="../src/MainWindowConnections.cpp" line="124"/>
-        <location filename="../src/MainWindowConnections.cpp" line="158"/>
+        <location filename="../src/MainWindowConnections.cpp" line="62"/>
+        <source>There is another one with same name, username and same platform.
+Please edit it or create with using another inputs.</source>
+        <translation>Es gibt bereits einen weiteren mit demselben Namen, Benutzernamen und derselben Plattform. Bitte bearbeiten Sie ihn oder erstellen Sie ihn mit anderen Eingaben.</translation>
+    </message>
+    <message>
+        <location filename="../src/MainWindowConnections.cpp" line="97"/>
+        <location filename="../src/MainWindowConnections.cpp" line="131"/>
+        <location filename="../src/MainWindowConnections.cpp" line="170"/>
         <source>Index error. There is no platform with that index.</source>
         <translation>Indexfehler. Es gibt keine Plattform mit diesem Index.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="95"/>
-        <location filename="../src/MainWindowConnections.cpp" line="182"/>
-        <location filename="../src/MainWindowConnections.cpp" line="238"/>
-        <location filename="../src/MainWindowConnections.cpp" line="279"/>
-        <location filename="../src/MainWindowConnections.cpp" line="308"/>
+        <location filename="../src/MainWindowConnections.cpp" line="101"/>
+        <location filename="../src/MainWindowConnections.cpp" line="194"/>
+        <location filename="../src/MainWindowConnections.cpp" line="251"/>
+        <location filename="../src/MainWindowConnections.cpp" line="292"/>
+        <location filename="../src/MainWindowConnections.cpp" line="321"/>
         <source>Confirm</source>
         <translation>Bestätigen</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="95"/>
+        <location filename="../src/MainWindowConnections.cpp" line="101"/>
         <source>Are you sure to delete?</source>
         <translation>Möchten Sie wirklich löschen?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="182"/>
+        <location filename="../src/MainWindowConnections.cpp" line="194"/>
         <source>Are you sure to update?</source>
         <translation>Möchten Sie wirklich aktualisieren?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="212"/>
+        <location filename="../src/MainWindowConnections.cpp" line="225"/>
         <source>Name cannot be empty.</source>
         <translation>Name darf nicht leer sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="217"/>
+        <location filename="../src/MainWindowConnections.cpp" line="230"/>
         <source>Name cannot be same as old.</source>
         <translation>Name darf nicht dem alten entsprechen.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="223"/>
+        <location filename="../src/MainWindowConnections.cpp" line="236"/>
         <source>Name must be unique. Please set unused name.</source>
         <translation>Name muss eindeutig sein. Bitte verwenden Sie einen nicht verwendeten Namen.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="229"/>
-        <location filename="../src/MainWindowConnections.cpp" line="264"/>
+        <location filename="../src/MainWindowConnections.cpp" line="242"/>
+        <location filename="../src/MainWindowConnections.cpp" line="277"/>
         <source>Current password cannot be empty.</source>
         <translation>Aktuelles Passwort darf nicht leer sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="234"/>
-        <location filename="../src/MainWindowConnections.cpp" line="275"/>
-        <location filename="../src/MainWindowConnections.cpp" line="304"/>
+        <location filename="../src/MainWindowConnections.cpp" line="247"/>
+        <location filename="../src/MainWindowConnections.cpp" line="288"/>
+        <location filename="../src/MainWindowConnections.cpp" line="317"/>
         <source>Current password is not correct.</source>
         <translation>Das aktuelle Passwort ist nicht korrekt.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="238"/>
+        <location filename="../src/MainWindowConnections.cpp" line="251"/>
         <source>Are you sure to update name?</source>
         <translation>Möchten Sie den Namen wirklich aktualisieren?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="243"/>
-        <location filename="../src/MainWindowConnections.cpp" line="283"/>
-        <location filename="../src/MainWindowConnections.cpp" line="315"/>
+        <location filename="../src/MainWindowConnections.cpp" line="256"/>
+        <location filename="../src/MainWindowConnections.cpp" line="296"/>
+        <location filename="../src/MainWindowConnections.cpp" line="328"/>
         <source>Success</source>
         <translation>Erfolg</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="243"/>
+        <location filename="../src/MainWindowConnections.cpp" line="256"/>
         <source>Name changed successfully.
 You should login again to continue</source>
         <translation>Name erfolgreich geändert.
 Bitte melden Sie sich erneut an, um fortzufahren</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="259"/>
+        <location filename="../src/MainWindowConnections.cpp" line="272"/>
         <source>New passwords must be equal and cannot be empty.</source>
         <translation>Die neuen Passwörter müssen gleich sein und dürfen nicht leer sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="269"/>
+        <location filename="../src/MainWindowConnections.cpp" line="282"/>
         <source>Current password and new password cannot be same.</source>
         <translation>Das aktuelle Passwort und das neue Passwort dürfen nicht identisch sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="279"/>
+        <location filename="../src/MainWindowConnections.cpp" line="292"/>
         <source>Are you sure to update master password?</source>
         <translation>Möchten Sie das Master-Passwort wirklich aktualisieren?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="283"/>
+        <location filename="../src/MainWindowConnections.cpp" line="296"/>
         <source>Master password changed successfully.
 You should login again to continue</source>
         <translation>Master-Passwort erfolgreich geändert.
 Bitte melden Sie sich erneut an, um fortzufahren</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="298"/>
+        <location filename="../src/MainWindowConnections.cpp" line="311"/>
         <source>Password cannot be empty.</source>
         <translation>Passwort darf nicht leer sein.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="308"/>
+        <location filename="../src/MainWindowConnections.cpp" line="321"/>
         <source>Are you sure to delete encrypted data?</source>
         <translation>Möchten Sie die verschlüsselten Daten wirklich löschen?</translation>
     </message>
     <message>
-        <location filename="../src/MainWindowConnections.cpp" line="315"/>
+        <location filename="../src/MainWindowConnections.cpp" line="328"/>
         <source>Encrypted data deleted successfully!
 You should login again to continue</source>
         <translation>Verschlüsselte Daten erfolgreich gelöscht!

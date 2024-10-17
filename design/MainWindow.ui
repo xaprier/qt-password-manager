@@ -60,6 +60,13 @@
           </widget>
          </item>
          <item>
+          <widget class="QLineEdit" name="usernameLE">
+           <property name="placeholderText">
+            <string>Username</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QComboBox" name="platformCombo">
            <property name="placeholderText">
             <string>Select Platform</string>

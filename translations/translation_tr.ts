@@ -233,6 +233,10 @@
         <source>Generate new password</source>
         <translation>Yeni şifre oluştur</translation>
     </message>
+    <message>
+        <source>Username</source>
+        <translation>Kullanıcı Adı</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowConnections</name>
@@ -333,6 +337,11 @@ Devam etmek için tekrar giriş yapmak gerek.</translation>
         <source>Encrypted data deleted successfully!
 You should login again to continue</source>
         <translation>Şifreli veri başarıyla silindi. Devam etmek için tekrar giriş yapman gerekecek.</translation>
+    </message>
+    <message>
+        <source>There is another one with same name, username and same platform.
+Please edit it or create with using another inputs.</source>
+        <translation>Aynı isim, kullanıcı adı ve platforma sahip bir tane var. Lütfen farklı değerler girerek düzenleyin veya oluşturun.</translation>
     </message>
 </context>
 <context>
