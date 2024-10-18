@@ -594,6 +594,10 @@ Please edit it or create with using another inputs.</source>
         <source>Data directory cannot be created: %1.</source>
         <translation>Veri dizini oluşturulamadı: %1.</translation>
     </message>
+    <message>
+        <source>Export Error</source>
+        <translation>Dışarı Aktarma Hatası</translation>
+    </message>
 </context>
 <context>
     <name>RandomizedPasswordDialog</name>

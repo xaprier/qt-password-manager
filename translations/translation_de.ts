@@ -57,19 +57,19 @@
 <context>
     <name>Export</name>
     <message>
-        <location filename="../src/Export.cpp" line="34"/>
+        <location filename="../src/Export.cpp" line="32"/>
         <source>Source file does not exist: %1</source>
         <translation>Quelldatei existiert nicht: %1</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="34"/>
-        <location filename="../src/Export.cpp" line="41"/>
-        <location filename="../src/Export.cpp" line="50"/>
+        <location filename="../src/Export.cpp" line="32"/>
+        <location filename="../src/Export.cpp" line="39"/>
+        <location filename="../src/Export.cpp" line="48"/>
         <source>Copy Error</source>
         <translation>Kopierfehler</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="41"/>
+        <location filename="../src/Export.cpp" line="39"/>
         <source>Destination file already exists: %1</source>
         <translation>Zieldatei existiert bereits: %1</translation>
     </message>
@@ -78,7 +78,7 @@
         <translation type="vanished">Kopiert: %1 nach %2</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="50"/>
+        <location filename="../src/Export.cpp" line="48"/>
         <source>Failed to copy file &apos;%1&apos; to &apos;%2&apos;</source>
         <translation>Fehler beim Kopieren der Datei &apos;%1&apos; nach &apos;%2&apos;</translation>
     </message>
@@ -804,30 +804,35 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
         <translation>Ungültiges JSON-Format. Erforderlicher Bereich nicht gefunden.</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="11"/>
+        <location filename="../src/Export.cpp" line="9"/>
         <source>There are no encrypted files on or not exists: %1</source>
         <translation>Es gibt keine verschlüsselten Dateien oder sie existieren nicht: %1</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="33"/>
+        <location filename="../src/Export.cpp" line="11"/>
+        <source>Export Error</source>
+        <translation>Exportfehler</translation>
+    </message>
+    <message>
+        <location filename="../src/Export.cpp" line="31"/>
         <location filename="../src/Import.cpp" line="26"/>
         <source>Source file does not exist: %1</source>
         <translation>Quelldatei existiert nicht: %1</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="40"/>
+        <location filename="../src/Export.cpp" line="38"/>
         <location filename="../src/Import.cpp" line="33"/>
         <source>Destination file already exists: %1</source>
         <translation>Zieldatei existiert bereits: %1</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="47"/>
+        <location filename="../src/Export.cpp" line="45"/>
         <location filename="../src/Import.cpp" line="40"/>
         <source>Copied &apos;%1&apos; to &apos;%2&apos;</source>
         <translation>&apos;%1&apos; nach &apos;%2&apos; kopiert</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="49"/>
+        <location filename="../src/Export.cpp" line="47"/>
         <location filename="../src/Import.cpp" line="42"/>
         <source>Failed to copy file &apos;%1&apos; to &apos;%2&apos;</source>
         <translation>Fehler beim Kopieren der Datei &apos;%1&apos; nach &apos;%2&apos;</translation>
