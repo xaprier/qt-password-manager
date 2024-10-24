@@ -2,6 +2,9 @@
 #define APPLICATION_HPP
 
 #include <QApplication>
+#include <QIcon>
+
+#include "Logger.hpp"
 
 class Application : public QApplication {
   public:
@@ -12,7 +15,11 @@ class Application : public QApplication {
     void setOrganizationName(const QString &name);
     void setStyleSheet(const QString &sheet);
 
+    static QTranslator translator;
+
   private:
+    void setAppLanguage();
+    void setAppIcon();
     QString applicationName;
     QString applicationVersion;
     QString organizationName;

@@ -3,37 +3,9 @@
 
 #include "Application.hpp"
 #include "Defines.hpp"
-#include "Logger.hpp"
 #include "LoginDialog.hpp"
 #include "MainWindow.hpp"
 #include "Migration.hpp"
-
-QTranslator translator;
-
-void setAppLanguage(QApplication &app) {
-    /** Localization */
-    QLocale locale = QLocale::system();
-    switch (locale.language()) {
-        case QLocale::Turkish:
-            if (translator.load(":/translations/translation_tr.qm")) {
-                Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Loaded language Turkish").toStdString());
-            }
-            break;
-        case QLocale::German:
-            if (translator.load(":/translations/translation_de.qm")) {
-                Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Loaded language German").toStdString());
-            }
-            break;
-        case QLocale::English:
-            break;
-            // no need to install translator for application wrote in English
-    }
-    app.installTranslator(&translator);
-}
-
-void setAppIcon(QApplication &app) {
-    app.setWindowIcon(QIcon(":/icons/xpwm.png"));
-}
 
 QString getQSS() {
     QFile styleFile(":/qss/style.qss");
@@ -49,9 +21,6 @@ QString getQSS() {
 int main(int argc, char *argv[]) {
     Application app(argc, argv, APPNAME, APPVERSION, ORGNAME, getQSS());
     Migration organizationNameMigration;
-
-    setAppLanguage(app);
-    setAppIcon(app);
 
     while (true) {
         LoginDialog login;
