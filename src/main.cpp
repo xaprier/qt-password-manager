@@ -2,9 +2,11 @@
 #include <QTranslator>
 
 #include "Application.hpp"
+#include "Defines.hpp"
 #include "Logger.hpp"
 #include "LoginDialog.hpp"
 #include "MainWindow.hpp"
+#include "Migration.hpp"
 
 QTranslator translator;
 
@@ -45,7 +47,8 @@ QString getQSS() {
 }
 
 int main(int argc, char *argv[]) {
-    Application app(argc, argv, "XPwm", "1.0.6", "xaprier", getQSS());
+    Application app(argc, argv, APPNAME, APPVERSION, ORGNAME, getQSS());
+    Migration organizationNameMigration;
 
     setAppLanguage(app);
     setAppIcon(app);
