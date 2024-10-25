@@ -5,7 +5,8 @@
 #include "Defines.hpp"
 #include "LoginDialog.hpp"
 #include "MainWindow.hpp"
-#include "Migration.hpp"
+#include "OrganizationNameMigration.hpp"
+#include "singleton.hpp"
 
 QString getQSS() {
     QFile styleFile(":/qss/style.qss");
@@ -20,13 +21,13 @@ QString getQSS() {
 
 int main(int argc, char *argv[]) {
     Application app(argc, argv, APPNAME, APPVERSION, ORGNAME, getQSS());
-    Migration organizationNameMigration;
+    OrganizationNameMigration migration;
 
     while (true) {
         LoginDialog login;
         int result = login.exec();
         if (result == QDialog::Accepted && login.isLogged()) {
-            MainWindow window(login);
+            auto &window = Singleton<MainWindow>::Instance(login);
             window.show();
             app.exec();
         } else if (result == QDialog::Rejected)
