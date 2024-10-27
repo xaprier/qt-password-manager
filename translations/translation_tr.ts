@@ -107,6 +107,22 @@
         <source>Encrypted files</source>
         <translation>Şifreli Dosyalar</translation>
     </message>
+    <message>
+        <source>Select Data Directory to import</source>
+        <translation>İçeri aktarılacak veri dizinini seçin</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hata</translation>
+    </message>
+    <message>
+        <source>Invalid file type. Please select encrypted files ends with .enc</source>
+        <translation>Geçersiz dosya türü. Lütfen .enc uzantısına sahip şifreli dosya seçiniz.</translation>
+    </message>
+    <message>
+        <source>No encrypted file selected. Please select an encrypted file.</source>
+        <translation>Şifrelenmiş veritabanı seçilmedi. Lütfen şifrelenmiş bir dosyayı seçin.</translation>
+    </message>
 </context>
 <context>
     <name>LoginDialog</name>
@@ -169,6 +185,10 @@
     <message>
         <source>Import new encrypted file/files</source>
         <translation>Yeni şifrelenmiş dosya/dosyaları içeri aktar</translation>
+    </message>
+    <message>
+        <source>Add/Update/Delete Data Directories to search Encrypted Files</source>
+        <translation>Şifreli dosyaların aranacağı veri dizinlerini Ekle/Güncelle/Sil</translation>
     </message>
 </context>
 <context>
@@ -597,6 +617,70 @@ Please edit it or create with using another inputs.</source>
     <message>
         <source>Export Error</source>
         <translation>Dışarı Aktarma Hatası</translation>
+    </message>
+    <message>
+        <source>Invalid or not exists path: %1</source>
+        <translation>Geçersiz veya mevcut olmayan dizin: %1</translation>
+    </message>
+    <message>
+        <source>Add Directory</source>
+        <translation>Dizin Ekle</translation>
+    </message>
+    <message>
+        <source>Update Directory</source>
+        <translation>Dizin Güncelle</translation>
+    </message>
+    <message>
+        <source>Delete Directory</source>
+        <translation>Dizin Sil</translation>
+    </message>
+    <message>
+        <source>Select Directory</source>
+        <translation>Dizin Seçiniz</translation>
+    </message>
+    <message>
+        <source>Do you want to add this directory:
+%1</source>
+        <translation>%1 dizinini eklemek istediğinize emin misiniz?</translation>
+    </message>
+    <message>
+        <source>No Selection</source>
+        <translation>Seçim Yapılmadı</translation>
+    </message>
+    <message>
+        <source>No items selected, please select an item first.</source>
+        <translation>Öğe seçilmedi, lütfen önce bir öğe seçiniz.</translation>
+    </message>
+    <message>
+        <source>Do you want to update the directory?&lt;br&gt;&lt;b&gt;New: %1&lt;/b&gt;&lt;br&gt;&lt;b&gt;Old: %2&lt;/b&gt;</source>
+        <translation>Dizini güncellemek istediğinize emin misiniz?&lt;br&gt;&lt;b&gt;Yeni: %1&lt;/b&gt;&lt;br&gt;&lt;b&gt;Eski: %2&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Do you want to delete directory:
+%1</source>
+        <translation>%1 dizinini silmek istediğinize emin misiniz?</translation>
+    </message>
+    <message>
+        <source>Add/Update/Delete Data Directories to search Encrypted Files</source>
+        <translation>Şifreli dosyaların aranacağı veri dizinlerini Ekle/Güncelle/Sil</translation>
+    </message>
+    <message>
+        <source>Old organization data found at: %1</source>
+        <translation>Eski organizasyon verisi bulundu: %1</translation>
+    </message>
+    <message>
+        <source>Old Organization</source>
+        <translation>Eski Organizasyon</translation>
+    </message>
+    <message>
+        <source>There is old organization data in your AppData location.
+</source>
+        <comment>Do you want the copy the encrypted files to new one and delete old directory?</comment>
+        <translation>AppData dizininizde eski organizasyon verisi bulundu.</translation>
+    </message>
+    <message>
+        <source>Encrypted files copied to: %1 and old directory removed.</source>
+        <translation>Şifreli dosyalar %1 dizinine kopyalandı ve eski dizin silindi.</translation>
     </message>
 </context>
 <context>

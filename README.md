@@ -1,27 +1,27 @@
 <h1 align="center">
-  🚀 qt-password-manager
+  🚀 XPwm
 </h1>
 
 <p align="center">
-  <a href="https://github.com/xaprier/qt-password-manager/blob/main/LICENSE" target="blank">
-    <img src="https://img.shields.io/github/license/xaprier/qt-password-manager" alt="license" />
+  <a href="https://github.com/xaprier/XPwm/blob/main/LICENSE" target="blank">
+    <img src="https://img.shields.io/github/license/xaprier/XPwm" alt="license" />
   </a>
 </p>
 
-<b>qt-password-manager</b> is a password manager to keep your passwords in local as encrypted with a master password using OpenSSL AES-256
+<b>XPwm</b> is a password manager to keep your passwords in local as encrypted with a master password using OpenSSL AES-256 and Qt.
 
 ### 🛠️ Build Instructions for Linux/UNIX
 
 Clone the repository to your directory
 
 ```sh
-git clone --recursive https://github.com/xaprier/qt-password-manager.git
+git clone --recursive https://github.com/xaprier/XPwm.git
 ```
 
 Enter the directory of the source code
 
 ```sh
-cd qt-password-manager/
+cd XPwm/
 ```
 
 Build the makefile with CMake, if you don't have cmake you have to install it.
@@ -50,13 +50,13 @@ There is an install script named `install.sh` that can be used for Arch-based an
 Clone the repository to your directory
 
 ```sh
-git clone --recursive https://github.com/xaprier/qt-password-manager.git
+git clone --recursive https://github.com/xaprier/XPwm.git
 ```
 
 Enter the directory of the source code
 
 ```sh
-cd qt-password-manager/
+cd XPwm/
 ```
 
 Execute bash script
