@@ -11,9 +11,9 @@ MainWindow::MainWindow(const LoginDialog &dialog, QWidget *parent) : QMainWindow
                                                                      m_connections(new MainWindowConnections(this, m_ui)) {
     m_jsonHandler = std::make_unique<JSONHandler>(dialog.m_filePath, dialog.m_masterPassword);
     m_ui->setupUi(this);
-    this->initPlatforms();
-    this->initConnections();
-    this->loadPlatforms();
+    this->_InitPlatforms();
+    this->_InitConnections();
+    this->_LoadPlatforms();
 }
 
 MainWindow::~MainWindow() {
@@ -21,7 +21,7 @@ MainWindow::~MainWindow() {
     qDeleteAll(this->m_platforms);
 }
 
-void MainWindow::initPlatforms() {
+void MainWindow::_InitPlatforms() {
     this->m_platforms = {
         new Discord(),
         new Epic(),
@@ -36,34 +36,34 @@ void MainWindow::initPlatforms() {
         new Other()};
 
     for (const Platform *platform : m_platforms) {
-        this->m_ui->platformCombo->addItem(platform->icon(), platform->name());
+        this->m_ui->platformCombo->addItem(platform->Icon(), platform->Name());
     }
 }
 
-void MainWindow::initConnections() {
-    connect(this->m_ui->copyTB, &QToolButton::clicked, this->m_connections, &MainWindowConnections::sl_copyClicked);
-    connect(this->m_ui->generateTB, &QToolButton::clicked, this->m_connections, &MainWindowConnections::sl_generateTBClicked);
-    connect(this->m_ui->showPasswordCB, &QCheckBox::stateChanged, this->m_connections, &MainWindowConnections::sl_showPasswordCBStateChanged);
-    connect(this->m_ui->createPB, &QPushButton::clicked, this->m_connections, &MainWindowConnections::sl_createPBClicked);
-    connect(this->m_ui->deletePB, &QPushButton::clicked, this->m_connections, &MainWindowConnections::sl_deletePBClicked);
-    connect(this->m_ui->updatePB, &QPushButton::clicked, this->m_connections, &MainWindowConnections::sl_updatePBClicked);
-    connect(this->m_ui->platformsLW, &QListWidget::itemClicked, this->m_connections, &MainWindowConnections::sl_itemClickedLW);
-    connect(this->m_ui->actionChange_Name, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_actionChangeNameTriggered);
-    connect(this->m_ui->actionChange_Master_Password, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_actionChangeMasterPasswordTriggered);
-    connect(this->m_ui->actionDelete, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_actionDeleteTriggered);
+void MainWindow::_InitConnections() {
+    connect(this->m_ui->copyTB, &QToolButton::clicked, this->m_connections, &MainWindowConnections::sl_CopyClicked);
+    connect(this->m_ui->generateTB, &QToolButton::clicked, this->m_connections, &MainWindowConnections::sl_GenerateTBClicked);
+    connect(this->m_ui->showPasswordCB, &QCheckBox::stateChanged, this->m_connections, &MainWindowConnections::sl_ShowPasswordCBStateChanged);
+    connect(this->m_ui->createPB, &QPushButton::clicked, this->m_connections, &MainWindowConnections::sl_CreatePBClicked);
+    connect(this->m_ui->deletePB, &QPushButton::clicked, this->m_connections, &MainWindowConnections::sl_DeletePBClicked);
+    connect(this->m_ui->updatePB, &QPushButton::clicked, this->m_connections, &MainWindowConnections::sl_UpdatePBClicked);
+    connect(this->m_ui->platformsLW, &QListWidget::itemClicked, this->m_connections, &MainWindowConnections::sl_ItemClickedLW);
+    connect(this->m_ui->actionChange_Name, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_ActionChangeNameTriggered);
+    connect(this->m_ui->actionChange_Master_Password, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_ActionChangeMasterPasswordTriggered);
+    connect(this->m_ui->actionDelete, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_ActionDeleteTriggered);
 }
 
-void MainWindow::loadPlatforms() {
+void MainWindow::_LoadPlatforms() {
     this->m_ui->platformsLW->clear();
     auto array = m_jsonHandler->platforms();
     for (const auto &item : array) {
         if (item.isObject()) {
             auto object = item.toObject();
             auto name = object["name"].toString();
-            auto platform = Platform::fromJson(object);
+            auto platform = Platform::FromJson(object);
             // add platform to QListWidget
             if (platform) {
-                auto *listItem = new QListWidgetItem(platform->icon(), name);
+                auto *listItem = new QListWidgetItem(platform->Icon(), name);
                 this->m_ui->platformsLW->addItem(listItem);
             }
         }

@@ -9,10 +9,10 @@ class Auth : public QObject {
     Q_OBJECT
   public:
     explicit Auth(const QString &file, const QString &masterPassword, QObject *parent = nullptr);
-    inline const bool isAuthorized() { return m_isAuthorized; }
+    inline const bool IsAuthorized() { return m_isAuthorized; }
 
   private:
-    const bool isValidJson(const QByteArray &json);
+    const bool _IsValidJson(const QByteArray &json);
 
   private:
     bool m_isAuthorized = false;

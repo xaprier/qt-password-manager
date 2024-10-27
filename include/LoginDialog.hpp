@@ -19,22 +19,22 @@ class LoginDialog : public QDialog {
     explicit LoginDialog(QWidget* parent = nullptr);
     ~LoginDialog();
 
-    const bool isLogged() { return m_logged; }
+    const bool IsLogged() { return m_logged; }
 
     friend class MainWindow;
 
   private slots:
-    void sl_accepted();
-    void sl_rejected();
-    void sl_newClicked(bool checked);
-    void sl_checkBoxChanged(int state);
-    void sl_importClicked(bool checked);
-    void sl_exportClicked(bool checked);
-    void sl_updateClicked(bool checked);
+    void sl_Accepted();
+    void sl_Rejected();
+    void sl_NewClicked(bool checked);
+    void sl_CheckBoxChanged(int state);
+    void sl_ImportClicked(bool checked);
+    void sl_ExportClicked(bool checked);
+    void sl_UpdateClicked(bool checked);
 
   private:
-    bool verifyPassword(const QString& file, const QString& password);
-    inline void setLogged(bool logged) { this->m_logged = logged; }
+    bool _verifyPassword(const QString& file, const QString& password);
+    inline void _setLogged(bool logged) { this->m_logged = logged; }
 
   private:
     QString m_filePath;

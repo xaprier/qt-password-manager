@@ -1,6 +1,6 @@
 #include "OrganizationNameMigration.hpp"
 
-void OrganizationNameMigration::migrate() {
+void OrganizationNameMigration::Migrate() {
     // Path to old organization directory
     QString oldOrganizationPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/xaprier";
 

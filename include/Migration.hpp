@@ -5,7 +5,7 @@
 
 class Migration {
   public:
-    virtual void migrate() = 0;
+    virtual void Migrate() = 0;
 };
 
 #endif  // MIGRATIONOLDDATATONEW_HPP

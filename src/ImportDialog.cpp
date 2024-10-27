@@ -10,18 +10,18 @@
 #include "DataDirHandlerDialog.hpp"
 #include "DataDirs.hpp"
 
-ImportDialog::ImportDialog(QWidget *parent) : QFileDialog(parent), m_Label(new QLabel(this)), m_DataDirSelectionBox(new QComboBox(this)), m_StartDataDirHandlerDialogButton(new QToolButton(this)) {
+ImportDialog::ImportDialog(QWidget *parent) : QFileDialog(parent), m_label(new QLabel(this)), m_dataDirSelectionBox(new QComboBox(this)), m_execDataDirHandlerDialogButton(new QToolButton(this)) {
     // enable multiple file selection
     this->setFileMode(QFileDialog::ExistingFiles);
 
     // filter with .enc files
     this->setNameFilter(tr("Encrypted files") + " (*.enc)");
 
-    m_Label->setText(tr("Select Data Directory to import"));
-    this->UpdateDataDirSelectionList();
+    m_label->setText(tr("Select Data Directory to import"));
+    this->_UpdateDataDirSelectionList();
 
-    m_StartDataDirHandlerDialogButton->setIcon(QIcon(":/icons/update.svg"));
-    m_StartDataDirHandlerDialogButton->setToolTip(QObject::tr("Add/Update/Delete Data Directories to search Encrypted Files"));
+    m_execDataDirHandlerDialogButton->setIcon(QIcon(":/icons/update.svg"));
+    m_execDataDirHandlerDialogButton->setToolTip(QObject::tr("Add/Update/Delete Data Directories to search Encrypted Files"));
 
     // update current layout
     QList<QPair<QLayoutItem *, QList<int>>> moved_items;
@@ -39,9 +39,9 @@ ImportDialog::ImportDialog(QWidget *parent) : QFileDialog(parent), m_Label(new Q
 
     // Insert the horizontal layout into the file dialog's layout
     if (layout) {
-        layout->addWidget(m_Label, 0, 0);
-        layout->addWidget(m_DataDirSelectionBox, 0, 1);
-        layout->addWidget(m_StartDataDirHandlerDialogButton, 0, 2);
+        layout->addWidget(m_label, 0, 0);
+        layout->addWidget(m_dataDirSelectionBox, 0, 1);
+        layout->addWidget(m_execDataDirHandlerDialogButton, 0, 2);
     }
 
     for (int i = 0; i < moved_items.count(); i++) {
@@ -52,24 +52,24 @@ ImportDialog::ImportDialog(QWidget *parent) : QFileDialog(parent), m_Label(new Q
                         moved_items[i].second[3]);
     }
 
-    connect(this, &QFileDialog::filesSelected, this, &ImportDialog::OnFilesSelected);
-    connect(this->m_StartDataDirHandlerDialogButton, &QToolButton::clicked, this, &ImportDialog::OnToolButtonClicked);
+    connect(this, &QFileDialog::filesSelected, this, &ImportDialog::sl_OnFilesSelected);
+    connect(this->m_execDataDirHandlerDialogButton, &QToolButton::clicked, this, &ImportDialog::sl_OnToolButtonClicked);
     connect(this, &QDialog::accepted, this, &ImportDialog::sl_Accepted);
 }
 
 QStringList ImportDialog::GetSelectedFiles() const {
-    return m_SelectedFiles;
+    return m_selectedFiles;
 }
 
 QString ImportDialog::GetSelectedDataDirectory() const {
-    return this->m_DataDirSelectionBox->currentText();
+    return this->m_dataDirSelectionBox->currentText();
 }
 
-void ImportDialog::OnFilesSelected(const QStringList &files) {
-    m_SelectedFiles.clear();
+void ImportDialog::sl_OnFilesSelected(const QStringList &files) {
+    m_selectedFiles.clear();
     for (const QString &file : files) {
         if (file.endsWith(".enc", Qt::CaseInsensitive)) {
-            m_SelectedFiles.append(QDir::toNativeSeparators(file));
+            m_selectedFiles.append(QDir::toNativeSeparators(file));
         } else {
             QMessageBox::warning(this, tr("Error"), tr("Invalid file type. Please select encrypted files ends with .enc"));
             return;
@@ -77,23 +77,23 @@ void ImportDialog::OnFilesSelected(const QStringList &files) {
     }
 }
 
-void ImportDialog::UpdateDataDirSelectionList() {
+void ImportDialog::_UpdateDataDirSelectionList() {
     auto &dataDirs = Singleton<DataDirs>::Instance();
-    m_DataDirSelectionBox->clear();
-    m_DataDirSelectionBox->addItem("");
+    m_dataDirSelectionBox->clear();
+    m_dataDirSelectionBox->addItem("");
     for (const auto &dataDir : dataDirs.GetDataDirs()) {
-        m_DataDirSelectionBox->addItem(dataDir.GetPath());
+        m_dataDirSelectionBox->addItem(dataDir.GetPath());
     }
 }
 
-void ImportDialog::OnToolButtonClicked(bool clicked) {
+void ImportDialog::sl_OnToolButtonClicked(bool clicked) {
     DataDirHandlerDialog dialog;
     dialog.exec();
-    this->UpdateDataDirSelectionList();
+    this->_UpdateDataDirSelectionList();
 }
 
 void ImportDialog::sl_Accepted() {
-    if (this->m_SelectedFiles.empty()) {
+    if (this->m_selectedFiles.empty()) {
         QMessageBox::warning(this, tr("Error"), tr("No encrypted file selected. Please select an encrypted file."));
         return;
     }

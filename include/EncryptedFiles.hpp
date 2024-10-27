@@ -43,17 +43,17 @@ class EncryptedFiles : public QObject {
 
     [[nodiscard]] const bool contains(const QString &fileName) const {
         for (const EncryptedFile *file : m_files) {
-            if (file->fileName() == fileName) {
+            if (file->FileName() == fileName) {
                 return true;
             }
         }
         return false;
     }
 
-    bool deleteFile(const QString &fileName) {
+    bool DeleteFile(const QString &fileName) {
         for (const EncryptedFile *file : m_files) {
-            if (file->fileName() == fileName) {
-                file->file()->moveToTrash();
+            if (file->FileName() == fileName) {
+                file->File()->moveToTrash();
                 return true;
             }
         }

@@ -17,30 +17,30 @@ LoginDialog::LoginDialog(QWidget* parent) : QDialog(parent),
         auto msgBox = QMessageBox(QMessageBox::Icon::Warning, tr("No encrypted database found"), tr("There is no encrypted databases. Do you want to create one"), QMessageBox::StandardButton::Yes | QMessageBox::StandardButton::No);
         if (msgBox.exec() == QMessageBox::StandardButton::Yes) {
             CreateDialog d;
-            while (!d.isCreated()) {
+            while (!d.IsCreated()) {
                 if (d.exec() == QDialog::Rejected) break;
             }
 
-            if (d.isCreated()) {  // if there is a created one, update combobox again
+            if (d.IsCreated()) {  // if there is a created one, update combobox again
                 EncFileListLoader loader(this->m_ui->encryptedFiles);
             }
         }
     }
 
-    connect(this, &QDialog::accepted, this, &LoginDialog::sl_accepted);
-    connect(this, &QDialog::rejected, this, &LoginDialog::sl_rejected);
-    connect(this->m_ui->newButton, &QToolButton::clicked, this, &LoginDialog::sl_newClicked);
-    connect(this->m_ui->showPasswordCheck, &QCheckBox::stateChanged, this, &LoginDialog::sl_checkBoxChanged);
-    connect(this->m_ui->importButton, &QToolButton::clicked, this, &LoginDialog::sl_importClicked);
-    connect(this->m_ui->exportButton, &QToolButton::clicked, this, &LoginDialog::sl_exportClicked);
-    connect(this->m_ui->updateDataDirButton, &QToolButton::clicked, this, &LoginDialog::sl_updateClicked);
+    connect(this, &QDialog::accepted, this, &LoginDialog::sl_Accepted);
+    connect(this, &QDialog::rejected, this, &LoginDialog::sl_Rejected);
+    connect(this->m_ui->newButton, &QToolButton::clicked, this, &LoginDialog::sl_NewClicked);
+    connect(this->m_ui->showPasswordCheck, &QCheckBox::stateChanged, this, &LoginDialog::sl_CheckBoxChanged);
+    connect(this->m_ui->importButton, &QToolButton::clicked, this, &LoginDialog::sl_ImportClicked);
+    connect(this->m_ui->exportButton, &QToolButton::clicked, this, &LoginDialog::sl_ExportClicked);
+    connect(this->m_ui->updateDataDirButton, &QToolButton::clicked, this, &LoginDialog::sl_UpdateClicked);
 }
 
 LoginDialog::~LoginDialog() {
     delete m_ui;
 }
 
-void LoginDialog::sl_accepted() {
+void LoginDialog::sl_Accepted() {
     // check the count of combobox
     auto combobox = this->m_ui->encryptedFiles;
 
@@ -59,36 +59,36 @@ void LoginDialog::sl_accepted() {
 
     QStandardItemModel* model = qobject_cast<QStandardItemModel*>(combobox->model());
     QString selectedFile = model->item(combobox->currentIndex())->toolTip();
-    if (verifyPassword(selectedFile, password)) {
+    if (_verifyPassword(selectedFile, password)) {
         this->m_masterPassword = password;
         this->m_filePath = selectedFile;
-        this->setLogged(true);
+        this->_setLogged(true);
     } else {
         QMessageBox::warning(this, tr("Error"), tr("Invalid password. Please try again."));
     }
 }
 
-void LoginDialog::sl_rejected() {
+bool LoginDialog::_verifyPassword(const QString& filePath, const QString& password) {
+    Auth authorizer(filePath, password);
+    return authorizer.IsAuthorized();
+}
+
+void LoginDialog::sl_Rejected() {
     QApplication::quit();
 }
 
-bool LoginDialog::verifyPassword(const QString& filePath, const QString& password) {
-    Auth authorizer(filePath, password);
-    return authorizer.isAuthorized();
-}
-
-void LoginDialog::sl_newClicked(bool checked) {
+void LoginDialog::sl_NewClicked(bool checked) {
     CreateDialog d;
-    while (!d.isCreated()) {
+    while (!d.IsCreated()) {
         if (d.exec() == QDialog::Rejected) break;
     }
 
-    if (d.isCreated()) {  // if there is a created one, update combobox again
+    if (d.IsCreated()) {  // if there is a created one, update combobox again
         EncFileListLoader loader(this->m_ui->encryptedFiles);
     }
 }
 
-void LoginDialog::sl_checkBoxChanged(int state) {
+void LoginDialog::sl_CheckBoxChanged(int state) {
     if (state == Qt::Checked) {
         this->m_ui->passwordLE->setEchoMode(QLineEdit::Normal);
     } else {
@@ -96,16 +96,16 @@ void LoginDialog::sl_checkBoxChanged(int state) {
     }
 }
 
-void LoginDialog::sl_importClicked(bool checked) {
+void LoginDialog::sl_ImportClicked(bool checked) {
     Import import;
     EncFileListLoader loader(this->m_ui->encryptedFiles);  // load encrypted files again
 }
 
-void LoginDialog::sl_exportClicked(bool checked) {
+void LoginDialog::sl_ExportClicked(bool checked) {
     Export exp;
 }
 
-void LoginDialog::sl_updateClicked(bool checked) {
+void LoginDialog::sl_UpdateClicked(bool checked) {
     DataDirHandlerDialog dialog;
     dialog.exec();
     EncFileListLoader loader(this->m_ui->encryptedFiles);

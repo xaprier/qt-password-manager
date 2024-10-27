@@ -15,10 +15,10 @@ class PasswordConfirmationDialog : public QDialog {
   public:
     explicit PasswordConfirmationDialog(QWidget *parent = nullptr);
     ~PasswordConfirmationDialog() override;
-    [[nodiscard]] const QString getCurrentPassword() const { return this->m_ui->passwordLE->text(); }
+    [[nodiscard]] const QString GetCurrentPassword() const { return this->m_ui->passwordLE->text(); }
 
   private slots:
-    void sl_showPasswordStateChanged(int state);
+    void sl_ShowPasswordStateChanged(int state);
 
   private:
     Ui::PasswordConfirmationDialog *m_ui;

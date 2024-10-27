@@ -9,10 +9,6 @@
 #include <QToolButton>
 #include <QtGlobal>
 
-/**
- * todo: handle selection of datadir to import path
- * inspect ExportDialog
- */
 // todo: make it singleton
 class ImportDialog : public QFileDialog {
     Q_OBJECT
@@ -24,18 +20,18 @@ class ImportDialog : public QFileDialog {
     [[nodiscard]] QString GetSelectedDataDirectory() const;
 
   private slots:
-    void OnFilesSelected(const QStringList &files);
-    void OnToolButtonClicked(bool clicked);
+    void sl_OnFilesSelected(const QStringList &files);
+    void sl_OnToolButtonClicked(bool clicked);
     void sl_Accepted();
 
   private:
-    void UpdateDataDirSelectionList();
+    void _UpdateDataDirSelectionList();
 
   private:
-    QStringList m_SelectedFiles;
-    QLabel *m_Label;
-    QComboBox *m_DataDirSelectionBox;
-    QToolButton *m_StartDataDirHandlerDialogButton;
+    QStringList m_selectedFiles;
+    QLabel *m_label;
+    QComboBox *m_dataDirSelectionBox;
+    QToolButton *m_execDataDirHandlerDialogButton;
 };
 
 #endif  // IMPORTDIALOG_HPP

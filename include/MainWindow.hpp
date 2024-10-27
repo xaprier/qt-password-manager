@@ -23,9 +23,9 @@ class MainWindow : public QMainWindow {
     friend class MainWindowConnections;  //* allow m_ui reach
 
   private:
-    void initPlatforms();
-    void initConnections();
-    void loadPlatforms();
+    void _InitPlatforms();
+    void _InitConnections();
+    void _LoadPlatforms();
 
   private:
     std::unique_ptr<JSONHandler> m_jsonHandler;

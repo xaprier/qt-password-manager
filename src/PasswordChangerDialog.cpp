@@ -5,17 +5,17 @@
 PasswordChangerDialog::PasswordChangerDialog(QWidget *parent) : QDialog(parent),
                                                                 m_ui(new Ui::PasswordChangerDialog) {
     m_ui->setupUi(this);
-    connect(this->m_ui->showPasswordCB, &QCheckBox::stateChanged, this, &PasswordChangerDialog::sl_showPasswordCheckStateChanged);
-    connect(this->m_ui->showNewPasswordCB, &QCheckBox::stateChanged, this, &PasswordChangerDialog::sl_showPasswordCheckStateChanged);
-    connect(this->m_ui->generatePasswordTB, &QToolButton::clicked, this, &PasswordChangerDialog::sl_generatePasswordTBClicked);
-    connect(this->m_ui->copyTB, &QToolButton::clicked, this, &PasswordChangerDialog::sl_copyClicked);
+    connect(this->m_ui->showPasswordCB, &QCheckBox::stateChanged, this, &PasswordChangerDialog::sl_ShowPasswordCheckStateChanged);
+    connect(this->m_ui->showNewPasswordCB, &QCheckBox::stateChanged, this, &PasswordChangerDialog::sl_ShowPasswordCheckStateChanged);
+    connect(this->m_ui->generatePasswordTB, &QToolButton::clicked, this, &PasswordChangerDialog::sl_GeneratePasswordTBClicked);
+    connect(this->m_ui->copyTB, &QToolButton::clicked, this, &PasswordChangerDialog::sl_CopyClicked);
 }
 
 PasswordChangerDialog::~PasswordChangerDialog() {
     delete m_ui;
 }
 
-void PasswordChangerDialog::sl_showPasswordCheckStateChanged(int state) {
+void PasswordChangerDialog::sl_ShowPasswordCheckStateChanged(int state) {
     // get sender
     auto *sender = qobject_cast<QCheckBox *>(QObject::sender());
     if (sender == this->m_ui->showNewPasswordCB) {
@@ -35,17 +35,17 @@ void PasswordChangerDialog::sl_showPasswordCheckStateChanged(int state) {
     }
 }
 
-void PasswordChangerDialog::sl_generatePasswordTBClicked(bool checked) {
+void PasswordChangerDialog::sl_GeneratePasswordTBClicked(bool checked) {
     RandomizedPasswordDialog dialog;
     dialog.exec();
-    auto createdPassword = dialog.getGeneratedPassword();
+    auto createdPassword = dialog.GetGeneratedPassword();
     if (!createdPassword.isEmpty() && !createdPassword.isNull()) {
         this->m_ui->newPasswordLE1->setText(createdPassword);
         this->m_ui->newPasswordLE2->setText(createdPassword);
     }
 }
 
-void PasswordChangerDialog::sl_copyClicked(bool checked) {
+void PasswordChangerDialog::sl_CopyClicked(bool checked) {
     QString text1 = this->m_ui->newPasswordLE1->text(),
             text2 = this->m_ui->newPasswordLE2->text();
 

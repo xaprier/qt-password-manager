@@ -14,23 +14,23 @@ class MultiSelectionBox : public QComboBox {
     MultiSelectionBox(QWidget *parent = nullptr);
     ~MultiSelectionBox() override;
 
-    void addItem(const QString &text);
+    void AddItem(const QString &text);
 
-    [[nodiscard]] QStringList selectedItems() const;
+    [[nodiscard]] QStringList SelectedItems() const;
 
   protected:
     void showPopup() override {
         // Set the menu's width to match the line edit's width
-        menu->setMinimumWidth(lineEdit()->width());
+        m_menu->setMinimumWidth(lineEdit()->width());
         QPoint pos = mapToGlobal(QPoint(0, height()));
-        menu->exec(pos);
+        m_menu->exec(pos);
     }
 
   private slots:
-    void updateText();
+    void sl_UpdateText();
 
   private:
-    MultiSelectionMenu *menu;
+    MultiSelectionMenu *m_menu;
 };
 
 #endif  // MULTISELECTIONBOX_HPP

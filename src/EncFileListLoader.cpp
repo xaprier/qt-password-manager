@@ -7,12 +7,12 @@
 #include "EncFileListLoaderException.hpp"
 #include "singleton.hpp"
 
-EncFileListLoader::EncFileListLoader(QComboBox* comboBox) : comboBox(comboBox) {
+EncFileListLoader::EncFileListLoader(QComboBox* comboBox) : m_comboBox(comboBox) {
     comboBox->clear();
-    this->loadEncFiles();
+    this->LoadEncFiles();
 }
 
-void EncFileListLoader::loadEncFiles() {
+void EncFileListLoader::LoadEncFiles() {
     // get appdata path
     QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 
@@ -37,14 +37,14 @@ void EncFileListLoader::loadEncFiles() {
 
     // add file names to combobox
     QSet<QString> uniqueFilePaths;
-    QStandardItemModel* model = qobject_cast<QStandardItemModel*>(comboBox->model());
+    QStandardItemModel* model = qobject_cast<QStandardItemModel*>(m_comboBox->model());
 
     for (std::size_t i = 0; i < encFiles.count(); i++) {
         QString fileName = encFiles.at(i).fileName().mid(0, encFiles.at(i).fileName().length() - 4);
         QString absoluteFilePath = encFiles.at(i).absoluteFilePath();
 
         // name in box
-        comboBox->addItem(fileName);
+        m_comboBox->addItem(fileName);
 
         // filter repeating absolutefilepaths
         if (!uniqueFilePaths.contains(absoluteFilePath)) {

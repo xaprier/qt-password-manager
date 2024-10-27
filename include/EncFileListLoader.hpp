@@ -10,10 +10,10 @@
 class EncFileListLoader {
   public:
     EncFileListLoader(QComboBox* comboBox);
-    void loadEncFiles();
+    void LoadEncFiles();
 
   private:
-    QComboBox* comboBox;
+    QComboBox* m_comboBox;
 };
 
 #endif  // ENCFILELISTLOADER_HPP

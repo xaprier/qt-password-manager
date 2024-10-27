@@ -6,38 +6,38 @@ QTranslator Application::translator = QTranslator();
 
 Application::Application(int &argc, char **argv, const QString &appName, const QString &appVersion, const QString &appOrg, const QString &appStyle)
     : QApplication(argc, argv) {
-    this->setApplicationName(appName);
-    this->setApplicationVersion(appVersion);
-    this->setOrganizationName(appOrg);
-    this->setStyleSheet(appStyle);
-    this->setAppIcon();
-    this->setAppLanguage();
+    this->SetApplicationName(appName);
+    this->SetApplicationVersion(appVersion);
+    this->SetOrganizationName(appOrg);
+    this->SetStyleSheet(appStyle);
+    this->_SetAppIcon();
+    this->_SetAppLanguage();
 }
 
 Application::~Application() {
 }
 
-void Application::setApplicationName(const QString &name) {
-    applicationName = name;
+void Application::SetApplicationName(const QString &name) {
+    m_applicationName = name;
     QApplication::setApplicationName(name);
 }
 
-void Application::setApplicationVersion(const QString &version) {
-    applicationVersion = version;
+void Application::SetApplicationVersion(const QString &version) {
+    m_applicationVersion = version;
     QApplication::setApplicationVersion(version);
 }
 
-void Application::setOrganizationName(const QString &name) {
-    organizationName = name;
+void Application::SetOrganizationName(const QString &name) {
+    m_organizationName = name;
     QApplication::setOrganizationName(name);
 }
 
-void Application::setStyleSheet(const QString &sheet) {
-    styleSheet = sheet;
+void Application::SetStyleSheet(const QString &sheet) {
+    m_styleSheet = sheet;
     QApplication::setStyleSheet(sheet);
 }
 
-void Application::setAppLanguage() {
+void Application::_SetAppLanguage() {
     /** Localization */
     QLocale locale = QLocale::system();
     switch (locale.language()) {
@@ -58,6 +58,6 @@ void Application::setAppLanguage() {
     installTranslator(&translator);
 }
 
-void Application::setAppIcon() {
+void Application::_SetAppIcon() {
     setWindowIcon(QIcon(":/icons/xpwm.png"));
 }

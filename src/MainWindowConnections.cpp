@@ -8,16 +8,16 @@
 #include "Platforms.hpp"
 #include "RandomizedPasswordDialog.hpp"
 
-void MainWindowConnections::sl_generateTBClicked(bool checked) {
+void MainWindowConnections::sl_GenerateTBClicked(bool checked) {
     RandomizedPasswordDialog dialog;
     dialog.exec();
-    auto createdPassword = dialog.getGeneratedPassword();
+    auto createdPassword = dialog.GetGeneratedPassword();
     if (!createdPassword.isEmpty() && !createdPassword.isNull()) {
         this->m_ui->passwordLE->setText(createdPassword);
     }
 }
 
-void MainWindowConnections::sl_showPasswordCBStateChanged(int state) {
+void MainWindowConnections::sl_ShowPasswordCBStateChanged(int state) {
     if (state == Qt::Checked) {
         this->m_ui->passwordLE->setEchoMode(QLineEdit::Normal);
     } else {
@@ -25,7 +25,7 @@ void MainWindowConnections::sl_showPasswordCBStateChanged(int state) {
     }
 }
 
-void MainWindowConnections::sl_createPBClicked(bool checked) {
+void MainWindowConnections::sl_CreatePBClicked(bool checked) {
     const QString name = this->m_ui->nameLE->text();
     const QString username = this->m_ui->usernameLE->text();
     const QString password = this->m_ui->passwordLE->text();
@@ -36,7 +36,7 @@ void MainWindowConnections::sl_createPBClicked(bool checked) {
     bool isPlatformNotSelected = this->m_ui->platformCombo->currentIndex() == -1;
 
     Other otherData;
-    const QString platformName = isPlatformNotSelected ? otherData.name() : this->m_ui->platformCombo->currentText();
+    const QString platformName = isPlatformNotSelected ? otherData.Name() : this->m_ui->platformCombo->currentText();
 
     if (isNameEmpty || isPasswordEmpty) {
         QMessageBox::warning(this->m_base, tr("Error"), tr("Please fill all fields"));
@@ -53,8 +53,8 @@ void MainWindowConnections::sl_createPBClicked(bool checked) {
             auto object = item.toObject();
             sameName = object["name"].toString() == name;
             sameUsername = object["username"].toString() == username;
-            auto platform = Platform::fromJson(object);
-            samePlatform = platform->name() == platformName;
+            auto platform = Platform::FromJson(object);
+            samePlatform = platform->Name() == platformName;
         }
     }
 
@@ -75,13 +75,13 @@ void MainWindowConnections::sl_createPBClicked(bool checked) {
     this->m_base->m_jsonHandler->setPlatforms(array);
 
     // load platforms again
-    this->m_base->loadPlatforms();
+    this->m_base->_LoadPlatforms();
 
     // remove selection
     this->m_ui->platformsLW->clearSelection();
 }
 
-void MainWindowConnections::sl_deletePBClicked(bool checked) {
+void MainWindowConnections::sl_DeletePBClicked(bool checked) {
     bool isPlatformNotSelected = this->m_ui->platformsLW->selectedItems().isEmpty();
     if (isPlatformNotSelected) {
         QMessageBox::warning(this->m_base, tr("Error"), tr("There is no selected platform to delete."));
@@ -107,13 +107,13 @@ void MainWindowConnections::sl_deletePBClicked(bool checked) {
     this->m_base->m_jsonHandler->setPlatforms(array);
 
     // load platforms again
-    this->m_base->loadPlatforms();
+    this->m_base->_LoadPlatforms();
 
     // remove selection
     this->m_ui->platformsLW->clearSelection();
 }
 
-void MainWindowConnections::sl_itemClickedLW(QListWidgetItem *item) {
+void MainWindowConnections::sl_ItemClickedLW(QListWidgetItem *item) {
     // get index from item
     QListWidget *listWidget = item->listWidget();
     int index = listWidget->row(item);
@@ -146,7 +146,7 @@ void MainWindowConnections::sl_itemClickedLW(QListWidgetItem *item) {
     this->m_ui->platformCombo->setCurrentIndex(firstIndex);
 }
 
-void MainWindowConnections::sl_updatePBClicked(bool checked) {
+void MainWindowConnections::sl_UpdatePBClicked(bool checked) {
     const QString name = this->m_ui->nameLE->text();
     const QString username = this->m_ui->usernameLE->text();
     const QString password = this->m_ui->passwordLE->text();
@@ -157,7 +157,7 @@ void MainWindowConnections::sl_updatePBClicked(bool checked) {
     bool isPlatformNotSelected = this->m_ui->platformCombo->currentIndex() == -1;
 
     OtherData other;
-    const QString platformName = isPlatformNotSelected ? other.name() : this->m_ui->platformCombo->currentText();
+    const QString platformName = isPlatformNotSelected ? other.Name() : this->m_ui->platformCombo->currentText();
 
     if (isNameEmpty || isPasswordEmpty) {
         QMessageBox::warning(this->m_base, tr("Error"), tr("Please fill all fields"));
@@ -181,8 +181,8 @@ void MainWindowConnections::sl_updatePBClicked(bool checked) {
             auto object = item.toObject();
             sameName = object["name"].toString() == name;
             sameUsername = object["username"].toString() == username;
-            auto platform = Platform::fromJson(object);
-            samePlatform = platform->name() == platformName;
+            auto platform = Platform::FromJson(object);
+            samePlatform = platform->Name() == platformName;
         }
     }
 
@@ -206,20 +206,20 @@ void MainWindowConnections::sl_updatePBClicked(bool checked) {
     this->m_base->m_jsonHandler->setPlatforms(array);
 
     // load platforms again
-    this->m_base->loadPlatforms();
+    this->m_base->_LoadPlatforms();
 
     // remove selection
     this->m_ui->platformsLW->clearSelection();
 }
 
-void MainWindowConnections::sl_actionChangeNameTriggered(bool checked) {
+void MainWindowConnections::sl_ActionChangeNameTriggered(bool checked) {
     NameChangerDialog dialog;
 begin:
     int result = dialog.exec();
 
     if (result != QDialog::Accepted) return;
 
-    auto newName = dialog.getEnteredName();
+    auto newName = dialog.GetEnteredName();
     auto oldName = this->m_base->m_jsonHandler->name();
     if (newName.isEmpty() || newName.isNull()) {
         QMessageBox::critical(this->m_base, tr("Error"), tr("Name cannot be empty."));
@@ -237,7 +237,7 @@ begin:
         goto begin;  // NOLINT
     }
 
-    auto currentPassword = dialog.getCurrentPassword();
+    auto currentPassword = dialog.GetCurrentPassword();
     if (currentPassword.isEmpty() || currentPassword.isNull()) {
         QMessageBox::critical(this->m_base, tr("Error"), tr("Current password cannot be empty."));
         goto begin;  // NOLINT
@@ -259,16 +259,16 @@ begin:
     }
 }
 
-void MainWindowConnections::sl_actionChangeMasterPasswordTriggered(bool checked) {
+void MainWindowConnections::sl_ActionChangeMasterPasswordTriggered(bool checked) {
     PasswordChangerDialog dialog;
 begin:
     int result = dialog.exec();
 
     if (result != QDialog::Accepted) return;
 
-    auto newPassword = dialog.getNewPassword();
-    auto currentPassword = dialog.getCurrentPassword();
-    if (newPassword.isEmpty() || newPassword.isNull() || !dialog.passwordEnteredCorrectly()) {
+    auto newPassword = dialog.GetNewPassword();
+    auto currentPassword = dialog.GetCurrentPassword();
+    if (newPassword.isEmpty() || newPassword.isNull() || !dialog.PasswordEnteredCorrectly()) {
         QMessageBox::critical(this->m_base, tr("Error"), tr("New passwords must be equal and cannot be empty."));
         goto begin;  // NOLINT
     }
@@ -299,14 +299,14 @@ begin:
     }
 }
 
-void MainWindowConnections::sl_actionDeleteTriggered(bool checked) {
+void MainWindowConnections::sl_ActionDeleteTriggered(bool checked) {
     PasswordConfirmationDialog dialog;
 begin:
     QString fileName = this->m_base->m_jsonHandler->name();
     int result = dialog.exec();
 
     if (result != QDialog::Accepted) return;
-    auto currentPassword = dialog.getCurrentPassword();
+    auto currentPassword = dialog.GetCurrentPassword();
     if (currentPassword.isEmpty() || currentPassword.isNull()) {
         QMessageBox::critical(this->m_base, tr("Error"), tr("Password cannot be empty."));
         goto begin;  // NOLINT
@@ -322,7 +322,7 @@ begin:
     if (msg.exec() == QMessageBox::StandardButton::No) return;
 
     EncryptedFiles files;
-    files.deleteFile(fileName);
+    files.DeleteFile(fileName);
     this->m_base->m_jsonHandler->deleteFile();  //! to prevent write into path again.
 
     QMessageBox msgSuccess(QMessageBox::Icon::Information, tr("Success"), tr("Encrypted data deleted successfully!\nYou should login again to continue"), QMessageBox::StandardButton::Ok);
@@ -331,7 +331,7 @@ begin:
     }
 }
 
-void MainWindowConnections::sl_copyClicked(bool checked) {
+void MainWindowConnections::sl_CopyClicked(bool checked) {
     QClipboard *clipboard = QApplication::clipboard();
     clipboard->setText(this->m_ui->passwordLE->text());
 }

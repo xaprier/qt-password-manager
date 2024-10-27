@@ -14,14 +14,14 @@ class CreateDialog : public QDialog {
   public:
     explicit CreateDialog(QWidget *parent = nullptr);
     ~CreateDialog();
-    inline const bool isCreated() { return m_isCreated; };
+    inline const bool IsCreated() { return m_isCreated; };
 
   private slots:
-    void sl_accepted();
-    void sl_rejected();
-    void sl_checkBoxChanged(int state);
-    void sl_generateClicked(bool checked);
-    void sl_copyClicked(bool checked);
+    void sl_Accepted();
+    void sl_Rejected();
+    void sl_CheckBoxChanged(int state);
+    void sl_GenerateClicked(bool checked);
+    void sl_CopyClicked(bool checked);
 
   private:
     bool m_isCreated = false;

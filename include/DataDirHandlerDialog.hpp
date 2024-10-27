@@ -18,47 +18,47 @@ class DataDirHandlerDialog : public QDialog {
     Q_OBJECT
 
   public:
-    explicit DataDirHandlerDialog(QWidget* parent = nullptr) : QDialog(parent), m_DataDirs(Singleton<DataDirs>::Instance()) {
+    explicit DataDirHandlerDialog(QWidget* parent = nullptr) : QDialog(parent), m_dataDirs(Singleton<DataDirs>::Instance()) {
         QHBoxLayout* buttonLayout = new QHBoxLayout();
         QVBoxLayout* layout = new QVBoxLayout(this);
 
-        m_ListView = new QListView(this);
-        m_Model = new QStringListModel(this);
-        m_ListView->setModel(m_Model);
+        m_listView = new QListView(this);
+        m_model = new QStringListModel(this);
+        m_listView->setModel(m_model);
 
-        m_AddButton = new QPushButton(QObject::tr("Add Directory"), this);
-        m_UpdateButton = new QPushButton(QObject::tr("Update Directory"), this);
-        m_DeleteButton = new QPushButton(QObject::tr("Delete Directory"), this);
+        m_addButton = new QPushButton(QObject::tr("Add Directory"), this);
+        m_updateButton = new QPushButton(QObject::tr("Update Directory"), this);
+        m_deleteButton = new QPushButton(QObject::tr("Delete Directory"), this);
 
-        layout->addWidget(m_ListView);
-        buttonLayout->addWidget(m_AddButton);
-        buttonLayout->addWidget(m_UpdateButton);
-        buttonLayout->addWidget(m_DeleteButton);
+        layout->addWidget(m_listView);
+        buttonLayout->addWidget(m_addButton);
+        buttonLayout->addWidget(m_updateButton);
+        buttonLayout->addWidget(m_deleteButton);
         layout->addLayout(buttonLayout);
 
-        connect(m_AddButton, &QPushButton::clicked, this, &DataDirHandlerDialog::OnAddDir);
-        connect(m_UpdateButton, &QPushButton::clicked, this, &DataDirHandlerDialog::OnUpdateDir);
-        connect(m_DeleteButton, &QPushButton::clicked, this, &DataDirHandlerDialog::OnDeleteDir);
+        connect(m_addButton, &QPushButton::clicked, this, &DataDirHandlerDialog::sl_OnAddDir);
+        connect(m_updateButton, &QPushButton::clicked, this, &DataDirHandlerDialog::sl_OnUpdateDir);
+        connect(m_deleteButton, &QPushButton::clicked, this, &DataDirHandlerDialog::sl_OnDeleteDir);
 
         setLayout(layout);
 
         // Load the DataDirs
-        UpdateModel();
+        _UpdateModel();
     }
 
     ~DataDirHandlerDialog() {
     }
 
   private slots:
-    void OnAddDir() {
+    void sl_OnAddDir() {
         // Open a file dialog for selecting a directory
         QString dirPath = QFileDialog::getExistingDirectory(nullptr,
                                                             QObject::tr("Select Directory"),
                                                             QString(),
                                                             QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
-
+        QDir dir(dirPath);
         // Check if the user selected a directory
-        if (!dirPath.isEmpty()) {
+        if (!dirPath.isEmpty() && dir.exists()) {
             // Prompt the user to confirm if they want to add the selected directory
             auto reply = QMessageBox::question(nullptr,
                                                QObject::tr("Add Directory"),
@@ -67,76 +67,77 @@ class DataDirHandlerDialog : public QDialog {
             if (reply == QMessageBox::Yes) {
                 // User accepted to add the directory
                 DataDir dataDir(dirPath);
-                m_DataDirs.AddDataDir(dataDir);
-                UpdateModel();
+                m_dataDirs.AddDataDir(dataDir);
+                _UpdateModel();
             }
         }
     }
 
-    void OnUpdateDir() {
+    void sl_OnUpdateDir() {
         // elevate no item selection
-        QModelIndex currentIndex = m_ListView->currentIndex();
+        QModelIndex currentIndex = m_listView->currentIndex();
         if (!currentIndex.isValid()) {
             QMessageBox::warning(nullptr, QObject::tr("No Selection"), QObject::tr("No items selected, please select an item first."));
             return;
         }
-        int selected = m_ListView->currentIndex().row();
+        int selected = m_listView->currentIndex().row();
 
         // Open a file dialog for selecting a directory
         QString dirPath = QFileDialog::getExistingDirectory(nullptr,
                                                             QObject::tr("Select Directory"),
                                                             QString(),
                                                             QFileDialog::DontResolveSymlinks);
+        QDir dir(dirPath);
         // Check if the user selected a directory
-        if (!dirPath.isEmpty()) {
+        if (!dirPath.isEmpty() && dir.exists()) {
             // Prompt the user to confirm if they want to add the selected directory
             QMessageBox msgBox;
             msgBox.setWindowTitle(QObject::tr("Update Directory"));
             msgBox.setTextFormat(Qt::RichText);
             msgBox.setText(QObject::tr("Do you want to update the directory?<br><b>New: %1</b><br><b>Old: %2</b>")
-                               .arg(m_DataDirs.GetDataDirs().at(selected).GetPath(), dirPath));
+                               .arg(m_dataDirs.GetDataDirs().at(selected).GetPath(), dirPath));
             msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
             auto reply = static_cast<QMessageBox::StandardButton>(msgBox.exec());
 
             if (reply == QMessageBox::Yes) {
                 // User accepted to add the directory
                 DataDir dataDir(dirPath);
-                m_DataDirs.UpdateDataDir(selected, dirPath);
-                UpdateModel();
+                m_dataDirs.UpdateDataDir(selected, dirPath);
+                _UpdateModel();
             }
         }
     }
 
-    void OnDeleteDir() {
-        QModelIndex currentIndex = m_ListView->currentIndex();
+    void sl_OnDeleteDir() {
+        QModelIndex currentIndex = m_listView->currentIndex();
         if (currentIndex.isValid()) {
-            int selected = m_ListView->currentIndex().row();
+            int selected = m_listView->currentIndex().row();
             auto reply = QMessageBox::question(nullptr,
                                                QObject::tr("Delete Directory"),
-                                               QObject::tr("Do you want to delete directory:\n%1").arg(m_DataDirs.GetDataDirs().at(selected).GetPath()),
+                                               QObject::tr("Do you want to delete directory:\n%1").arg(m_dataDirs.GetDataDirs().at(selected).GetPath()),
                                                QMessageBox::Button::Yes | QMessageBox::Button::No);
             if (reply == QMessageBox::StandardButton::Yes) {
-                m_DataDirs.RemoveDataDir(currentIndex.row());
-                UpdateModel();
+                m_dataDirs.RemoveDataDir(currentIndex.row());
+                _UpdateModel();
             }
         }
     }
 
   private:
-    void UpdateModel() {
+    void _UpdateModel() {
         QStringList dirList;
-        for (const auto& dataDir : m_DataDirs.GetDataDirs()) {
+        for (const auto& dataDir : m_dataDirs.GetDataDirs()) {
             dirList << dataDir.GetPath();
         }
-        m_Model->setStringList(dirList);
+        m_model->setStringList(dirList);
     }
 
-    QListView* m_ListView;
-    QStringListModel* m_Model;
-    QPushButton* m_AddButton;
-    QPushButton* m_DeleteButton;
-    QPushButton* m_UpdateButton;
-    DataDirs& m_DataDirs;
+    QListView* m_listView;
+    QStringListModel* m_model;
+    QPushButton* m_addButton;
+    QPushButton* m_deleteButton;
+    QPushButton* m_updateButton;
+    DataDirs& m_dataDirs;
 };
 
 #endif  // DATADIRHANDLER_HPP

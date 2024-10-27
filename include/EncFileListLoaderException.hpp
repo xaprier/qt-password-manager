@@ -10,7 +10,7 @@ class EncFileListLoaderException : public QException {
     void raise() const override { throw *this; }
     [[nodiscard]] EncFileListLoaderException *clone() const override { return new EncFileListLoaderException(*this); }  // NOLINT
 
-    [[nodiscard]] const QString &message() const { return m_message; }
+    [[nodiscard]] const QString &Message() const { return m_message; }
 
   private:
     QString m_message;

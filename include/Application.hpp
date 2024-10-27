@@ -10,20 +10,20 @@ class Application : public QApplication {
   public:
     Application(int &argc, char **argv, const QString &appName, const QString &appVersion, const QString &orgName, const QString &appStyle);
     ~Application();
-    void setApplicationName(const QString &name);
-    void setApplicationVersion(const QString &version);
-    void setOrganizationName(const QString &name);
-    void setStyleSheet(const QString &sheet);
+    void SetApplicationName(const QString &name);
+    void SetApplicationVersion(const QString &version);
+    void SetOrganizationName(const QString &name);
+    void SetStyleSheet(const QString &sheet);
 
     static QTranslator translator;
 
   private:
-    void setAppLanguage();
-    void setAppIcon();
-    QString applicationName;
-    QString applicationVersion;
-    QString organizationName;
-    QString styleSheet;
+    void _SetAppLanguage();
+    void _SetAppIcon();
+    QString m_applicationName;
+    QString m_applicationVersion;
+    QString m_organizationName;
+    QString m_styleSheet;
 };
 
 #endif  // APPLICATION_HPP

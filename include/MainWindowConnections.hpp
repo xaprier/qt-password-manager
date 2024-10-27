@@ -26,16 +26,16 @@ class MainWindowConnections : public QObject {  // NOLINT
   signals:
 
   private slots:
-    void sl_generateTBClicked(bool checked);
-    void sl_showPasswordCBStateChanged(int state);
-    void sl_createPBClicked(bool checked);
-    void sl_updatePBClicked(bool checked);
-    void sl_deletePBClicked(bool checked);
-    void sl_itemClickedLW(QListWidgetItem *item);
-    void sl_actionChangeNameTriggered(bool checked);
-    void sl_actionChangeMasterPasswordTriggered(bool checked);
-    void sl_actionDeleteTriggered(bool checked);
-    void sl_copyClicked(bool checked);
+    void sl_GenerateTBClicked(bool checked);
+    void sl_ShowPasswordCBStateChanged(int state);
+    void sl_CreatePBClicked(bool checked);
+    void sl_UpdatePBClicked(bool checked);
+    void sl_DeletePBClicked(bool checked);
+    void sl_ItemClickedLW(QListWidgetItem *item);
+    void sl_ActionChangeNameTriggered(bool checked);
+    void sl_ActionChangeMasterPasswordTriggered(bool checked);
+    void sl_ActionDeleteTriggered(bool checked);
+    void sl_CopyClicked(bool checked);
 };
 
 #endif  // MAINWINDOWCONNECTIONS_HPP

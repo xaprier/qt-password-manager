@@ -51,7 +51,7 @@ QString ExportDialog::GetSelectedDirectory() const {
 }
 
 QStringList ExportDialog::GetSelectedFiles() const {
-    auto selectedFileNames = this->m_Files->selectedItems();
+    auto selectedFileNames = this->m_Files->SelectedItems();
     // return filtered "QStringList m_selectedFiles" with selectedFileNames with ends alg.
     QStringList filteredFiles;
 

@@ -16,11 +16,11 @@ class NameChangerDialog : public QDialog {
   public:
     explicit NameChangerDialog(QWidget *parent = nullptr);
     ~NameChangerDialog();
-    [[nodiscard]] const QString getEnteredName() const { return this->m_ui->nameLE->text(); }
-    [[nodiscard]] const QString getCurrentPassword() const { return this->m_ui->currentPasswordLE->text(); }
+    [[nodiscard]] const QString GetEnteredName() const { return this->m_ui->nameLE->text(); }
+    [[nodiscard]] const QString GetCurrentPassword() const { return this->m_ui->currentPasswordLE->text(); }
 
   private slots:
-    void sl_showPasswordCheckStateChanged(int state);
+    void sl_ShowPasswordCheckStateChanged(int state);
 
   private:
     Ui::NameChangerDialog *m_ui;

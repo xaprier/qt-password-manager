@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
     while (true) {
         LoginDialog login;
         int result = login.exec();
-        if (result == QDialog::Accepted && login.isLogged()) {
+        if (result == QDialog::Accepted && login.IsLogged()) {
             MainWindow window(login);
             window.show();
             app.exec();

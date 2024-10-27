@@ -17,10 +17,10 @@
 class OrganizationNameMigration : public Migration {
   public:
     OrganizationNameMigration() {
-        migrate();
+        Migrate();
     }
 
-    virtual void migrate() override;
+    virtual void Migrate() override;
 };
 
 #endif  // ORGANIZATIONNAMEMIGRATION_HPP

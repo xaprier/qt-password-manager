@@ -2,7 +2,7 @@
 
 #include "Platforms.hpp"
 
-std::unique_ptr<Platform> Platform::fromJson(const QJsonObject &object) {
+std::unique_ptr<Platform> Platform::FromJson(const QJsonObject &object) {
     QString platformName = object["platform"].toString();
     if (platformName.isEmpty()) {
         qWarning() << tr("Platform name is empty or not found in JSON object");

@@ -6,7 +6,7 @@
 RandomizedPasswordDialog::RandomizedPasswordDialog(QWidget *parent) : QDialog(parent),
                                                                       m_ui(new Ui::RandomizedPasswordDialog) {
     m_ui->setupUi(this);
-    this->initConnections();
+    this->_InitConnections();
     this->m_ui->passwordLengthIndicator->setText(QString::number(this->m_ui->passwordLengthSlider->value()));
 }
 
@@ -14,19 +14,19 @@ RandomizedPasswordDialog::~RandomizedPasswordDialog() {
     delete m_ui;
 }
 
-void RandomizedPasswordDialog::initConnections() {
-    connect(this->m_ui->checkLowerCase, &QCheckBox::toggled, this, &RandomizedPasswordDialog::sl_checkBoxToggled);
-    connect(this->m_ui->checkUpperCase, &QCheckBox::toggled, this, &RandomizedPasswordDialog::sl_checkBoxToggled);
-    connect(this->m_ui->checkDigits, &QCheckBox::toggled, this, &RandomizedPasswordDialog::sl_checkBoxToggled);
-    connect(this->m_ui->checkDigits, &QCheckBox::toggled, this, &RandomizedPasswordDialog::sl_checkBoxToggled);
+void RandomizedPasswordDialog::_InitConnections() {
+    connect(this->m_ui->checkLowerCase, &QCheckBox::toggled, this, &RandomizedPasswordDialog::sl_CheckBoxToggled);
+    connect(this->m_ui->checkUpperCase, &QCheckBox::toggled, this, &RandomizedPasswordDialog::sl_CheckBoxToggled);
+    connect(this->m_ui->checkDigits, &QCheckBox::toggled, this, &RandomizedPasswordDialog::sl_CheckBoxToggled);
+    connect(this->m_ui->checkDigits, &QCheckBox::toggled, this, &RandomizedPasswordDialog::sl_CheckBoxToggled);
 
-    connect(this->m_ui->generateButton, &QPushButton::clicked, this, &RandomizedPasswordDialog::sl_generateClicked);
-    connect(this->m_ui->copyTB, &QPushButton::clicked, this, &RandomizedPasswordDialog::sl_copyClicked);
-    connect(this->m_ui->showPasswordCheck, &QCheckBox::stateChanged, this, &RandomizedPasswordDialog::sl_showPassword);
-    connect(this->m_ui->passwordLengthSlider, &QSlider::valueChanged, this, &RandomizedPasswordDialog::sl_valueChanged);
+    connect(this->m_ui->generateButton, &QPushButton::clicked, this, &RandomizedPasswordDialog::sl_GenerateClicked);
+    connect(this->m_ui->copyTB, &QPushButton::clicked, this, &RandomizedPasswordDialog::sl_CopyClicked);
+    connect(this->m_ui->showPasswordCheck, &QCheckBox::stateChanged, this, &RandomizedPasswordDialog::sl_ShowPassword);
+    connect(this->m_ui->passwordLengthSlider, &QSlider::valueChanged, this, &RandomizedPasswordDialog::sl_ValueChanged);
 }
 
-void RandomizedPasswordDialog::sl_generateClicked(bool clicked) {
+void RandomizedPasswordDialog::sl_GenerateClicked(bool clicked) {
     int lengthOfPassword = this->m_ui->passwordLengthSlider->value();
     int checkedCount = 0;
     foreach (QObject *child, this->m_ui->groupBox->findChildren<QCheckBox *>()) {
@@ -61,7 +61,7 @@ void RandomizedPasswordDialog::sl_generateClicked(bool clicked) {
     this->m_generatedPassword = password;
 }
 
-void RandomizedPasswordDialog::sl_checkBoxToggled(bool toggle) {
+void RandomizedPasswordDialog::sl_CheckBoxToggled(bool toggle) {
     auto *senderCheckBox = qobject_cast<QCheckBox *>(sender());
     if (senderCheckBox) {
         // Count checked checkboxes
@@ -82,7 +82,7 @@ void RandomizedPasswordDialog::sl_checkBoxToggled(bool toggle) {
     }
 }
 
-void RandomizedPasswordDialog::sl_showPassword(int state) {
+void RandomizedPasswordDialog::sl_ShowPassword(int state) {
     if (state == Qt::Checked) {
         this->m_ui->passwordLE->setEchoMode(QLineEdit::Normal);
     } else {
@@ -90,11 +90,11 @@ void RandomizedPasswordDialog::sl_showPassword(int state) {
     }
 }
 
-void RandomizedPasswordDialog::sl_copyClicked(bool checked) {
+void RandomizedPasswordDialog::sl_CopyClicked(bool checked) {
     QClipboard *clipboard = QApplication::clipboard();
     clipboard->setText(this->m_ui->passwordLE->text());
 }
 
-void RandomizedPasswordDialog::sl_valueChanged(int value) {
+void RandomizedPasswordDialog::sl_ValueChanged(int value) {
     this->m_ui->passwordLengthIndicator->setText(QString::number(value));
 }

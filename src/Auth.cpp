@@ -9,11 +9,11 @@ Auth::Auth(const QString &fileName, const QString &masterPassword, QObject *pare
     file.close();
     Cipher wrapper;
     auto decrypted = wrapper.decryptAES(masterPassword.toUtf8(), encrypted);
-    bool isItJsonFile = this->isValidJson(decrypted);
+    bool isItJsonFile = this->_IsValidJson(decrypted);
     if (!decrypted.isEmpty() && !decrypted.isNull() && isItJsonFile) this->m_isAuthorized = true;
 }
 
-const bool Auth::isValidJson(const QByteArray &json) {
+const bool Auth::_IsValidJson(const QByteArray &json) {
     QJsonParseError parseError;
     QJsonDocument jsonDoc = QJsonDocument::fromJson(json, &parseError);
     return (parseError.error == QJsonParseError::NoError);

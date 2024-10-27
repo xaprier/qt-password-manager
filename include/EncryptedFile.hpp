@@ -29,9 +29,9 @@ class EncryptedFile : public QObject {
     }
 
     ~EncryptedFile() override { delete m_file; }
-    [[nodiscard]] const QString fileName() const { return m_fileName; }
-    [[nodiscard]] QFile *file() const { return m_file; }
-    [[nodiscard]] const QFileInfo fileInfo() const { return m_fileInfo; }
+    [[nodiscard]] const QString FileName() const { return m_fileName; }
+    [[nodiscard]] QFile *File() const { return m_file; }
+    [[nodiscard]] const QFileInfo FileInfo() const { return m_fileInfo; }
 
   private:
     QString m_fileName;

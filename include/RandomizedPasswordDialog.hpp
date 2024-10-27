@@ -17,17 +17,17 @@ class RandomizedPasswordDialog : public QDialog {
     explicit RandomizedPasswordDialog(QWidget *parent = nullptr);
     ~RandomizedPasswordDialog() override;
 
-    const QByteArray getGeneratedPassword() { return m_generatedPassword; }
+    const QByteArray GetGeneratedPassword() { return m_generatedPassword; }
 
   private slots:
-    void sl_generateClicked(bool clicked);
-    void sl_checkBoxToggled(bool toggle);
-    void sl_showPassword(int state);
-    void sl_copyClicked(bool checked);
-    void sl_valueChanged(int value);
+    void sl_GenerateClicked(bool clicked);
+    void sl_CheckBoxToggled(bool toggle);
+    void sl_ShowPassword(int state);
+    void sl_CopyClicked(bool checked);
+    void sl_ValueChanged(int value);
 
   private:
-    void initConnections();
+    void _InitConnections();
 
   private:
     QByteArray m_generatedPassword;

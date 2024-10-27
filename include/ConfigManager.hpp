@@ -13,37 +13,37 @@ class ConfigManager : public QObject {
     friend class Singleton<ConfigManager>;
 
     void SaveDataDirs(const DataDirs& dataDirs) {
-        m_Settings.beginGroup("DataDirs");
-        m_Settings.remove("");  // Clear existing keys
-        m_Settings.beginWriteArray("Dirs");
+        m_settings.beginGroup("DataDirs");
+        m_settings.remove("");  // Clear existing keys
+        m_settings.beginWriteArray("Dirs");
         for (int i = 0; i < dataDirs.GetDataDirs().size(); ++i) {
-            m_Settings.setArrayIndex(i);
-            m_Settings.setValue("Path", dataDirs.GetDataDirs()[i].GetPath());
+            m_settings.setArrayIndex(i);
+            m_settings.setValue("Path", dataDirs.GetDataDirs()[i].GetPath());
         }
-        m_Settings.endArray();
-        m_Settings.endGroup();
+        m_settings.endArray();
+        m_settings.endGroup();
     }
 
     void LoadDataDirs(DataDirs& dataDirs) {
-        m_Settings.beginGroup("DataDirs");
-        int size = m_Settings.beginReadArray("Dirs");
+        m_settings.beginGroup("DataDirs");
+        int size = m_settings.beginReadArray("Dirs");
         dataDirs.ClearDataDirs();
         for (int i = 0; i < size; ++i) {
-            m_Settings.setArrayIndex(i);
-            QString path = m_Settings.value("Path").toString();
+            m_settings.setArrayIndex(i);
+            QString path = m_settings.value("Path").toString();
             dataDirs.AddDataDir(DataDir(path));
         }
-        m_Settings.endArray();
-        m_Settings.endGroup();
+        m_settings.endArray();
+        m_settings.endGroup();
     }
 
   private:
-    ConfigManager() : m_Settings(ORGNAME, APPNAME) {}
+    ConfigManager() : m_settings(ORGNAME, APPNAME) {}
     ~ConfigManager() = default;
 
   private:
-    static ConfigManager& m_Manager;
-    QSettings m_Settings;
+    static ConfigManager& m_manager;
+    QSettings m_settings;
 };
 
 #endif  // CONFIGMANAGER_HPP
