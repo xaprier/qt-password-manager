@@ -88,7 +88,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Cipher JSONHandler Logger)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Singleton Cipher JSONHandler Logger)
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES

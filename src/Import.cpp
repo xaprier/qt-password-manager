@@ -15,10 +15,12 @@ Import::Import(QObject *base) : QObject(base) {
 
     ImportDialog dialog;
     if (dialog.exec() == QDialog::Accepted) {
-        QStringList files = dialog.getSelectedFiles();
+        QStringList files = dialog.GetSelectedFiles();
+        QString dataDirPath = dialog.GetSelectedDataDirectory();
+        if (!dataDirPath.isEmpty()) appDataPath = dataDirPath;
         for (const QString &file : files) {
             QFileInfo info(file);
-            QString sourcePath = QDir(appDataPath).filePath(file);
+            QString sourcePath = info.filePath();
             QString destinationPath = QDir(appDataPath).filePath(info.fileName());
 
             // Check if source file exists

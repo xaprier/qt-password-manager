@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QMessageBox>
+#include <QStandardItemModel>
 
 #include "MainWindow.hpp"
 
@@ -29,6 +30,7 @@ class LoginDialog : public QDialog {
     void sl_checkBoxChanged(int state);
     void sl_importClicked(bool checked);
     void sl_exportClicked(bool checked);
+    void sl_updateClicked(bool checked);
 
   private:
     bool verifyPassword(const QString& file, const QString& password);

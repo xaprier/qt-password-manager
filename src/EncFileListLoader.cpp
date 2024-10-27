@@ -1,6 +1,11 @@
 #include "EncFileListLoader.hpp"
 
+#include <QSet>
+#include <QStandardItemModel>
+
+#include "DataDirs.hpp"
 #include "EncFileListLoaderException.hpp"
+#include "singleton.hpp"
 
 EncFileListLoader::EncFileListLoader(QComboBox* comboBox) : comboBox(comboBox) {
     comboBox->clear();
@@ -24,8 +29,27 @@ void EncFileListLoader::loadEncFiles() {
     filters << "*.enc";
     QFileInfoList encFiles = dir.entryInfoList(filters, QDir::Files);
 
+    auto& dataDirs = Singleton<DataDirs>::Instance();
+    for (const auto& dataDir : dataDirs.GetDataDirs()) {
+        QDir dir(dataDir.GetPath());
+        encFiles.append(dir.entryInfoList(filters, QDir::Files));
+    }
+
     // add file names to combobox
-    for (const QFileInfo& fileInfo : encFiles) {
-        comboBox->addItem(fileInfo.fileName().mid(0, fileInfo.fileName().length() - 4));
+    QSet<QString> uniqueFilePaths;
+    QStandardItemModel* model = qobject_cast<QStandardItemModel*>(comboBox->model());
+
+    for (std::size_t i = 0; i < encFiles.count(); i++) {
+        QString fileName = encFiles.at(i).fileName().mid(0, encFiles.at(i).fileName().length() - 4);
+        QString absoluteFilePath = encFiles.at(i).absoluteFilePath();
+
+        // name in box
+        comboBox->addItem(fileName);
+
+        // filter repeating absolutefilepaths
+        if (!uniqueFilePaths.contains(absoluteFilePath)) {
+            model->item(i)->setToolTip(absoluteFilePath);
+            uniqueFilePaths.insert(absoluteFilePath);
+        }
     }
 }

@@ -10,7 +10,6 @@ MainWindow::MainWindow(const LoginDialog &dialog, QWidget *parent) : QMainWindow
                                                                      m_ui(new Ui::MainWindow),
                                                                      m_connections(new MainWindowConnections(this, m_ui)) {
     m_jsonHandler = std::make_unique<JSONHandler>(dialog.m_filePath, dialog.m_masterPassword);
-
     m_ui->setupUi(this);
     this->initPlatforms();
     this->initConnections();

@@ -17,5 +17,6 @@
         <file>export.svg</file>
         <file>generate.svg</file>
         <file>copy.svg</file>
+        <file>update.svg</file>
     </qresource>
 </RCC>

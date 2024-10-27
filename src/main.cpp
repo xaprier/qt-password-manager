@@ -1,6 +1,3 @@
-#include <QLocale>
-#include <QTranslator>
-
 #include "Application.hpp"
 #include "Defines.hpp"
 #include "LoginDialog.hpp"
@@ -27,7 +24,7 @@ int main(int argc, char *argv[]) {
         LoginDialog login;
         int result = login.exec();
         if (result == QDialog::Accepted && login.isLogged()) {
-            auto &window = Singleton<MainWindow>::Instance(login);
+            MainWindow window(login);
             window.show();
             app.exec();
         } else if (result == QDialog::Rejected)

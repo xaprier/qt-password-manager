@@ -3,6 +3,7 @@
 #include "../design/ui_LoginDialog.h"
 #include "Auth.hpp"
 #include "CreateDialog.hpp"
+#include "DataDirHandlerDialog.hpp"
 #include "EncFileListLoader.hpp"
 #include "Export.hpp"
 #include "Import.hpp"
@@ -32,6 +33,7 @@ LoginDialog::LoginDialog(QWidget* parent) : QDialog(parent),
     connect(this->m_ui->showPasswordCheck, &QCheckBox::stateChanged, this, &LoginDialog::sl_checkBoxChanged);
     connect(this->m_ui->importButton, &QToolButton::clicked, this, &LoginDialog::sl_importClicked);
     connect(this->m_ui->exportButton, &QToolButton::clicked, this, &LoginDialog::sl_exportClicked);
+    connect(this->m_ui->updateDataDirButton, &QToolButton::clicked, this, &LoginDialog::sl_updateClicked);
 }
 
 LoginDialog::~LoginDialog() {
@@ -55,13 +57,11 @@ void LoginDialog::sl_accepted() {
         return;
     }
 
-    QString selectedFile = combobox->currentText();
-    QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-    QDir dir(appDataPath);
-    QString fullFilePath = dir.absolutePath() + QDir::separator() + selectedFile + ".enc";
-    if (verifyPassword(fullFilePath, password)) {
+    QStandardItemModel* model = qobject_cast<QStandardItemModel*>(combobox->model());
+    QString selectedFile = model->item(combobox->currentIndex())->toolTip();
+    if (verifyPassword(selectedFile, password)) {
         this->m_masterPassword = password;
-        this->m_filePath = fullFilePath;
+        this->m_filePath = selectedFile;
         this->setLogged(true);
     } else {
         QMessageBox::warning(this, tr("Error"), tr("Invalid password. Please try again."));
@@ -103,4 +103,10 @@ void LoginDialog::sl_importClicked(bool checked) {
 
 void LoginDialog::sl_exportClicked(bool checked) {
     Export exp;
+}
+
+void LoginDialog::sl_updateClicked(bool checked) {
+    DataDirHandlerDialog dialog;
+    dialog.exec();
+    EncFileListLoader loader(this->m_ui->encryptedFiles);
 }

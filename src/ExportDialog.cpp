@@ -1,6 +1,6 @@
 #include "ExportDialog.hpp"
 
-ExportDialog::ExportDialog(QStringList files, QWidget *parent) : QFileDialog(parent), m_selectedFiles(files), m_Files(new MultiSelectionBox), m_Label(new QLabel) {
+ExportDialog::ExportDialog(QStringList files, QWidget *parent) : QFileDialog(parent), m_SelectedFiles(files), m_Files(new MultiSelectionBox(this)), m_Label(new QLabel(this)) {
     // Enable only directory mode
     setFileMode(QFileDialog::Directory);
     setOption(QFileDialog::ShowDirsOnly, true);
@@ -16,7 +16,7 @@ ExportDialog::ExportDialog(QStringList files, QWidget *parent) : QFileDialog(par
     m_Label->setText(tr("Select files to export"));
 
     // update current layout
-    QList<QPair<QLayoutItem *, QList<int> > > moved_items;
+    QList<QPair<QLayoutItem *, QList<int>>> moved_items;
     auto *layout = static_cast<QGridLayout *>(this->layout());
     for (int i = 0; i < layout->count(); i++) {
         int row, column, rowSpan, columnSpan;
@@ -44,21 +44,18 @@ ExportDialog::ExportDialog(QStringList files, QWidget *parent) : QFileDialog(par
     }
 }
 
-ExportDialog::~ExportDialog() {
-    delete m_Files;
-    delete m_Label;
-}
+ExportDialog::~ExportDialog() {}
 
-QString ExportDialog::getSelectedDirectory() const {
+QString ExportDialog::GetSelectedDirectory() const {
     return selectedFiles().isEmpty() ? QString() : selectedFiles().first();
 }
 
-QStringList ExportDialog::getSelectedFiles() const {
+QStringList ExportDialog::GetSelectedFiles() const {
     auto selectedFileNames = this->m_Files->selectedItems();
     // return filtered "QStringList m_selectedFiles" with selectedFileNames with ends alg.
     QStringList filteredFiles;
 
-    for (const QString &file : m_selectedFiles) {
+    for (const QString &file : m_SelectedFiles) {
         QFileInfo fileInfo(file);
         QString fileName = fileInfo.fileName();
 

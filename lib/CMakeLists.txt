@@ -1,6 +1,7 @@
 # Specify the directory to check
 set(
   DIRECTORIES_TO_CHECK
+  "${CMAKE_CURRENT_SOURCE_DIR}/singleton" # get singleton
   "${CMAKE_CURRENT_SOURCE_DIR}/logger" # get logger
   "${CMAKE_CURRENT_SOURCE_DIR}/Cipher" # get Cipher
   "${CMAKE_CURRENT_SOURCE_DIR}/JSONHandler" # get JSONHandler

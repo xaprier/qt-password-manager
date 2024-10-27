@@ -18,8 +18,8 @@ Export::Export(QObject *base) : QObject(base) {
     // get export directory
     ExportDialog dialog(encFiles);
     if (dialog.exec() == QDialog::Accepted) {
-        QStringList files = dialog.getSelectedFiles();
-        QString path = dialog.getSelectedDirectory();
+        QStringList files = dialog.GetSelectedFiles();
+        QString path = dialog.GetSelectedDirectory();
 
         for (const QString &file : files) {
             QFileInfo info(file);

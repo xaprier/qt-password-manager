@@ -30,10 +30,9 @@ class Singleton {
     Singleton& operator=(const Singleton&) = delete;
     Singleton& operator=(Singleton&&) = delete;
 
-    Singleton() = delete;
-    ~Singleton() = delete;
-
   private:
+    Singleton() = default;
+    ~Singleton() = default;
     struct Deleter {
         void operator()(T* ptr) const {
             delete ptr;
