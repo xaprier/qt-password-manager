@@ -876,57 +876,69 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
         <translation>Ungültiger oder nicht vorhandener Pfad: %1</translation>
     </message>
     <message>
-        <location filename="../include/DataDirHandlerDialog.hpp" line="29"/>
-        <location filename="../include/DataDirHandlerDialog.hpp" line="64"/>
+        <location filename="../include/DataDirHandlerDialog.hpp" line="30"/>
+        <location filename="../include/DataDirHandlerDialog.hpp" line="65"/>
         <source>Add Directory</source>
         <translation>Verzeichnis hinzufügen</translation>
     </message>
     <message>
-        <location filename="../include/DataDirHandlerDialog.hpp" line="30"/>
-        <location filename="../include/DataDirHandlerDialog.hpp" line="95"/>
+        <location filename="../include/DataDirHandlerDialog.hpp" line="31"/>
+        <location filename="../include/DataDirHandlerDialog.hpp" line="96"/>
         <source>Update Directory</source>
         <translation>Verzeichnis aktualisieren</translation>
     </message>
     <message>
-        <location filename="../include/DataDirHandlerDialog.hpp" line="31"/>
-        <location filename="../include/DataDirHandlerDialog.hpp" line="116"/>
+        <location filename="../include/DataDirHandlerDialog.hpp" line="32"/>
+        <location filename="../include/DataDirHandlerDialog.hpp" line="117"/>
         <source>Delete Directory</source>
         <translation>Verzeichnis löschen</translation>
     </message>
     <message>
-        <location filename="../include/DataDirHandlerDialog.hpp" line="56"/>
-        <location filename="../include/DataDirHandlerDialog.hpp" line="87"/>
+        <location filename="../include/DataDirHandlerDialog.hpp" line="57"/>
+        <location filename="../include/DataDirHandlerDialog.hpp" line="88"/>
         <source>Select Directory</source>
         <translation>Verzeichnis auswählen</translation>
     </message>
     <message>
-        <location filename="../include/DataDirHandlerDialog.hpp" line="65"/>
+        <location filename="../include/DataDirHandlerDialog.hpp" line="66"/>
+        <source>Do you want to add this directory:
+%1</source>
+        <translation>Möchten Sie dieses Verzeichnis hinzufügen:
+%1</translation>
+    </message>
+    <message>
+        <location filename="../include/DataDirHandlerDialog.hpp" line="118"/>
+        <source>Do you want to delete directory:
+%1</source>
+        <translation>Möchten Sie das Verzeichnis löschen:
+%1</translation>
+    </message>
+    <message>
         <source>Do you want to add this directory:
     %1</source>
-        <translation>Möchten Sie dieses Verzeichnis hinzufügen:
+        <translation type="vanished">Möchten Sie dieses Verzeichnis hinzufügen:
     %1</translation>
     </message>
     <message>
-        <location filename="../include/DataDirHandlerDialog.hpp" line="80"/>
+        <source>Do you want to delete directory:
+    %1</source>
+        <translation type="vanished">Möchten Sie das Verzeichnis löschen:
+    %1</translation>
+    </message>
+    <message>
+        <location filename="../include/DataDirHandlerDialog.hpp" line="81"/>
         <source>No Selection</source>
         <translation>Keine Auswahl</translation>
     </message>
     <message>
-        <location filename="../include/DataDirHandlerDialog.hpp" line="80"/>
+        <location filename="../include/DataDirHandlerDialog.hpp" line="81"/>
         <source>No items selected, please select an item first.</source>
         <translation>Keine Elemente ausgewählt, bitte wählen Sie zuerst ein Element aus.</translation>
     </message>
     <message>
-        <location filename="../include/DataDirHandlerDialog.hpp" line="97"/>
+        <location filename="../include/DataDirHandlerDialog.hpp" line="98"/>
         <source>Do you want to update the directory?&lt;br&gt;&lt;b&gt;New: %1&lt;/b&gt;&lt;br&gt;&lt;b&gt;Old: %2&lt;/b&gt;</source>
         <translation>Möchten Sie das Verzeichnis aktualisieren?&lt;br&gt;&lt;b&gt;Neu: %1&lt;/b&gt;&lt;br&gt;&lt;b&gt;Alt: %2&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="../include/DataDirHandlerDialog.hpp" line="117"/>
-        <source>Do you want to delete directory:
-    %1</source>
-        <translation>Möchten Sie das Verzeichnis löschen:
-    %1</translation>
     </message>
     <message>
         <location filename="../src/ImportDialog.cpp" line="24"/>
@@ -946,9 +958,20 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
     <message>
         <location filename="../src/OrganizationNameMigration.cpp" line="24"/>
         <source>There is old organization data in your AppData location.
+</source>
+        <comment>Do you want the copy the encrypted files to new one and delete old directory?</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is old organization data in your AppData location.</source>
+        <comment>Do you want the copy the encrypted files to new one and delete old directory?</comment>
+        <translation type="vanished">Es befinden sich alte Organisationsdaten in Ihrem AppData-Verzeichnis.</translation>
+    </message>
+    <message>
+        <source>There is old organization data in your AppData location.
     </source>
         <comment>Do you want the copy the encrypted files to new one and delete old directory?</comment>
-        <translation>Es gibt alte Organisationsdaten in Ihrem AppData-Verzeichnis.
+        <translation type="vanished">Es gibt alte Organisationsdaten in Ihrem AppData-Verzeichnis.
     </translation>
     </message>
     <message>

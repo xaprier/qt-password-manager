@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(XPwm VERSION 1.0.7 LANGUAGES CXX)
+project(XPwm VERSION 1.1.0 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 

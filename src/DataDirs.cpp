@@ -1,5 +1,7 @@
 #include "DataDirs.hpp"
 
+#include <QDebug>
+
 #include "ConfigManager.hpp"
 #include "singleton.hpp"
 

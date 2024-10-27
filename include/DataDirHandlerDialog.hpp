@@ -1,6 +1,7 @@
 #ifndef DATADIRHANDLER_HPP
 #define DATADIRHANDLER_HPP
 
+#include <QDebug>
 #include <QFileDialog>
 #include <QHBoxLayout>
 #include <QInputDialog>
