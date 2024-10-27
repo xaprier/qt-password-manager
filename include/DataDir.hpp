@@ -8,7 +8,7 @@
 class DataDir : public Dir {
   public:
     explicit DataDir(const QString& path = "") {
-        QDir dir;
+        QDir dir(path);
         if (!dir.exists(path)) {
             Logger::log_static(LoggingLevel::WARNING, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Invalid or not exists path: %1").arg(path).toStdString());
             return;

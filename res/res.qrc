@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/icons">
-        <file>xpwm.png</file>
+        <file>XPwm.png</file>
     </qresource>
     <qresource prefix="/qss">
         <file>style.qss</file>

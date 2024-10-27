@@ -73,7 +73,7 @@ jobs:
 
       - name: Build AppImage
         run: |
-          ./linuxdeployqt.AppImage AppDir/usr/share/applications/xpwm.desktop -bundle-non-qt-libs -appimage
+          ./linuxdeployqt.AppImage AppDir/usr/share/applications/XPwm.desktop -bundle-non-qt-libs -appimage
 
       - name: Remove linuxdeployqt and rename AppImage
         run: |
