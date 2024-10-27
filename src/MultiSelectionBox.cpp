@@ -1,15 +1,13 @@
 #include "MultiSelectionBox.hpp"
 
-MultiSelectionBox::MultiSelectionBox(QWidget *parent) : QComboBox(parent) {
+#include "MultiSelectionMenu.hpp"
+
+MultiSelectionBox::MultiSelectionBox(QWidget *parent) : QComboBox(parent), menu(new MultiSelectionMenu(this)) {
     setEditable(true);
     lineEdit()->setReadOnly(true);
-
-    // Custom menu for multiple selection
-    menu = new MultiSelectionMenu(this);
 }
 
 MultiSelectionBox::~MultiSelectionBox() {
-    delete menu;
 }
 
 void MultiSelectionBox::addItem(const QString &text) {

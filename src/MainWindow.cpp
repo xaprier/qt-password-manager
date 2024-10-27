@@ -18,7 +18,6 @@ MainWindow::MainWindow(const LoginDialog &dialog, QWidget *parent) : QMainWindow
 
 MainWindow::~MainWindow() {
     delete m_ui;
-    delete m_connections;
     qDeleteAll(this->m_platforms);
 }
 
