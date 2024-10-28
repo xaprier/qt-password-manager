@@ -39,6 +39,14 @@ const QVector<DataDir> DataDirs::GetDataDirs() const {
     return m_DataDirs;
 }
 
+const QList<QString> DataDirs::GetDataDirPaths() const {
+    QStringList list;
+    for (const auto& data : m_DataDirs) {
+        list << data.GetPath();
+    }
+    return list;
+}
+
 void DataDirs::ClearDataDirs() {
     this->m_DataDirs.clear();
     //! if we save data after clear function, the data can be lost when closing program immediately

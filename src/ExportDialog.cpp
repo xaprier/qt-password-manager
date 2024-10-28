@@ -6,12 +6,7 @@ ExportDialog::ExportDialog(QStringList files, QWidget *parent) : QFileDialog(par
     setOption(QFileDialog::ShowDirsOnly, true);
     setOption(QFileDialog::DontUseNativeDialog, true);  // we need qt layout
 
-    foreach (QString file, files) {
-        // remove absolute path and add to m_Files combobox
-        QFileInfo fileInfo(file);
-        QString fileName = fileInfo.fileName();  // Extracts just the file name
-        m_Files->addItem(fileName);
-    }
+    this->SetFiles(files);
 
     m_Label->setText(tr("Select files to export"));
 
@@ -51,18 +46,16 @@ QString ExportDialog::GetSelectedDirectory() const {
 }
 
 QStringList ExportDialog::GetSelectedFiles() const {
-    auto selectedFileNames = this->m_Files->SelectedItems();
-    // return filtered "QStringList m_selectedFiles" with selectedFileNames with ends alg.
-    QStringList filteredFiles;
+    return this->m_Files->SelectedItems();
+}
 
-    for (const QString &file : m_SelectedFiles) {
+void ExportDialog::SetFiles(const QStringList &files) {
+    this->m_SelectedFiles = files;
+    m_Files->clear();
+    foreach (QString file, files) {
+        // remove absolute path and add to m_Files combobox
         QFileInfo fileInfo(file);
-        QString fileName = fileInfo.fileName();
-
-        if (selectedFileNames.contains(fileName)) {
-            filteredFiles.append(file);
-        }
+        QString fileName = fileInfo.fileName();  // Extracts just the file name
+        m_Files->AddItem(fileName, file);
     }
-
-    return filteredFiles;
 }

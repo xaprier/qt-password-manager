@@ -5,6 +5,7 @@
 #include <QEvent>
 #include <QMenu>
 #include <QMouseEvent>
+#include <QToolTip>
 
 class MultiSelectionMenu : public QMenu {
     Q_OBJECT
@@ -16,6 +17,7 @@ class MultiSelectionMenu : public QMenu {
 
   protected:
     bool eventFilter(QObject *obj, QEvent *event) override;
+    void enterEvent(QEvent *event) override;
 
     void mouseReleaseEvent(QMouseEvent *event) override;
 };

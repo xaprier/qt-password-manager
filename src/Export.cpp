@@ -1,29 +1,45 @@
 #include "Export.hpp"
 
-Export::Export(QObject *base) : QObject(base) {
-    QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+#include "DataDirs.hpp"
+#include "ExportDialog.hpp"
+#include "singleton.hpp"
 
-    // check directory is exists or empty
-    QDir directory(appDataPath);
-    if (directory.isEmpty() || !directory.exists()) {
-        QString text = QObject::tr("There are no encrypted files on or not exists: %1").arg(appDataPath);
+Export::Export(QObject *base) : QObject(base) {
+    QStringList paths = Singleton<DataDirs>::Instance().GetDataDirPaths();
+    paths << QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+
+    // get every *.enc files from paths
+    QStringList encFiles;
+    for (const auto &path : paths) {
+        QDir dir(path);
+        if (!dir.exists()) {
+            Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Data directory not exists: %1. Trying to create.").arg(path).toStdString());
+            if (!dir.mkdir(path))
+                Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Data directory cannot be created: %1.").arg(path).toStdString());
+        }
+        auto encFilesInDir = dir.entryList(QStringList() << "*.enc", QDir::Files);
+        if (encFilesInDir.isEmpty())
+            Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("There is no encrypted files in: %1. Skipping").arg(path).toStdString());
+        else
+            for (const auto &fileName : encFilesInDir) encFiles << dir.filePath(fileName);
+    }
+
+    if (encFiles.isEmpty()) {
+        QString text = QObject::tr("There are no encrypted files on or not exists");
         Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, text.toStdString());
         QMessageBox::question(nullptr, QObject::tr("Export Error"), text);
         return;
     }
 
-    // get .enc file list from path
-    QStringList encFiles = directory.entryList(QStringList() << "*.enc", QDir::Files);
-
     // get export directory
-    ExportDialog dialog(encFiles);
+    auto &dialog = Singleton<ExportDialog>::Instance(encFiles);
     if (dialog.exec() == QDialog::Accepted) {
         QStringList files = dialog.GetSelectedFiles();
         QString path = dialog.GetSelectedDirectory();
 
         for (const QString &file : files) {
             QFileInfo info(file);
-            QString sourcePath = appDataPath + QDir::separator() + file;
+            QString sourcePath = file;
             QString destinationPath = path + QDir::separator() + info.fileName();
 
             // Check if source file exists

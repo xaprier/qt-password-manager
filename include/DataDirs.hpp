@@ -21,6 +21,7 @@ class DataDirs : public QObject {
     void UpdateDataDir(int index, const QString& path);
 
     const QVector<DataDir> GetDataDirs() const;
+    const QList<QString> GetDataDirPaths() const;
 
     void ClearDataDirs();
 

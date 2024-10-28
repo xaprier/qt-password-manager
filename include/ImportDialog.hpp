@@ -9,13 +9,13 @@
 #include <QToolButton>
 #include <QtGlobal>
 
-// todo: make it singleton
+#include "singleton.hpp"
+
 class ImportDialog : public QFileDialog {
     Q_OBJECT
     Q_DISABLE_COPY_MOVE(ImportDialog)
   public:
-    explicit ImportDialog(QWidget *parent = nullptr);
-    ~ImportDialog() override = default;
+    friend Singleton<ImportDialog>;
     [[nodiscard]] QStringList GetSelectedFiles() const;
     [[nodiscard]] QString GetSelectedDataDirectory() const;
 
@@ -25,6 +25,8 @@ class ImportDialog : public QFileDialog {
     void sl_Accepted();
 
   private:
+    explicit ImportDialog(QWidget *parent = nullptr);
+    ~ImportDialog() override = default;
     void _UpdateDataDirSelectionList();
 
   private:

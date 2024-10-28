@@ -19,3 +19,13 @@ void MultiSelectionMenu::mouseReleaseEvent(QMouseEvent *event) {
     }
     QMenu::mouseReleaseEvent(event);
 }
+
+void MultiSelectionMenu::enterEvent(QEvent *event) {
+    auto actions = this->actions();
+    for (auto *action : actions) {
+        connect(action, &QAction::hovered, [action]() {
+            QToolTip::showText(QCursor::pos(), action->toolTip());
+        });
+    }
+    QMenu::enterEvent(event);
+}

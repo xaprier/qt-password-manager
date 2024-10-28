@@ -1,5 +1,8 @@
 #include "Import.hpp"
 
+#include "ImportDialog.hpp"
+#include "singleton.hpp"
+
 Import::Import(QObject *base) : QObject(base) {
     QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 
@@ -13,7 +16,7 @@ Import::Import(QObject *base) : QObject(base) {
         }
     }
 
-    ImportDialog dialog;
+    auto &dialog = Singleton<ImportDialog>::Instance();
     if (dialog.exec() == QDialog::Accepted) {
         QStringList files = dialog.GetSelectedFiles();
         QString dataDirPath = dialog.GetSelectedDataDirectory();

@@ -22,7 +22,7 @@ CreateEncryptedFile::CreateEncryptedFile(const QString &fileName, const QString 
     // create path if not exists
     QDir dir(appDataPath);
     if (!dir.exists()) {
-        if (!dir.mkpath(appDataPath)) {
+        if (!dir.mkdir(appDataPath)) {
             throw CreateEncryptedFileException(QObject::tr("Failed to create directory: %1").arg(appDataPath));
         }
     }

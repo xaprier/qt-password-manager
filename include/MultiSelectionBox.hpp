@@ -1,7 +1,10 @@
 #ifndef MULTISELECTIONBOX_HPP
 #define MULTISELECTIONBOX_HPP
 
+#include <qevent.h>
+
 #include <QComboBox>
+#include <QDebug>
 #include <QLineEdit>
 #include <QObject>
 
@@ -14,11 +17,17 @@ class MultiSelectionBox : public QComboBox {
     MultiSelectionBox(QWidget *parent = nullptr);
     ~MultiSelectionBox() override;
 
-    void AddItem(const QString &text);
+    void AddItem(const QString &text, const QString &path);
 
     [[nodiscard]] QStringList SelectedItems() const;
+    [[nodiscard]] QStringList SelectedItemNames() const;
 
   protected:
+    void mousePressEvent(QMouseEvent *event) override {
+        QComboBox::mousePressEvent(event);
+        showPopup();  // internally call for every mouse press event
+    }
+
     void showPopup() override {
         // Set the menu's width to match the line edit's width
         m_menu->setMinimumWidth(lineEdit()->width());

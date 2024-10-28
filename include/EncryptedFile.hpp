@@ -18,7 +18,7 @@ class EncryptedFile : public QObject {
         QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
         QDir dir(appDataPath);
         if (!dir.exists()) {
-            if (!dir.mkpath(appDataPath)) {
+            if (!dir.mkdir(appDataPath)) {
                 throw CreateEncryptedFileException(QObject::tr("Failed to create directory: %1").arg(appDataPath));
             }
         }
