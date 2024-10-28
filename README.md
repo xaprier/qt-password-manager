@@ -3,8 +3,8 @@
 </h1>
 
 <p align="center">
-  <a href="https://github.com/xaprier/XPwm/blob/main/LICENSE" target="blank">
-    <img src="https://img.shields.io/github/license/xaprier/XPwm" alt="license" />
+  <a href="https://github.com/SFENX-Group/XPwm/blob/main/LICENSE" target="blank">
+    <img src="https://img.shields.io/github/license/SFENX-Group/XPwm" alt="license" />
   </a>
 </p>
 
@@ -15,7 +15,7 @@
 Clone the repository to your directory
 
 ```sh
-git clone --recursive https://github.com/xaprier/XPwm.git
+git clone --recursive https://github.com/SFENX-Group/XPwm.git
 ```
 
 Enter the directory of the source code
@@ -50,7 +50,7 @@ There is an install script named `install.sh` that can be used for Arch-based an
 Clone the repository to your directory
 
 ```sh
-git clone --recursive https://github.com/xaprier/XPwm.git
+git clone --recursive https://github.com/SFENX-Group/XPwm.git
 ```
 
 Enter the directory of the source code
@@ -77,11 +77,11 @@ You can search the application `Password Manager`
 
 ### 📸 Screenshot 
 
-![](https://raw.githubusercontent.com/xaprier/XPwm/main/screenshot/login.png)
-![](https://raw.githubusercontent.com/xaprier/XPwm/main/screenshot/main.png)
+![](https://raw.githubusercontent.com/SFENX-Group/XPwm/main/screenshot/login.png)
+![](https://raw.githubusercontent.com/SFENX-Group/XPwm/main/screenshot/main.png)
 
 ### ✨ Contributors
 
-<a href="https://github.com/xaprier/XPwm/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=xaprier/XPwm" />
+<a href="https://github.com/SFENX-Group/XPwm/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=SFENX-Group/XPwm" />
 </a>
