@@ -84,4 +84,4 @@ You can search the application `Password Manager`
 
 <a href="https://github.com/SFENX-Group/XPwm/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=SFENX-Group/XPwm" />
-</a>
+</a> 
