@@ -11,6 +11,7 @@ RandomizedPasswordDialog::RandomizedPasswordDialog(QWidget *parent) : QDialog(pa
 }
 
 RandomizedPasswordDialog::~RandomizedPasswordDialog() {
+    if (result() == QDialog::Accepted) emit this->m_ui->copyTB->clicked(true);
     delete m_ui;
 }
 

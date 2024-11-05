@@ -3,8 +3,6 @@
 #include <QDebug>
 
 void PasswordLengthSlider::mousePressEvent(QMouseEvent *event) {
-    qDebug() << __PRETTY_FUNCTION__;
-
     Qt::MouseButtons btns = QApplication::mouseButtons();
     QPoint localMousePos = mapFromGlobal(QCursor::pos());
     bool clickOnSlider = (btns & Qt::LeftButton) &&

@@ -57,19 +57,19 @@
 <context>
     <name>Export</name>
     <message>
-        <location filename="../src/Export.cpp" line="32"/>
+        <location filename="../src/Export.cpp" line="48"/>
         <source>Source file does not exist: %1</source>
         <translation>Quelldatei existiert nicht: %1</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="32"/>
-        <location filename="../src/Export.cpp" line="39"/>
         <location filename="../src/Export.cpp" line="48"/>
+        <location filename="../src/Export.cpp" line="55"/>
+        <location filename="../src/Export.cpp" line="64"/>
         <source>Copy Error</source>
         <translation>Kopierfehler</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="39"/>
+        <location filename="../src/Export.cpp" line="55"/>
         <source>Destination file already exists: %1</source>
         <translation>Zieldatei existiert bereits: %1</translation>
     </message>
@@ -78,7 +78,7 @@
         <translation type="vanished">Kopiert: %1 nach %2</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="48"/>
+        <location filename="../src/Export.cpp" line="64"/>
         <source>Failed to copy file &apos;%1&apos; to &apos;%2&apos;</source>
         <translation>Fehler beim Kopieren der Datei &apos;%1&apos; nach &apos;%2&apos;</translation>
     </message>
@@ -86,7 +86,7 @@
 <context>
     <name>ExportDialog</name>
     <message>
-        <location filename="../src/ExportDialog.cpp" line="16"/>
+        <location filename="../src/ExportDialog.cpp" line="11"/>
         <source>Select files to export</source>
         <translation>Wählen Sie Dateien zum Exportieren aus</translation>
     </message>
@@ -94,19 +94,19 @@
 <context>
     <name>Import</name>
     <message>
-        <location filename="../src/Import.cpp" line="29"/>
+        <location filename="../src/Import.cpp" line="32"/>
         <source>Source file does not exist: %1</source>
         <translation>Quelldatei existiert nicht: %1</translation>
     </message>
     <message>
-        <location filename="../src/Import.cpp" line="29"/>
-        <location filename="../src/Import.cpp" line="36"/>
-        <location filename="../src/Import.cpp" line="45"/>
+        <location filename="../src/Import.cpp" line="32"/>
+        <location filename="../src/Import.cpp" line="39"/>
+        <location filename="../src/Import.cpp" line="48"/>
         <source>Copy Error</source>
         <translation>Kopierfehler</translation>
     </message>
     <message>
-        <location filename="../src/Import.cpp" line="36"/>
+        <location filename="../src/Import.cpp" line="39"/>
         <source>Destination file already exists: %1</source>
         <translation>Zieldatei existiert bereits: %1</translation>
     </message>
@@ -115,7 +115,7 @@
         <translation type="vanished">&apos;%1&apos; nach &apos;%2&apos; kopiert</translation>
     </message>
     <message>
-        <location filename="../src/Import.cpp" line="45"/>
+        <location filename="../src/Import.cpp" line="48"/>
         <source>Failed to copy file &apos;%1&apos; to &apos;%2&apos;</source>
         <translation>Fehler beim Kopieren der Datei &apos;%1&apos; nach &apos;%2&apos;</translation>
     </message>
@@ -826,46 +826,57 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
         <translation>Ungültiges JSON-Format. Erforderlicher Bereich nicht gefunden.</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="9"/>
         <source>There are no encrypted files on or not exists: %1</source>
-        <translation>Es gibt keine verschlüsselten Dateien oder sie existieren nicht: %1</translation>
+        <translation type="vanished">Es gibt keine verschlüsselten Dateien oder sie existieren nicht: %1</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="11"/>
+        <location filename="../src/Export.cpp" line="22"/>
+        <source>There is no encrypted files in: %1. Skipping</source>
+        <translation>Keine verschlüsselten Dateien in: %1. Überspringen</translation>
+    </message>
+    <message>
+        <location filename="../src/Export.cpp" line="28"/>
+        <source>There are no encrypted files on or not exists</source>
+        <translation>Es gibt keine verschlüsselten Dateien oder das Verzeichnis existiert nicht.</translation>
+    </message>
+    <message>
+        <location filename="../src/Export.cpp" line="30"/>
         <source>Export Error</source>
         <translation>Exportfehler</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="31"/>
-        <location filename="../src/Import.cpp" line="28"/>
+        <location filename="../src/Export.cpp" line="47"/>
+        <location filename="../src/Import.cpp" line="31"/>
         <source>Source file does not exist: %1</source>
         <translation>Quelldatei existiert nicht: %1</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="38"/>
-        <location filename="../src/Import.cpp" line="35"/>
+        <location filename="../src/Export.cpp" line="54"/>
+        <location filename="../src/Import.cpp" line="38"/>
         <source>Destination file already exists: %1</source>
         <translation>Zieldatei existiert bereits: %1</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="45"/>
-        <location filename="../src/Import.cpp" line="42"/>
+        <location filename="../src/Export.cpp" line="61"/>
+        <location filename="../src/Import.cpp" line="45"/>
         <source>Copied &apos;%1&apos; to &apos;%2&apos;</source>
         <translation>&apos;%1&apos; nach &apos;%2&apos; kopiert</translation>
     </message>
     <message>
-        <location filename="../src/Export.cpp" line="47"/>
-        <location filename="../src/Import.cpp" line="44"/>
+        <location filename="../src/Export.cpp" line="63"/>
+        <location filename="../src/Import.cpp" line="47"/>
         <source>Failed to copy file &apos;%1&apos; to &apos;%2&apos;</source>
         <translation>Fehler beim Kopieren der Datei &apos;%1&apos; nach &apos;%2&apos;</translation>
     </message>
     <message>
-        <location filename="../src/Import.cpp" line="9"/>
+        <location filename="../src/Export.cpp" line="16"/>
+        <location filename="../src/Import.cpp" line="12"/>
         <source>Data directory not exists: %1. Trying to create.</source>
         <translation>Das Datenverzeichnis existiert nicht: %1. Es wird versucht, es zu erstellen.</translation>
     </message>
     <message>
-        <location filename="../src/Import.cpp" line="11"/>
+        <location filename="../src/Export.cpp" line="18"/>
+        <location filename="../src/Import.cpp" line="14"/>
         <source>Data directory cannot be created: %1.</source>
         <translation>Das Datenverzeichnis kann nicht erstellt werden: %1.</translation>
     </message>
@@ -960,7 +971,7 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
         <source>There is old organization data in your AppData location.
 </source>
         <comment>Do you want the copy the encrypted files to new one and delete old directory?</comment>
-        <translation type="unfinished"></translation>
+        <translation>Möchten Sie die verschlüsselten Dateien in ein neues Verzeichnis kopieren und das alte Verzeichnis löschen?</translation>
     </message>
     <message>
         <source>There is old organization data in your AppData location.</source>
@@ -1107,24 +1118,24 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <translation>Zahlen</translation>
     </message>
     <message>
-        <location filename="../src/RandomizedPasswordDialog.cpp" line="40"/>
-        <location filename="../src/RandomizedPasswordDialog.cpp" line="58"/>
-        <location filename="../src/RandomizedPasswordDialog.cpp" line="78"/>
+        <location filename="../src/RandomizedPasswordDialog.cpp" line="41"/>
+        <location filename="../src/RandomizedPasswordDialog.cpp" line="59"/>
+        <location filename="../src/RandomizedPasswordDialog.cpp" line="79"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../src/RandomizedPasswordDialog.cpp" line="40"/>
+        <location filename="../src/RandomizedPasswordDialog.cpp" line="41"/>
         <source>You have to select at least 1 character set</source>
         <translation>Sie müssen mindestens einen Zeichensatz auswählen</translation>
     </message>
     <message>
-        <location filename="../src/RandomizedPasswordDialog.cpp" line="58"/>
+        <location filename="../src/RandomizedPasswordDialog.cpp" line="59"/>
         <source>Random password cannot be created</source>
         <translation>Zufälliges Passwort kann nicht erstellt werden</translation>
     </message>
     <message>
-        <location filename="../src/RandomizedPasswordDialog.cpp" line="78"/>
+        <location filename="../src/RandomizedPasswordDialog.cpp" line="79"/>
         <source>There must be at least 1 state.</source>
         <translation>Es muss mindestens ein Zustand vorhanden sein.</translation>
     </message>

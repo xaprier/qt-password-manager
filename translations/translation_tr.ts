@@ -604,7 +604,7 @@ Please edit it or create with using another inputs.</source>
     </message>
     <message>
         <source>There are no encrypted files on or not exists: %1</source>
-        <translation>Hiç şifrelenmiş dosya yok veya mevcut değil: %1</translation>
+        <translation type="vanished">Hiç şifrelenmiş dosya yok veya mevcut değil: %1</translation>
     </message>
     <message>
         <source>Data directory not exists: %1. Trying to create.</source>
@@ -681,6 +681,14 @@ Please edit it or create with using another inputs.</source>
     <message>
         <source>Encrypted files copied to: %1 and old directory removed.</source>
         <translation>Şifreli dosyalar %1 dizinine kopyalandı ve eski dizin silindi.</translation>
+    </message>
+    <message>
+        <source>There is no encrypted files in: %1. Skipping</source>
+        <translation>Şifrelenmiş dosya yok: %1. Geçiliyor</translation>
+    </message>
+    <message>
+        <source>There are no encrypted files on or not exists</source>
+        <translation>Şifrelenmiş dosya yok veya mevcut değil</translation>
     </message>
 </context>
 <context>
