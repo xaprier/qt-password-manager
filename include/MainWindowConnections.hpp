@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include <QObject>
 
+#include "AboutDialog.hpp"
 #include "MainWindow.hpp"
 
 /**
@@ -35,6 +36,7 @@ class MainWindowConnections : public QObject {  // NOLINT
     void sl_ActionChangeNameTriggered(bool checked);
     void sl_ActionChangeMasterPasswordTriggered(bool checked);
     void sl_ActionDeleteTriggered(bool checked);
+    void sl_ActionAboutTriggered(bool checked);
     void sl_CopyClicked(bool checked);
 };
 

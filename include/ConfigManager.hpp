@@ -3,8 +3,8 @@
 
 #include <QSettings>
 
+#include "Config.hpp"
 #include "DataDirs.hpp"
-#include "Defines.hpp"
 #include "singleton.hpp"
 
 class ConfigManager : public QObject {
@@ -38,7 +38,7 @@ class ConfigManager : public QObject {
     }
 
   private:
-    ConfigManager() : m_settings(ORGNAME, APPNAME) {}
+    ConfigManager() : m_settings(PROJECT_ORGANIZATION, PROJECT_NAME) {}
     ~ConfigManager() = default;
 
   private:

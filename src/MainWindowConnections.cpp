@@ -331,6 +331,11 @@ begin:
     }
 }
 
+void MainWindowConnections::sl_ActionAboutTriggered(bool checked) {
+    AboutDialog dialog;
+    dialog.exec();
+}
+
 void MainWindowConnections::sl_CopyClicked(bool checked) {
     QClipboard *clipboard = QApplication::clipboard();
     clipboard->setText(this->m_ui->passwordLE->text());

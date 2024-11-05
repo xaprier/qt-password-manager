@@ -1,9 +1,8 @@
 #include "Application.hpp"
-#include "Defines.hpp"
+#include "Config.hpp"
 #include "LoginDialog.hpp"
 #include "MainWindow.hpp"
 #include "OrganizationNameMigration.hpp"
-#include "singleton.hpp"
 
 QString getQSS() {
     QFile styleFile(":/qss/style.qss");
@@ -17,9 +16,8 @@ QString getQSS() {
 }
 
 int main(int argc, char *argv[]) {
-    Application app(argc, argv, APPNAME, APPVERSION, ORGNAME, getQSS());
+    Application app(argc, argv, PROJECT_NAME, PROJECT_VERSION, PROJECT_ORGANIZATION, getQSS());
     OrganizationNameMigration migration;
-
     while (true) {
         LoginDialog login;
         int result = login.exec();

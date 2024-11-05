@@ -6,7 +6,7 @@
 #include <QMessageBox>
 #include <QStandardPaths>
 
-#include "Defines.hpp"
+#include "Config.hpp"
 #include "Logger.hpp"
 #include "Migration.hpp"
 /**

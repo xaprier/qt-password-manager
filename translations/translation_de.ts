@@ -2,6 +2,49 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
+    <name>AboutDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="obsolete">Dialog</translation>
+    </message>
+    <message>
+        <location filename="../src/AboutDialog.cpp" line="18"/>
+        <source>Project Version</source>
+        <translation>Projektversion</translation>
+    </message>
+    <message>
+        <location filename="../src/AboutDialog.cpp" line="19"/>
+        <source>Using: Qt &lt;b&gt;%1&lt;/b&gt;</source>
+        <translation>Verwendet: Qt &lt;b&gt;%1&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/AboutDialog.cpp" line="27"/>
+        <source>Website</source>
+        <translation>Webseite</translation>
+    </message>
+    <message>
+        <location filename="../src/AboutDialog.cpp" line="29"/>
+        <source>Organization</source>
+        <translation>Organisation</translation>
+    </message>
+    <message>
+        <location filename="../src/AboutDialog.cpp" line="33"/>
+        <source>This program is free software; you can redistribute it and/or modify it</source>
+        <translation>Dieses Programm ist freie Software; Sie können es weitergeben und/oder ändern</translation>
+    </message>
+    <message>
+        <location filename="../src/AboutDialog.cpp" line="34"/>
+        <source>under the terms of the GNU General Public License version 3 or later.</source>
+        <translation>unter den Bedingungen der GNU General Public License Version 3 oder später.</translation>
+    </message>
+    <message>
+        <location filename="../design/AboutDialog.ui" line="14"/>
+        <location filename="../build/XPwm_autogen/design/ui_AboutDialog.h" line="57"/>
+        <source>About</source>
+        <translation>Über</translation>
+    </message>
+</context>
+<context>
     <name>CreateDialog</name>
     <message>
         <location filename="../design/CreateDialog.ui" line="14"/>
@@ -683,7 +726,7 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
         <translation>Deutsche Sprache geladen</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="11"/>
+        <location filename="../src/main.cpp" line="12"/>
         <source>Style file cannot be opened</source>
         <translation>Die Style-Datei kann nicht geöffnet werden</translation>
     </message>

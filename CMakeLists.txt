@@ -1,6 +1,13 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(XPwm VERSION 1.1.1 LANGUAGES CXX)
+project(
+    XPwm 
+    VERSION 1.1.4 
+    DESCRIPTION "Local Password manager using OpenSSL and Qt"
+    HOMEPAGE_URL "https://github.com/SFENX-Group/XPwm"
+    LANGUAGES CXX)
+
+set(PROJECT_ORGANIZATION "SFENX")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -25,6 +32,8 @@ elseif(Qt6Widgets_FOUND)
 else()
     message(FATAL_ERROR "Qt5Widgets or Qt6Widgets not found")
 endif()
+
+configure_file(./include/Config.hpp.cmake ${CMAKE_CURRENT_BINARY_DIR}/Config.hpp)
 
 # 4 - add qm file to qrc file and load it in code
 file(GLOB_RECURSE CPP_HILES "src/*.cpp")

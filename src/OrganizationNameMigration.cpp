@@ -6,7 +6,7 @@ void OrganizationNameMigration::Migrate() {
 
     // Check if the old directory exists
     QDir oldOrgDir(oldOrganizationPath);
-    QDir oldAppDir(oldOrgDir.absolutePath() + QDir::separator() + APPNAME);
+    QDir oldAppDir(oldOrgDir.absolutePath() + QDir::separator() + PROJECT_NAME);
 
     // Check if the old directory contains ".enc" files
     QStringList filters;

@@ -51,6 +51,7 @@ void MainWindow::_InitConnections() {
     connect(this->m_ui->actionChange_Name, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_ActionChangeNameTriggered);
     connect(this->m_ui->actionChange_Master_Password, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_ActionChangeMasterPasswordTriggered);
     connect(this->m_ui->actionDelete, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_ActionDeleteTriggered);
+    connect(this->m_ui->actionAbout, &QAction::triggered, this->m_connections, &MainWindowConnections::sl_ActionAboutTriggered);
 }
 
 void MainWindow::_LoadPlatforms() {

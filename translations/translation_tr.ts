@@ -2,6 +2,41 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
+    <name>AboutDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="vanished">Diyalog</translation>
+    </message>
+    <message>
+        <source>Project Version</source>
+        <translation>Proje Sürümü</translation>
+    </message>
+    <message>
+        <source>Using: Qt &lt;b&gt;%1&lt;/b&gt;</source>
+        <translation>Kullanılan: Qt &lt;b&gt;%1&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation>Web site</translation>
+    </message>
+    <message>
+        <source>Organization</source>
+        <translation>Organizasyon</translation>
+    </message>
+    <message>
+        <source>This program is free software; you can redistribute it and/or modify it</source>
+        <translation>Bu program özgür bir yazılımdır; GNU Genel Kamu Lisansı sürüm 3 veya sonraki</translation>
+    </message>
+    <message>
+        <source>under the terms of the GNU General Public License version 3 or later.</source>
+        <translation>sürümlerinin şartları uyarınca onu yeniden dağıtabilir ve/veya değiştirebilirsiniz.</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Hakkında</translation>
+    </message>
+</context>
+<context>
     <name>CreateDialog</name>
     <message>
         <source>Create</source>
