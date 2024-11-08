@@ -29,7 +29,7 @@ void Application::SetApplicationVersion(const QString &version) {
 
 void Application::SetOrganizationName(const QString &name) {
     m_organizationName = name;
-    QApplication::setOrganizationName(name);
+    QCoreApplication::setOrganizationName(name);
 }
 
 void Application::SetStyleSheet(const QString &sheet) {
@@ -51,9 +51,8 @@ void Application::_SetAppLanguage() {
                 Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Loaded language German").toStdString());
             }
             break;
-        case QLocale::English:
+        default:
             break;
-            // no need to install translator for application wrote in English
     }
     installTranslator(&translator);
 }

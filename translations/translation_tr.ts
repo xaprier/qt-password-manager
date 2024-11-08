@@ -292,6 +292,14 @@
         <source>Username</source>
         <translation>Kullanıcı Adı</translation>
     </message>
+    <message>
+        <source>Help</source>
+        <translation>Yardım</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Hakkında</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowConnections</name>

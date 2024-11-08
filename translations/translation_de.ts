@@ -293,105 +293,117 @@
     <name>MainWindow</name>
     <message>
         <location filename="../design/MainWindow.ui" line="14"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="209"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="217"/>
         <source>Password Manager</source>
         <translation>Passwort-Manager</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="25"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="213"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="222"/>
         <source>Platforms</source>
         <translation>Plattformen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="37"/>
         <location filename="../design/MainWindow.ui" line="172"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="214"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="231"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="223"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="240"/>
         <source>Manage</source>
         <translation>Verwalten</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="58"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="215"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="224"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="65"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="216"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="225"/>
         <source>Username</source>
         <translation>Benutzernamen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="72"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="217"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="226"/>
         <source>Select Platform</source>
         <translation>Plattform auswählen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="86"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="218"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="227"/>
         <source>Password</source>
         <translation>Passwort</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="93"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="220"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="229"/>
         <source>Copy entered password</source>
         <translation>Eingegebenes Passwort kopieren</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="96"/>
         <location filename="../design/MainWindow.ui" line="110"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="222"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="226"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="231"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="235"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="107"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="224"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="233"/>
         <source>Generate new password</source>
         <translation>Neues Passwort generieren</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="123"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="227"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="236"/>
         <source>Show Password</source>
         <translation>Passwort anzeigen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="132"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="228"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="237"/>
         <source>Create</source>
         <translation>Erstellen</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="139"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="229"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="238"/>
         <source>Update</source>
         <translation>Aktualisieren</translation>
     </message>
     <message>
         <location filename="../design/MainWindow.ui" line="146"/>
-        <location filename="../design/MainWindow.ui" line="194"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="212"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="230"/>
+        <location filename="../design/MainWindow.ui" line="201"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="220"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="239"/>
         <source>Delete</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="184"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="210"/>
+        <location filename="../design/MainWindow.ui" line="181"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="241"/>
+        <source>Help</source>
+        <translation>Hilfe</translation>
+    </message>
+    <message>
+        <location filename="../design/MainWindow.ui" line="191"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="218"/>
         <source>Change Master Password</source>
         <translation>Master-Passwort ändern</translation>
     </message>
     <message>
-        <location filename="../design/MainWindow.ui" line="189"/>
-        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="211"/>
+        <location filename="../design/MainWindow.ui" line="196"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="219"/>
         <source>Change Name</source>
         <translation>Name ändern</translation>
+    </message>
+    <message>
+        <location filename="../design/MainWindow.ui" line="206"/>
+        <location filename="../build/XPwm_autogen/design/ui_MainWindow.h" line="221"/>
+        <source>About</source>
+        <translation>Über</translation>
     </message>
 </context>
 <context>
@@ -726,7 +738,7 @@ Bitte melden Sie sich erneut an, um fortzufahren</translation>
         <translation>Deutsche Sprache geladen</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="12"/>
+        <location filename="../src/main.cpp" line="13"/>
         <source>Style file cannot be opened</source>
         <translation>Die Style-Datei kann nicht geöffnet werden</translation>
     </message>

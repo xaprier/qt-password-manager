@@ -14,7 +14,7 @@ Export::Export(QObject *base) : QObject(base) {
         QDir dir(path);
         if (!dir.exists()) {
             Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Data directory not exists: %1. Trying to create.").arg(path).toStdString());
-            if (!dir.mkdir(path))
+            if (!dir.mkpath(path))
                 Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Data directory cannot be created: %1.").arg(path).toStdString());
         }
         auto encFilesInDir = dir.entryList(QStringList() << "*.enc", QDir::Files);

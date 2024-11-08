@@ -10,7 +10,7 @@ Import::Import(QObject *base) : QObject(base) {
     QDir directory(appDataPath);
     if (!directory.exists()) {
         Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Data directory not exists: %1. Trying to create.").arg(appDataPath).toStdString());
-        if (!directory.mkdir(appDataPath)) {
+        if (!directory.mkpath(appDataPath)) {
             Logger::log_static(LoggingLevel::INFO, __LINE__, __PRETTY_FUNCTION__, QObject::tr("Data directory cannot be created: %1.").arg(appDataPath).toStdString());
             return;
         }

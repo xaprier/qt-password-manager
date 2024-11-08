@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 
 project(
     XPwm 
-    VERSION 1.1.4 
+    VERSION 1.1.5
     DESCRIPTION "Local Password manager using OpenSSL and Qt"
     HOMEPAGE_URL "https://github.com/SFENX-Group/XPwm"
     LANGUAGES CXX)
